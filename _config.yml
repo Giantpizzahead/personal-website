@@ -2,10 +2,10 @@
 title: Forty
 subtitle: by HTML5 UP
 email: giantpizzahead@gmail.com
-description: A responsive site template designed by HTML5 Up<br /> and released under the Creative Commons.
-baseurl: "/main" # the subpath of your site, e.g. /blog
+description: An MIT freshman looking to make the world a better place using the latest breakthroughs in computer science.
+# baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://kylefu.me" # the base hostname & protocol for your site
-author:
+author: Kyle
 street_address: 1234 Somewhere Road
 city: Nashville
 state: TN
@@ -22,12 +22,12 @@ tiles-count: 6
 # Icons are not shown if value is empty
 # You need to restart jekyll for changes to have an effect
 socials:
-  GitHub: https://github.com/andrewbanchich
+  GitHub: https://github.com/Giantpizzahead
   GitLab:
-  Google-Plus: https://plus.google.com/u/0/+AndrewBanchich
+  Google-Plus:
   Instagram:
-  LinkedIn: https://www.linkedin.com/in/andrew-banchich-a4ba1195
-  Twitter: https://twitter.com/andrewbanchich
+  LinkedIn: https://www.linkedin.com/in/kyle-fu-us/
+  Twitter:
   Facebook:
   Slack:
 
