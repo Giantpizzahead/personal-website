@@ -1,17 +1,55 @@
 # site settings
-title: Kyle
-subtitle: AKA Giantpizzahead
-email: giantpizzahead@gmail.com
-description: An MIT freshman looking to make the world a better place using the latest breakthroughs in computer science.
+title: Kyle Fu
+subtitle: "@Giantpizzahead"
+email: kyle_fu@yahoo.com
+description: I am Kyle Fu, an MIT freshman looking to better the world through computer science.
 # baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://kylefu.me" # the base hostname & protocol for your site
-author: Kyle
-street_address: 1234 Somewhere Road
-city: Someplace
-state: IDK
-zip_code: 12345
-country: United States of America
-phone: (123) 456-7890
+author: Kyle Fu
+street_address: "(Private)"
+city: "Sunnyvale"
+state: "CA"
+zip_code: ""
+country: "United States of America"
+phone: "(XXX) XXX-XXXX"
+
+# plugins
+plugins:
+  - jemoji
+
+# collections
+collections:
+  projects:
+    output: true
+  cheatsheets:
+    output: true
+  cheat_python:
+    output: true
+    sort_by: order
+  cheat_webdev:
+    output: true
+    sort_by: order
+
+# https://stackoverflow.com/questions/18675610/jekyll-change-layout-if-page-is-a-post
+# default layout
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: post
+  -
+    scope:
+      path: ""      # empty string for all files
+      type: posts   # limit to posts
+    values:
+      is_post: true # automatically set is_post=true for all posts
+  -
+    scope:
+      path: ""
+      type: cheatsheets
+    values:
+      layout: cheatsheet
 
 # homepage tiles
 tiles-source: pages # accepts "posts" or "pages"
@@ -30,6 +68,7 @@ socials:
   Twitter:
   Facebook:
   Slack:
+  YouTube-Play: https://www.youtube.com/channel/UCqok9Akhd7R3u2jcTGph2oA
 
 # build settings
 markdown: kramdown

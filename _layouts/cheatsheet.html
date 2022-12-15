@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+{% include head.html %}
+
+<body>
+
+    {% include header.html %} 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<header class="major">
+			<h1>{{ page.title }}</h1>
+		</header>
+
+		<!-- Get all posts in the cheat-source collection -->
+		{% if 'cheat_python' == page.cheat-source %}
+    		{% assign posts = site.cheat_python %}
+		{% elsif 'cheat_webdev' == page.cheat-source %}
+			{% assign posts = site.cheat_webdev %}
+		{% endif %}
+
+		<!-- Group posts by category -->
+		{% assign posts_by_group = posts | group_by: "group" %}
+		<ol>
+		{% for group in posts_by_group %}
+			<!-- Handle posts without a group -->
+			{% if group.name != "" %}
+				{% assign name = group.name %}
+			{% else %}
+				{% assign name = "Uncategorized" %}
+			{% endif %}
+			<li>
+				{{ name }}
+				<ul>
+				{% for post in group.items %}
+					<li><a href={{ post.url | absolute_url }}>{{ post.title }}</a></li>
+				{% endfor %}
+				</ul>
+			</li>
+		{% endfor %}
+		</ol>
+
+		{{ content }}
+
+		<p><i><a class="yes-link-fade" href="javascript:window.history.back()">Back to previous page</a></i></p>
+	</div>
+</section>
+
+</div>
+
+    {% include footer.html %}
+
+</body>
+
+</html>

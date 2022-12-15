@@ -8,7 +8,7 @@
 
 	#banner {
 		@include vendor('align-items', 'center');
-		@include vendor('background-image', 'url("../images/banner.jpg")');
+		@include vendor('background-image', 'url("../images/banners/spacelarge.jpg")');
 		@include vendor('display', 'flex');
 		@include padding(4em, 0, (2em, 0, 0, 0));
 		background-attachment: fixed;
@@ -111,6 +111,13 @@
 		&.style5 { &:after { background-color: _palette(accent5); } }
 		&.style6 { &:after { background-color: _palette(accent6); } }
 
+		&.style7 {
+			&:after {
+				background-color: _palette(accent7);
+				opacity: 0.5;
+			}
+		}
+
 		body.is-loading & {
 			&:after {
 				opacity: 1.0;
@@ -124,7 +131,7 @@
 		}
 
 		@include breakpoint(large) {
-			background-attachment: scroll;
+			//background-attachment: scroll;
 		}
 
 		@include breakpoint(small) {

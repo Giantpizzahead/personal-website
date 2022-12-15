@@ -4,6 +4,34 @@
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
+/* Alerts */
+
+.info-msg,
+.success-msg,
+.warning-msg,
+.danger-msg {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 3px 3px 3px 3px;
+  font-weight: 500;
+}
+.info-msg {
+  background-color: #005090C0;
+  color: #BEF;
+}
+.success-msg {
+  background-color: #227700C0;
+  color: #DFF2BF;
+}
+.warning-msg {
+  background-color: #9F6000C0;
+  color: #FEEFB3;
+}
+.danger-msg {
+  background-color: #D8000CC0;
+  color: #FFBABA;
+}
+
 /* Type */
 
 	body, input, select, textarea {
@@ -133,7 +161,7 @@
 	}
 
 	code {
-		background: _palette(border-bg);
+		background-color: #181816;
 		font-family: _font(family-fixed);
 		font-size: 0.9em;
 		margin: 0 0.25em;
@@ -151,6 +179,7 @@
 			line-height: 1.75;
 			padding: 1em 1.5em;
 			overflow-x: auto;
+			background-color: #272822;
 		}
 	}
 

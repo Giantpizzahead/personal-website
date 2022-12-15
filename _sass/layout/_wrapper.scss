@@ -10,7 +10,7 @@
 		@include vendor('transition', (
 			'filter #{_duration(menu)} ease',
 			'-webkit-filter #{_duration(menu)} ease',
-			'opacity 0.375s ease-out'
+			'opacity #{_duration(wrapper)} ease-out'
 		));
 		padding-top: 3.25em;
 

@@ -22,8 +22,18 @@
 		<header class="major">
 			<h1>{{ page.title }}</h1>
 		</header>
-		{% if page.image %}<span class="image main"><img src="{{ site.baseurl }}/{{ page.image }}" alt="" /></span>{% endif %}
+		<!--
+		{% if page.image %}
+			<span class="image main"><img src="{{ site.baseurl }}/{{ page.image }}"
+			{% if page.imagealt %} alt="{{ page.imagealt }}" {% endif %}/>
+			</span>
+		{% endif %}
+		-->
 		{{ content }}
+		{% if page.is_post and page.date %}
+			<i>Last updated: {{ page.date | date_to_long_string }}</i>
+		{% endif %}
+		<p><i><a class="yes-link-fade" href="javascript:window.history.back()">Back to previous page</a></i></p>
 	</div>
 </section>
 

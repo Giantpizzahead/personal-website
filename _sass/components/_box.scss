@@ -10,6 +10,18 @@
 		border: solid 1px _palette(border);
 		margin-bottom: _size(element-margin);
 		padding: 1.5em;
+		@include vendor('transition', (
+			'background-color #{_duration(transition)} ease-in-out',
+			'box-shadow #{_duration(transition)} ease-in-out',
+			//'color #{_duration(transition)} ease-in-out'
+		));
+
+		h2, p {
+			@include vendor('transition', (
+				'color #{_duration(transition)} ease-in-out'
+			));
+			color: _palette(fg-bold);
+		}
 
 		> :last-child,
 		> :last-child > :last-child,
@@ -21,5 +33,30 @@
 			border: 0;
 			border-radius: 0;
 			padding: 0;
+		}
+
+		&.with-image {
+			// https://matthewjamestaylor.com/equal-height-columns
+			display: grid;
+			grid-auto-rows: min-content;
+    		grid-template-columns: 2fr 1fr;
+			align-items: center;
+			padding: 0;
+			background-color: _palette(border);
+
+			&:hover, &:active {
+				box-shadow: inset 0 0 0 1px _palette(border);
+				h2, p {
+					color: _palette(highlight);
+				}
+			}
+	
+			&:active {
+				background-color: transparentize(_palette(highlight), 0.9);
+				box-shadow: inset 0 0 0 1px desaturate(darken(_palette(highlight), 25), 10);
+				h2, p {
+					color: desaturate(darken(_palette(highlight), 15), 5);
+				}
+			}
 		}
 	}

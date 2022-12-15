@@ -1,0 +1,75 @@
+{% if 'posts' == page.display-source %}
+    {% assign posts = site.posts %}
+{% elsif 'projects' == page.display-source %}
+    {% assign posts = site.projects %}
+{% elsif 'cheatsheets' == page.display-source %}
+    {% assign posts = site.cheatsheets %}
+{% endif %}
+
+<!DOCTYPE html>
+<!--
+    Forty by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+  -->
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %} 
+    
+    <section id="banner" class="style{{ page.style }}">
+      <div class="inner">
+        <span class="image">
+          <img src="{{ site.baseurl }}/{{ page.image }}"
+          {% if page.imagealt %} alt="{{ page.imagealt }}" {% endif %}>
+        </span>
+        <header class="major">
+          <h1>{{ page.title }}</h1>
+        </header>
+        <div class="content">
+          {{ page.description }}
+        </div>
+      </div>
+    </section>
+    
+    <!-- Main -->
+    <div id="main" class="alt">
+
+      <!-- One -->
+      <section id="one">
+        <div class="inner">
+          {% for post in posts %}
+            {% if post.title != 404 %}
+              <a href={{ post.url | absolute_url }}><div class="box with-image">
+                <div style="padding: 0.4em 1em 1em 1em">
+                <h2 style="margin-bottom: 0.25em">{{ post.title }}</h2>
+                <p style="margin-bottom: 0">
+                  {% if post.description %}{{ post.description }}{% endif %}
+                  {% if 'posts' == page.display-source and post.date %}
+                    <br><i>{{ post.date | date_to_long_string }}</i>
+                  {% endif %}
+                </p>
+                </div>
+                <span style="display: grid; align-items: center; justify-items: right; margin: 1px 1px 1px 0; max-height: 30vh">
+                  {% if post.image %}
+                  <img src="{{ site.baseurl }}/{{ post.image }}" alt="" style="height: 100%; max-height: 30vh; margin: 0"/>
+                  {% endif %}
+                </span>
+              </div></a>
+            {% endif %}
+          {% endfor %}
+	      </div>
+      </section>
+
+    </div>
+
+    {% include footer.html %}
+
+    </div>
+
+  </body>
+
+</html>
