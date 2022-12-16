@@ -6,16 +6,28 @@ imagealt: Python logo
 cheat-source: cheat_python
 ---
 
-{% alert %}
-Hello!
+{% alert info %}
+The below code only works in Python 3.10 or newer.
 {% endalert %}
 
-<div class="info-msg">
+{% alert warning %}
+**Warning**
+
+Try not to die! :D
+{% endalert %}
+
+{% alert %}
+Tip: Don't use parentheses.
+{% endalert %}
+
+Hello *hello* **hello**
+
+<div class="note-msg">
   <i class="fa fa-info-circle"></i>
   This is an info message.
 </div>
 
-<div class="success-msg">
+<div class="review-msg">
   <i class="fa fa-check"></i>
   This is a success message.
 </div>

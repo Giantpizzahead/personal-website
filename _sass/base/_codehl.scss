@@ -1,14 +1,20 @@
 $bgcolor: #272822;
 $edgecolor: #75715e50;
 
-.highlighter-rouge {
+div.highlighter-rouge {
     background-color: $bgcolor;
     padding: 1em;
-    margin: 0 0 32px 0;
+    margin: 0 0 2rem 0;
     border: 1px solid $edgecolor;
     font-weight: 400;
-    font-size: 13px;
-    line-height: 18.5px;
+    font-size: 0.8125rem;
+    line-height: 1.15625rem;
+}
+
+code.highlighter-rouge {
+    background-color: transparent;
+    padding: 0;
+    font-family: _font(family-fixed);
 }
 
 .highlight {
@@ -16,20 +22,20 @@ $edgecolor: #75715e50;
     pre {
         background-color: $bgcolor;
         margin: 0;
-        font-size: 13px;
-        line-height: 18.5px;
+        font-size: 0.8125rem;
+        line-height: 1.15625rem;
     }
     code {
         padding: 0;
         margin: 0;
-        font-size: 13px;
-        line-height: 18.5px;
+        font-size: 0.8125rem;
+        line-height: 1.15625rem;
     }
 }
 
 figure.highlight {
     background-color: $bgcolor;
-    margin: 0 0 32px 0;
+    margin: 0 0 2rem 0;
     border: 1px solid $edgecolor;
 }
 

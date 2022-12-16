@@ -43,13 +43,32 @@ defaults:
       path: ""      # empty string for all files
       type: posts   # limit to posts
     values:
+      layout: post
       is_post: true # automatically set is_post=true for all posts
+  -
+    scope:
+      path: ""
+      type: projects
+    values:
+      layout: post
   -
     scope:
       path: ""
       type: cheatsheets
     values:
       layout: cheatsheet
+  - 
+    scope:
+      path: ""
+      type: cheat_python
+    values:
+      layout: guide
+  - 
+    scope:
+      path: ""
+      type: cheat_webdev
+    values:
+      layout: guide
 
 # homepage tiles
 tiles-source: pages # accepts "posts" or "pages"
