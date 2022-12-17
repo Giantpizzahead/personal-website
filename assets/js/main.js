@@ -4,6 +4,31 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+// https://stackoverflow.com/a/20087506
+function modifierHeld(event) {
+  // Don't stop the user if they're trying to open a new tab.
+  return (
+    event.ctrlKey || 
+    event.shiftKey || 
+    event.metaKey || // apple
+    (event.button && event.button == 1) // middle click, >IE9 + everyone else
+  );
+}
+
+// https://stackoverflow.com/a/24056766
+function historyBackWithFallback(fallbackUrl) {
+  fallbackUrl = fallbackUrl || '/';
+  var prevPage = window.location.href;
+
+  window.history.back();
+
+  setTimeout(function(){ 
+      if (window.location.href == prevPage) {
+          window.location.href = fallbackUrl; 
+      }
+  }, 750);
+}
+
 (function ($) {
   skel.breakpoints({
     xlarge: "(max-width: 1680px)",
@@ -138,6 +163,7 @@
           return;
   
         $link.on("click", function (event) {
+          if (modifierHeld(event)) return;
           var href = $link.attr("href");
   
           // Prevent default.
@@ -191,6 +217,7 @@
         $link = $link.add($x);
 
         $link.on("click", function (event) {
+          if (modifierHeld(event)) return;
           var href = $link.attr("href");
 
           // Prevent default.
@@ -292,6 +319,7 @@
         event.stopPropagation();
       })
       .on("click", "a", function (event) {
+        if (modifierHeld(event)) return;
         var href = $(this).attr("href");
 
         event.preventDefault();
@@ -342,5 +370,24 @@
         $(this).css("padding", "1em");
       }
     });
+
+    // Smooth scrolling for anchor links
+    // https://stackoverflow.com/a/7717572
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      // Don't scroll if the href is #menu
+      if ($(this).attr("href") == "#menu") return;
+      anchor.addEventListener('click', function (e) {
+        if (modifierHeld(e)) return;
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Hide previous page link if referrer was not this website
+    if (document.referrer.indexOf(window.location.hostname) == -1) {
+      $("previous-page").hide();
+    }
   });
 })(jQuery);

@@ -1,15 +1,56 @@
 ---
-title: Environment & Dependency Management
+title: Environment Management
 group: Project Management
 order: 2
 ---
 
-**Use virtual environments!** They keep your system from getting messy, keep projects from conflicting with each other, and are more consistent across developer setups.
+## Virtual Environments
 
-See [https://docs.python-guide.org/dev/virtualenvs/](https://docs.python-guide.org/dev/virtualenvs/)
+These let you install Python modules in a local directory instead of system-wide. Use them!
 
-WIP!
+Reasons:
+- Keep your system files clean
+- Keep projects from conflicting with each other
+- More consistent across developer setups
 
-```python
-print("Hi")
+### Create
+
+```bash
+$ python3 -m venv ./venv
 ```
+
+### Activate
+
+Mac and Linux:
+```bash
+$ source venv/bin/activate
+```
+
+Windows:
+```bash
+$ venv/Scripts/activate.bat  # Terminal
+$ venv/Scripts/Activate.ps1  # Powershell
+```
+
+Your terminal prompt should now have `(venv)` at the start. Now `pip` modules will install locally!
+
+### Requirements
+
+```bash
+# Dump current requirements into a file
+$ pip freeze > requirements.txt
+
+# Install requirements from file
+$ pip install -r requirements.txt
+```
+
+{% alert tip %}
+Most IDEs - like PyCharm - can [automatically](https://www.jetbrains.com/help/pycharm/managing-dependencies.html) use virtual environments and generate the `requirements.txt` file.
+{% endalert %}
+
+The requirements file provides an easy way to keep a list of module dependencies, and allow different developers to configure the same environment.
+
+## Sources
+
+- [https://docs.python-guide.org/dev/virtualenvs/](https://docs.python-guide.org/dev/virtualenvs/)
+- [https://www.freecodecamp.org/news/how-to-setup-virtual-environments-in-python/](https://www.freecodecamp.org/news/how-to-setup-virtual-environments-in-python/)

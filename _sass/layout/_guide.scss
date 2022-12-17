@@ -70,9 +70,12 @@ $condensed_margin: 0.6rem;
   h4,
   h5,
   h6,
+  ul,
+  ol,
   div.highlighter-rouge,
   figure.highlight {
     margin-bottom: $condensed_margin;
+    scroll-margin-top: 4.5rem;
   }
 
   h2 {

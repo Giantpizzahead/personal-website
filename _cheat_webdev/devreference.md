@@ -4,7 +4,20 @@ group: Internal (Specific to this site)
 order: 1
 ---
 
-Todo: Generate a table of contents based on headings (h2, h3, and h4)
+## Todo
+
+Distributing code for end users: [https://github.com/pyinstaller/pyinstaller](https://github.com/pyinstaller/pyinstaller)
+Or create a Python package for developers, hosted on PyPi: [https://packaging.python.org/en/latest/](https://packaging.python.org/en/latest/)
+
+Web apps guide [https://12factor.net/](https://12factor.net/)
+
+Picture tag: [https://rbuchberger.github.io/jekyll_picture_tag/users/installation](https://rbuchberger.github.io/jekyll_picture_tag/users/installation)
+
+Passive income: [https://www.bankrate.com/investing/passive-income-ideas/](https://www.bankrate.com/investing/passive-income-ideas/)
+
+Useful cheatsheet websites:
+[https://devhints.io/](https://devhints.io/)
+[https://quickref.me](https://quickref.me)
 
 ## Common Tasks
 

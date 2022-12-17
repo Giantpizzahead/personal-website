@@ -41,6 +41,7 @@
       <!-- One -->
       <section id="one">
         <div class="inner">
+          {{ content }}
           {% for post in posts %}
             {% if post.title != 404 %}
               <a href={{ post.url | absolute_url }}><div class="box with-image">
