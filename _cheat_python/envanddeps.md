@@ -34,8 +34,17 @@ $ venv/Scripts/Activate.ps1  # Powershell
 
 Your terminal prompt should now have `(venv)` at the start. Now `pip` modules will install locally!
 
+### Deactivate
+
+```bash
+$ deactivate
+```
+
 ### Requirements
 
+The best way to track dependencies is to manually create a `requirements.txt` file, then add all packages you install into that file first before installing them. It's also a good idea to use the `~=` "compatible release" version specifier.
+
+Quick and dirty way:
 ```bash
 # Dump current requirements into a file
 $ pip freeze > requirements.txt

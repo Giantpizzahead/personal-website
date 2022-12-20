@@ -6,6 +6,7 @@ order: 1
 
 ## Todo
 
+Access static (data) files in Python: [https://stackoverflow.com/a/58941536](https://stackoverflow.com/a/58941536)
 Distributing code for end users: [https://github.com/pyinstaller/pyinstaller](https://github.com/pyinstaller/pyinstaller)
 Or create a Python package for developers, hosted on PyPi: [https://packaging.python.org/en/latest/](https://packaging.python.org/en/latest/)
 
