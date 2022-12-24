@@ -78,8 +78,7 @@
     {% assign firstHeader = true %}
     {% assign currLevel = 0 %}
     {% assign lastLevel = 0 %}
-
-    {% capture listModifier %}{% if orderedList %}ol{% else %}ul{% endif %}{% endcapture %}
+    {% capture listModifier %}ul{% endcapture %}
 
     {% for node in nodes %}
         {% if node == "" %}
@@ -108,6 +107,8 @@
 
         {% if firstHeader %}
             {% assign minHeader = currLevel %}
+            {% assign lastLevel = currLevel %}
+            {% capture jekyll_toc %}{{ jekyll_toc }}<ol>{% endcapture %}
         {% endif %}
 
         {% capture _hAttrToStrip %}{{ _workspace[0] | split: '>' | first }}>{% endcapture %}
@@ -158,11 +159,12 @@
         {% assign firstHeader = false %}
     {% endfor %}
 
-    {% assign repeatCount = minHeader | minus: 1 %}
+    {% assign repeatCount = minHeader %}
     {% assign repeatCount = lastLevel | minus: repeatCount %}
     {% for i in (1..repeatCount) %}
         {% capture jekyll_toc %}{{ jekyll_toc }}</li></{{ listModifier }}>{% endcapture %}
     {% endfor %}
+    {% capture jekyll_toc %}{{ jekyll_toc }}</ol>{% endcapture %}
 
     {% if jekyll_toc != '' %}
         {% assign rootAttributes = '' %}
@@ -173,10 +175,12 @@
         {% if include.id and include.id != blank %}
             {% capture rootAttributes %}{{ rootAttributes }} id="{{ include.id }}"{% endcapture %}
         {% endif %}
-
-        {% if rootAttributes %}
-            {% assign nodes = jekyll_toc | split: '>' %}
-            {% capture jekyll_toc %}<{{ listModifier }}{{ rootAttributes }}>{{ nodes | shift | join: '>' }}>{% endcapture %}
-        {% endif %}
+        
+        {% comment %}
+            {% if rootAttributes %}
+                {% assign nodes = jekyll_toc | split: '>' %}
+                {% capture jekyll_toc %}<{{ listModifier }}{{ rootAttributes }}>{{ nodes | shift | join: '>' }}>{% endcapture %}
+            {% endif %}
+        {% endcomment %}
     {% endif %}
 {% endcapture %}{% assign tocWorkspace = '' %}{{ deprecation_warnings }}{{ jekyll_toc -}}

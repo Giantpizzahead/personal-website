@@ -2,8 +2,11 @@
     {% assign posts = site.posts %}
 {% elsif 'projects' == page.display-source %}
     {% assign posts = site.projects %}
-{% elsif 'cheatsheets' == page.display-source %}
-    {% assign posts = site.cheatsheets %}
+{% elsif 'showcase' == page.display-source %}
+    {% assign showcase_projects = site.projects | where_exp: "item", "item.showcase" %}
+    {% assign showcase_posts = site.posts | where_exp: "item", "item.showcase" %}
+    {% assign posts = showcase_projects | concat: showcase_posts %}
+    {% assign posts = posts | sort: 'showcase' %}
 {% endif %}
 
 <!DOCTYPE html>
@@ -42,10 +45,11 @@
       <section id="one">
         <div class="inner">
           {{ content }}
-          {% for post in posts %}
+          <!-- First 50 posts -->
+          {% for post in posts limit:50 %}
             {% if post.title != 404 %}
               <a href={{ post.url | absolute_url }}><div class="box with-image">
-                <div style="padding: 0.4em 1em 1em 1em">
+                <div style="padding: 0.8em 1em 1em 1em">
                 <h2 style="margin-bottom: 0.25em">{{ post.title }}</h2>
                 <p style="margin-bottom: 0">
                   {% if post.description %}{{ post.description }}{% endif %}
@@ -54,9 +58,9 @@
                   {% endif %}
                 </p>
                 </div>
-                <span style="display: grid; align-items: center; justify-items: right; margin: 1px 1px 1px 0; max-height: 30vh">
+                <span style="display: grid; align-items: center; justify-items: right; margin: 1px 1px 1px 0; max-height: 20vh">
                   {% if post.image %}
-                  <img src="{{ site.baseurl }}/{{ post.image }}" alt="" style="height: 100%; max-height: 30vh; margin: 0"/>
+                  <img src="{{ site.baseurl }}/{{ post.image }}" alt="" style="height: 100%; max-height: 14vh; margin: 0 1em 0 0"/>
                   {% endif %}
                 </span>
               </div></a>

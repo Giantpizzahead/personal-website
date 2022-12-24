@@ -1,0 +1,121 @@
+<!-- Based on https://jekyllcodex.org/without-plugin/search-lunr/, adapted for ElasticLunr -->
+<script src="assets/js/elasticlunr.min.js"></script>
+
+<script>
+  {% assign counter = 0 %}
+  var documents = [{% for page in site.posts %}{
+      "id": {{ counter }},
+      "url": "{{ site.url }}{{ page.url }}",
+      "title": "{{ page.title }}",
+      "image": "{{ page.image }}",
+      "date": "{{ page.date | date_to_long_string }}",
+      "description": "{{ page.description }}"{% assign counter = counter | plus: 1 %},
+      "rawBody": "{{ page.content | markdownify | replace: '.', '. ' | strip_html | strip_newlines | replace: '  ', ' ' | replace: '"', ' ' }}"
+      }{% if forloop.last %}{% else %}, {% endif %}{% endfor %}];
+
+  var idx = elasticlunr(function () {
+      this.setRef('id')
+      this.addField('title')
+      this.addField('description')
+      this.addField('rawBody')
+
+      documents.forEach(function (doc) {
+          this.addDoc(doc)
+      }, this)
+  });
+  function lunr_search(term) {
+    document.getElementById('lunrsearchresults').innerHTML = "";
+      if(term) {
+          // document.getElementById('lunrsearchresults').innerHTML = "<p>Search results for '" + term + "'</p>";
+          //put results on the screen.
+          var results = idx.search(term, {
+            fields: {
+              title: {boost: 4},
+              description: {boost: 3},
+              rawBody: {boost: 1}
+            },
+            expand: true
+          });
+          if(results.length > 0){
+              //console.log(idx.search(term));
+              //if results
+              for (var i = 0; i < results.length; i++) {
+                  // more statements
+                  var ref = results[i]['ref'];
+                  console.log(documents[ref]);
+                  var url = documents[ref]['url'];
+                  var title = documents[ref]['title'];
+                  if (title.length > 80) title = title.substring(0, 80) + '...';
+                  var image = documents[ref]['image'];
+                  var date = documents[ref]['date'];
+                  var description = documents[ref]['description'];
+                  if (description.length > 160) description = description.substring(0, 160) + '...';
+                  var toAdd = `
+                  <a href=${url}><div class="box with-image">
+                    <div style="padding: 0.8em 1em 1em 1em">
+                    <h3 style="margin-bottom: 0em">${title}</h3>
+                    <p style="margin-bottom: 0">
+                      ${description}<br>
+                      <i>${date}</i>
+                    </p>
+                    </div>
+                    <span style="display: grid; align-items: center; justify-items: right; margin: 1px 1px 1px 0; max-height: 15vh">
+                      <img src="${image}" alt="" style="height: 100%; max-height: 10vh; margin: 0 1em 0 0"/>
+                    </span>
+                  </div></a>
+                  `;
+                  document.getElementById('lunrsearchresults').innerHTML += toAdd;
+              }
+          } else {
+            document.getElementById('lunrsearchresults').innerHTML = "<p>No results found... :(</p>";
+          }
+      }
+      return false;
+  }
+</script>
+<style>
+  #lunrsearchresults {
+    padding-top: 0.2rem;
+  }
+  .lunrsearchresult {
+    padding-bottom: 1rem;
+  }
+  .lunrsearchresult .title {
+    color: #d9230f;
+  }
+  .lunrsearchresult .url {
+    color: silver;
+  }
+  .lunrsearchresult a {
+    display: block;
+    color: #777;
+  }
+  .lunrsearchresult a:hover,
+  .lunrsearchresult a:focus {
+    text-decoration: none;
+  }
+  .lunrsearchresult a:hover .title {
+    text-decoration: underline;
+  }
+</style>
+
+<form
+  oninput="return lunr_search(document.getElementById('lunrsearch').value);"
+  onSubmit="return lunr_search(document.getElementById('lunrsearch').value);"
+>
+  <p>
+    <input
+      type="text"
+      class="form-control"
+      id="lunrsearch"
+      name="q"
+      maxlength="255"
+      value=""
+      placeholder="What's on your mind?"
+      autocomplete="off"
+    />
+  </p>
+</form>
+<div id="lunrsearchresults">
+  <ul></ul>
+</div>

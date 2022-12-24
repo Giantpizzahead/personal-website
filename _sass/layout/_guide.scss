@@ -1,4 +1,4 @@
-$condensed_margin: 0.6rem;
+$condensed_margin: 0.1rem;
 
 /* Alerts */
 
@@ -63,6 +63,8 @@ $condensed_margin: 0.6rem;
 /* Condensed */
 
 .condensed {
+  margin-bottom: 2rem;
+
   p,
   h1,
   h2,
@@ -72,10 +74,10 @@ $condensed_margin: 0.6rem;
   h6,
   ul,
   ol,
+  li,
   div.highlighter-rouge,
   figure.highlight {
     margin-bottom: $condensed_margin;
-    scroll-margin-top: 4.5rem;
   }
 
   h2 {

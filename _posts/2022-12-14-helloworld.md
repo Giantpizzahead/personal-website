@@ -1,7 +1,7 @@
 ---
 title: Hello World!
 description: Time for yet another portfolio website
-image: assets/images/posts/rainbowsmiley.png
+image: assets/img/rainbowsmiley.png
 imagealt: Rainbow smiley face
 ---
 

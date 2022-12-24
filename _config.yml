@@ -3,7 +3,6 @@ title: Kyle Fu
 subtitle: "@Giantpizzahead"
 email: kyle_fu@yahoo.com
 description: I am Kyle Fu, an MIT freshman looking to better the world through computer science.
-# baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://kylefu.me" # the base hostname & protocol for your site
 author: Kyle Fu
 street_address: "(Private)"
@@ -16,19 +15,12 @@ phone: "(XXX) XXX-XXXX"
 # plugins
 plugins:
   - jemoji
+  - jekyll-sitemap
 
 # collections
 collections:
   projects:
     output: true
-  cheatsheets:
-    output: true
-  cheat_python:
-    output: true
-    sort_by: order
-  cheat_webdev:
-    output: true
-    sort_by: order
 
 # https://stackoverflow.com/questions/18675610/jekyll-change-layout-if-page-is-a-post
 # default layout
@@ -45,30 +37,15 @@ defaults:
     values:
       layout: post
       is_post: true # automatically set is_post=true for all posts
+      description: ""
+      image: ""
+      imagealt: ""
   -
     scope:
       path: ""
       type: projects
     values:
       layout: post
-  -
-    scope:
-      path: ""
-      type: cheatsheets
-    values:
-      layout: cheatsheet
-  - 
-    scope:
-      path: ""
-      type: cheat_python
-    values:
-      layout: guide
-  - 
-    scope:
-      path: ""
-      type: cheat_webdev
-    values:
-      layout: guide
 
 # homepage tiles
 tiles-source: pages # accepts "posts" or "pages"
@@ -100,3 +77,10 @@ exclude:
 - LICENSE.md
 - CONTRIBUTING.md
 - README.md 
+
+# jekyll-admin
+jekyll_admin:
+  hidden_links:
+    - datafiles
+    - configuration
+  homepage: "posts"

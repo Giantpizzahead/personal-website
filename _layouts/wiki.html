@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+    Forty by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+  -->
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %} 
+    
+    <section id="banner" class="style{{ page.style }}" style="
+      max-height: 40vh;
+      height: 30vh;
+      min-height: 20vh;
+      padding: 4em 0 0 0;
+    ">
+      <div class="inner">
+        <span class="image">
+          <img src="{{ site.baseurl }}/{{ page.image }}"
+          {% if page.imagealt %} alt="{{ page.imagealt }}" {% endif %}>
+        </span>
+        <header class="major">
+          <h1>{{ page.title }}</h1>
+        </header>
+      </div>
+    </section>
+    
+    <!-- Main -->
+    <div id="main" class="alt">
+
+      <!-- One -->
+      <section id="one">
+        <div class="inner">
+          <h2>Search the Wiki</h2>
+          <div id="search-results" style="min-height: 100vh">
+            {% include search-lunr.html %}
+          </div>
+          {{ content }}
+	      </div>
+      </section>
+
+    </div>
+
+    {% include footer.html %}
+
+    </div>
+
+  </body>
+
+</html>
