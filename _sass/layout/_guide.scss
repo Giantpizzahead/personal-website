@@ -1,5 +1,41 @@
 $condensed_margin: 0.1rem;
 
+.post-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  // Only show image on large screens
+  .text-part {
+    h1 {
+      word-wrap: break-word;
+      white-space: normal;
+    }
+    flex: 2.5;
+    max-width: 75%;
+    margin-right: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .image-part {
+    display: block;
+    flex: 1;
+    margin-left: 0.5rem;
+    padding-left: 0.5rem;
+  }
+  
+  @include breakpoint(medium) {
+    .text-part {
+      max-width: 95%;
+      margin-right: 0rem;
+    }
+    .image-part {
+      display: none;
+    }
+  }
+}
+
 /* Alerts */
 
 .note-msg,

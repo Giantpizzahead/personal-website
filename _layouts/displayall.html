@@ -59,7 +59,7 @@
                 </p>
                 </div>
                 <span style="display: grid; align-items: center; justify-items: right; margin: 1px 1px 1px 0; max-height: 20vh">
-                  {% if post.image %}
+                  {% if post.image != "" %}
                   <img src="{{ site.baseurl }}/{{ post.image }}" alt="" style="height: 100%; max-height: 14vh; margin: 0 1em 0 0"/>
                   {% endif %}
                 </span>

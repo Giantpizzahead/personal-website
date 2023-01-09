@@ -4,6 +4,15 @@
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
+img.emoji {
+	// Override any img styles to ensure Emojis are displayed inline
+	margin: 0 0 0 0;
+	display: inline;
+	position: relative;
+	top: 0.25rem;
+	// vertical-align: middle !important;
+}
+
 /* Type */
 
 	body, input, select, textarea {

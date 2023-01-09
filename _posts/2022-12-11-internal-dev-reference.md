@@ -34,7 +34,18 @@ Starts a local web server that auto-reloads on each change.
 If `_config.yml` or a `.rb` file is edited, you must manually reload to apply the changes.
 {% endalert %}
 
+### Optimize Images
+
+```bash
+$ image_optim --no-svgo --no-pngout -v *.{jpg,png}
+```
+
+Also consider resizing images! (Open in Preview, Tools -\> Adjust Size)
+If you want, you can change the path name to prevent already optimized images from being processed again.
+
 ## Element Reference
+
+See [this page](https://kylefu.me/elements).
 
 ### Code Blocks
 

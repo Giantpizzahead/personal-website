@@ -10,7 +10,7 @@
       "image": "{{ page.image }}",
       "date": "{{ page.date | date_to_long_string }}",
       "description": "{{ page.description }}"{% assign counter = counter | plus: 1 %},
-      "rawBody": "{{ page.content | markdownify | replace: '.', '. ' | strip_html | strip_newlines | replace: '  ', ' ' | replace: '"', ' ' }}"
+      "rawBody": "{{ page.content | xml_escape | markdownify | replace: '.', '. ' | strip_html | strip_newlines | replace: '  ', ' ' | remove: ':' | replace: '"', ' ' | slice: 0, 1000 }}"
       }{% if forloop.last %}{% else %}, {% endif %}{% endfor %}];
 
   var idx = elasticlunr(function () {
@@ -39,10 +39,12 @@
           if(results.length > 0){
               //console.log(idx.search(term));
               //if results
+              // Only show first 5 results
+              if (results.length > 5) results = results.slice(0, 5);
               for (var i = 0; i < results.length; i++) {
                   // more statements
                   var ref = results[i]['ref'];
-                  console.log(documents[ref]);
+                  // console.log(documents[ref]);
                   var url = documents[ref]['url'];
                   var title = documents[ref]['title'];
                   if (title.length > 80) title = title.substring(0, 80) + '...';
@@ -60,7 +62,9 @@
                     </p>
                     </div>
                     <span style="display: grid; align-items: center; justify-items: right; margin: 1px 1px 1px 0; max-height: 15vh">
-                      <img src="${image}" alt="" style="height: 100%; max-height: 10vh; margin: 0 1em 0 0"/>
+                  `;
+                  if (image != "") toAdd += `<img src="${image}" alt="" style="height: 100%; max-height: 10vh; margin: 0 1em 0 0"/>`;
+                  toAdd += `
                     </span>
                   </div></a>
                   `;

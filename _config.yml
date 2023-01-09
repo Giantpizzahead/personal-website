@@ -82,5 +82,6 @@ exclude:
 jekyll_admin:
   hidden_links:
     - datafiles
-    - configuration
+    - projects
+    - pages
   homepage: "posts"
