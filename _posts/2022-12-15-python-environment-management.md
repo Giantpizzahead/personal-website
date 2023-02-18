@@ -2,7 +2,6 @@
 title: Python - Environment Management
 description: How to manage Python dependencies
 image: assets/img/pythonlogo.webp
-order: 2
 ---
 
 ## Virtual Environments

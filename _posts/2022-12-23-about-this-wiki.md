@@ -1,6 +1,8 @@
 ---
 title: About this Wiki
 description: Sooo why do we even need a personal wiki?
+image: assets/img/rainbowsmiley.png
+imagealt: Rainbow Smiley
 ---
 
 <p><em>"Don't repeat yourself."</em></p>
