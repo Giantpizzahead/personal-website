@@ -24,7 +24,7 @@ A and B towers are connected on the 7th floor, but *not* the C tower. All towers
 
 Going out of the middle tower elevator, A tower is on the left, C tower is on the right.
 
-(Room statuses last updated 2/26/23)
+(Room statuses last updated 3/5/23)
 
 ### 845
 Next to A tower elevator, going towards B tower. 1 washer, 2 dryers.
@@ -33,7 +33,7 @@ Next to A tower elevator, going towards B tower. 1 washer, 2 dryers.
 Next to B tower elevator/stairs, going towards C tower. 2 washers, 2 dryers.
 
 ### 676
-Far-ish from C tower elevator, going towards B tower. 1 washer, 1 dryer (?).
+Far-ish from C tower elevator, going towards B tower. 1 washer, 2 dryers.
 
 ### 529
 Right across from B tower elevator. 2 washers, 2 dryers.
