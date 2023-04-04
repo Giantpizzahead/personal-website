@@ -25,7 +25,7 @@ Useful cheatsheet websites:
 ### Live Website Preview
 
 ```bash
-$ bundle exec jekyll serve --livereload
+$ bundle exec jekyll serve --incremental --livereload
 ```
 
 Starts a local web server that auto-reloads on each change.
