@@ -7,19 +7,19 @@ imagealt: A variety of restaurant food.
 
 ## Conclusion
 
-The best (cheapest / widely available) option, hands-down, is **Uber Eats**, thanks to this: [Complimentary Uber Benefits | Capital One](https://www.capitalone.com/learn-grow/more-than-money/complimentary-uber-benefits/)
+The best (cheapest / widely available) option, hands-down, is **Uber Eats**, thanks to this: [Complimentary Uber Benefits \| Capital One](https://www.capitalone.com/learn-grow/more-than-money/complimentary-uber-benefits/)
 
 How much to tip: Aim for the maximum of $3 and 15%. AKA the middle option in most food delivery apps. Tip amount impacts how likely drivers are to accept your order.
 
 ## Research
 
-[Food Delivery Comparison | MoneyUnder30](https://www.moneyunder30.com/food-delivery-comparison)
+[Food Delivery Comparison \| MoneyUnder30](https://www.moneyunder30.com/food-delivery-comparison)
 
 [Uber says its drone delivery will cost the same as Uber Eats — it’s one of the cheapest delivery apps (for now) - MarketWatch](https://www.marketwatch.com/story/uber-eats-is-one-of-the-cheapest-delivery-apps-but-prices-may-rise-post-ipo-2019-05-10)
 
-[How Much to Tip For Food Delivery: An Ultimate Guide | Glamour](https://www.glamour.com/story/what-to-tip-food-delivery)
+[How Much to Tip For Food Delivery: An Ultimate Guide \| Glamour](https://www.glamour.com/story/what-to-tip-food-delivery)
 
-[SavorOne Rewards Credit Card | Cash Back on Dining & Grocery Stores | Capital One](https://www.capitalone.com/credit-cards/savorone-dining-rewards/)
+[SavorOne Rewards Credit Card \| Cash Back on Dining & Grocery Stores \| Capital One](https://www.capitalone.com/credit-cards/savorone-dining-rewards/)
 
 Using college delivery address with a preordered Sunday 1 PM delivery at Shake Shack (1 Chicken Shack, 1 Hand-spun Shake + malted), here are the added costs (on top of $18.16 food/tax):
 

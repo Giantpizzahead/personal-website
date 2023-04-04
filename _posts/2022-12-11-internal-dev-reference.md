@@ -25,10 +25,11 @@ Useful cheatsheet websites:
 ### Live Website Preview
 
 ```bash
-$ bundle exec jekyll serve --incremental --livereload
+$ bundle exec jekyll build --watch &
+$ bundle exec jekyll serve --no-watch
 ```
 
-Starts a local web server that auto-reloads on each change.
+Starts a local web server (serve) that auto-reloads on each change (build). The weird double command is so that Jekyll admin won't cause the site to crash on changes due to race conditions.
 
 {% alert warning %}
 If `_config.yml` or a `.rb` file is edited, you must manually reload to apply the changes.

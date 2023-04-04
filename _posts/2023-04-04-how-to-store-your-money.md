@@ -13,6 +13,14 @@ Note: Everything described below assumes you have a high-ish risk tolerance (you
 
 Basically, set aside a small emergency fund (3 to 6 months of expenses), along with a small amount of additional savings for day-to-day purchases. Put this in a high yield savings account, connected to a good checking account / credit card with the same bank to transfer and spend on demand and without any hassles. There shouldn't be any additional fees for transferring balances between different banks, so the bank holding savings/checking accounts and the credit card bank can be different. Keep in mind that both savings/checking interest rates and credit card rewards are quite a small part of growing money in the grand scheme of things. Investments matter the most!
 
+### Savings Account
+
+**Use Ally bank**. They have good interest rates *and* extensive support with other banks.
+
+Also, *do not use Wealthfront.* They don't allow you to do recurring withdrawals, and are quite stingy when it comes to keeping your money in their ecosystem (and trying to get you to invest it). Don't fall for the high APR!
+
+In addition, *stick to high-yield savings accounts*. Places like Bank of America keep your money secure, but your money is FDIC insured anyways, so it's fine.
+
 ## Investing
 
 Speaking of investments... For the rest of the money:
@@ -31,15 +39,15 @@ Essential videos to watch:
  - [Why Invest? - YouTube](https://www.youtube.com/watch?v=x7msE3tx8QI)
  - [How to Invest - YouTube](https://www.youtube.com/watch?v=g0RaE9Cencc)
  - [401(k) and IRA 101 - YouTube](https://www.youtube.com/watch?v=ApHRfYA1A-Y)
- - [Vanguard vs Best Investing Apps (M1, Betterment & Acorns) | See Our Results With Real Investments - YouTube](https://www.youtube.com/watch?v=mrojJV04Oa8)
- - [Investing 101 for Financial Independence | Start With As Little as $25 - YouTube](https://www.youtube.com/watch?v=mf6SSJkJGN8)
- - [How to Open a Stock Account in Less Than Ten Minutes | Start Investing Today - YouTube](https://www.youtube.com/watch?v=pkfmDRQN8oI)
+ - [Vanguard vs Best Investing Apps (M1, Betterment & Acorns) \| See Our Results With Real Investments - YouTube](https://www.youtube.com/watch?v=mrojJV04Oa8)
+ - [Investing 101 for Financial Independence \| Start With As Little as $25 - YouTube](https://www.youtube.com/watch?v=mf6SSJkJGN8)
+ - [How to Open a Stock Account in Less Than Ten Minutes \| Start Investing Today - YouTube](https://www.youtube.com/watch?v=pkfmDRQN8oI)
  - [Vanguard - Compare mutual funds and ETFs](https://personal.vanguard.com/us/funds/vanguard/compare?navigatingFrom=6)
  - [Recommendations (moneycoach.io)](https://moneycoach.io/recommendations)
 
 Extra stuff that led me to my conclusion:
 
- - [Betterment vs. M1 Finance vs. Acorns | Which Robo-Advisor is Better (Battle of the 'Bots) - YouTube](https://www.youtube.com/watch?v=E6pvVpX6PE0)
+ - [Betterment vs. M1 Finance vs. Acorns \| Which Robo-Advisor is Better (Battle of the 'Bots) - YouTube](https://www.youtube.com/watch?v=E6pvVpX6PE0)
  - [How to Invest for Beginners - YouTube](https://www.youtube.com/watch?v=gFQNPmLKj1k)
- - [Robo Advisors: Betterment vs Wealthfront vs Vanguard vs Schwab | Which Is The Best Robo Advisor? - YouTube](https://www.youtube.com/watch?v=QO8YMBwGTAo)
- - [ETF vs. Index Funds | Our Investments for Financial Independence (FIRE Investing) - YouTube](https://www.youtube.com/watch?v=2zpwJWVHKrg)
+ - [Robo Advisors: Betterment vs Wealthfront vs Vanguard vs Schwab \| Which Is The Best Robo Advisor? - YouTube](https://www.youtube.com/watch?v=QO8YMBwGTAo)
+ - [ETF vs. Index Funds \| Our Investments for Financial Independence (FIRE Investing) - YouTube](https://www.youtube.com/watch?v=2zpwJWVHKrg)

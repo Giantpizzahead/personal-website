@@ -169,10 +169,10 @@ Maybe all we need is something that encourages us to eat healthy, which is basic
 
 ### Research
 
- - [The American Heart Association Diet and Lifestyle Recommendations | American Heart Association](https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/nutrition-basics/aha-diet-and-lifestyle-recommendations)
- - [The Facts on Fats Infographic | American Heart Association](https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/fats/the-facts-on-fats)
- - [The Sugary 6 Infographic | American Heart Association](https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/sugar/sugary-six)
- - [How to Reduce Sodium | American Heart Association](https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/sodium/how-to-reduce-sodium)
+ - [The American Heart Association Diet and Lifestyle Recommendations \| American Heart Association](https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/nutrition-basics/aha-diet-and-lifestyle-recommendations)
+ - [The Facts on Fats Infographic \| American Heart Association](https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/fats/the-facts-on-fats)
+ - [The Sugary 6 Infographic \| American Heart Association](https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/sugar/sugary-six)
+ - [How to Reduce Sodium \| American Heart Association](https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/sodium/how-to-reduce-sodium)
  - [A comparison of intermittent fasting and other diets - Blog - HealthifyMe](https://www.healthifyme.com/blog/intermittent-fasting-and-other-diets/#Health_Benefits_of_Intermittent_Fasting)
 	 - Intermittent fasting has similar benefits to other diets, but may be easier to maintain in practice.
 	 - It's important to make healthy food choices / exercise routines to keep hitting your goals. Fasting/diets are only a small part of this.
@@ -181,7 +181,7 @@ Other stuff that's supplemental:
 
  - [Nutrition for a Healthy Life - YouTube](https://www.youtube.com/watch?v=c06dTj0v0sM)
  - [Healthy Aging with Nutrition - YouTube](https://www.youtube.com/watch?v=KD-FmeueFUo)
- - [Eat Smart | American Heart Association](https://www.heart.org/en/healthy-living/healthy-eating/eat-smart)
+ - [Eat Smart \| American Heart Association](https://www.heart.org/en/healthy-living/healthy-eating/eat-smart)
 	 - 4 things on their home page: Nutrition Basics (general advice like fruits/veggies), Fats, Sugar, and Sodium.
  - https://www.hsph.harvard.edu/nutritionsource/salt-and-sodium/
 	 - Keeping sodium low is very important! Think of it as a goal that should be on par with sugar reduction. Basically, balance is everything, for all foods.
