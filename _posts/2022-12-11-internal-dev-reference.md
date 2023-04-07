@@ -25,15 +25,18 @@ Useful cheatsheet websites:
 ### Live Website Preview
 
 ```bash
-$ bundle exec jekyll build --watch &
-$ bundle exec jekyll serve --no-watch
+./start.sh
 ```
 
-Starts a local web server (serve) that auto-reloads on each change (build). The weird double command is so that Jekyll admin won't cause the site to crash on changes due to race conditions.
+Starts a local web server using port 4000 that auto-reloads on each change. See the script for the exact commands being run.
 
 {% alert warning %}
 If `_config.yml` or a `.rb` file is edited, you must manually reload to apply the changes.
 {% endalert %}
+
+### Writing and Editing Posts
+
+Use **StackEdit** to edit any posts marked as WIP. Then, when you have time, start a local development server (see above), go to [this site's local admin page](http://localhost:4000/admin/collections/posts), and copy those posts over. Finally, commit and push the changes onto Github.
 
 ### Optimize Images
 

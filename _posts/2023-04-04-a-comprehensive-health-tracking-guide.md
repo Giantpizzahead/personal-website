@@ -233,27 +233,3 @@ Just bad. Not polished enough.
 #### BetterMe
 
 Cannot easily log food. The searchable food database is lacking, and only barcode scanning is available.
-
-## Brain Training
-
-### Purpose
-
-Ok, so this doesn’t immediately fall into the typical health tracking category. And honestly, I’m just adding it cause I need to choose a good app anyway.
-
-But. In a way, this is a method to track your brain’s ability and exercise your brain. Now, according to [this article](https://www.realsimple.com/health/mind-mood/memory/brain-games-exercises), **learning something new every day** has more benefits than brain training games. Also, brain training only has a positive effect if you’re **making mistakes** - this means you’re being challenged, which is what causes growth. So which apps are fun *and* fall into this category?
-
-### What We'll Try
-
-#### Neuronation
-
-Cost: $57.99 per year
-
-#### Lumosity
-
-Cost: $59.99 per year
-
-### What We Considered
-
-#### Impulse
-
-It’s too plain. Obviously the devs tried to make the games as easy to code as possible. I doubt there is scientific evidence backing this one up. Also the games are too easy and difficulty goes up very slowly.
