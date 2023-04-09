@@ -1,5 +1,5 @@
 ---
-title: League of Legends Reference (WIP)
+title: League of Legends Reference
 description: carry me out of bronze plzzzzzz ;(
 image: assets/img/alphalol.jpeg
 imagealt: League of Legends gameplay.

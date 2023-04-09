@@ -10,11 +10,11 @@ Disclaimer: This is not medical advice; it is just my opinion.
 
 ## About
 
-### Philosophy
+#### Philosophy
 
 The most important thing when it comes to health tracking is to **minimize friction**. That is, the more effort it takes to log something, the less likely it is that you'll stick to it. Also, it's not worth logging something just for the sake of logging - you need to act on and/or review the logs in some way.
 
-### Timeliness
+#### Timeliness
 
 This guide was created in March 2023. Unless something major changes, it should be accurate enough until at least 3 years later - so no need to update this guide until March 2026. Even after that, most things will probably still be the same.
 
@@ -40,13 +40,9 @@ Basically, use reminders sparingly. **Every reminder should be associated with a
 
 Track sleep with little to no friction: When we went to sleep and woke up, along with some basic sleep quality analysis.
 
-The important thing is to get something that can **track sleep automatically** at any time of day, since sleeping past your alarm or taking midday naps without turning on sleep tracking can and does happen.
+The important thing is to get something that can **track sleep automatically** at any time of day, since sleeping past your alarm or taking midday naps without turning sep ing and does happen.
 
 ### The Best
-
-#### [RISE Sleep](https://www.risescience.com/)
-
-Great app for giving a simple, one number summary of how well you're sleeping (sleep debt). Not very good at tracking sleep, as it cannot auto-detect naps or oversleeping.
 
 #### [Sleep Cycle](https://www.sleepcycle.com/)
 
@@ -54,22 +50,37 @@ Or in general, sleep tracker apps (Sleep Cycle is probably the gold standard for
 
 But. The major issue is they require you to *manually start and stop tracking*, which means they can't track things like oversleeping past the alarm or unintentional naps. Entering those manually is a pain. Basically, apps are accurate enough to be used for nighttime sleep tracking, but we ideally want something that can auto-detect sleep sessions at any time of day.
 
-### What We'll Try
+#### Whoop 4.0
 
-[This article](https://www.cnn.com/cnn-underscored/reviews/best-sleep-trackers) guided most of the products I looked at (along with a few brief Google searches).
+You barely feel the Whoop strap when you're wearing it, and it tracks your sleep automatically - and even has a haptic wake up alarm! It's expensive, but considering the boatload of exercise features, it's well worth it IMO. If you're only looking for a sleep tracker though, ignore this and look at Sleep Cycle instead.
 
-To try:
-Ring - Oura Ring (sleep tracking), SleepOn Go2sleep Tracker
-Bedside - Google Nest Hub 2nd gen (yes this can track sleep), SleepScore Max, Amazon Halo Rise
-Under mattress - Withings sleep pad, Sleepme Sleep Tracker, Emfit QS, Tomorrow Sleeptracker
+#### What We'll Try
 
-Withings Body + Smart Wi-Fi bathroom scale
+##### Withings Sleep Pad
 
-### What We Considered
+This thing made me self conscious about getting on my bed, with the fear that I'd accidentally trigger a sleep session. Although technically that's a good thing... right?
 
-#### Amazon Halo View/Band
+This pad needs to be connected to a power outlet to work, so only consider this if you have a power outlet near your bed! With that being said, the sleep tracking is quite accurate, and it's *fully automatic* - which is the key part.
+
+#### What We Considered
+
+
+
+BUT, after using it for a while... I have determined that RISE's sleep tracking feature is horribly unreliable, because it assumes that you sleep in one contiguous block of time, and refuses to accept any nap times without manual logging. In other words, it doesn't work well with other trackers, so don't use it.
+
+##### Amazon Halo View/Band
 
 No - See wearable trackers for more info.
+
+##### Other Stuff
+
+[This article](https://www.cnn.com/cnn-underscored/reviews/best-sleep-trackers) guided most of the products I looked at (along with a few brief Google searches). These things cost money though, so I didn't look at the below - not for any particular reason, I just found something I was happy with before trying these ones.
+
+Other things to consider:
+Bedside - Google Nest Hub 2nd gen (yes this can track sleep), SleepScore Max
+Under mattress - Sleepme Sleep Tracker, Emfit QS, Tomorrow Sleeptracker
+Under mattress - Slee ose cer, Emfit QS, Tomorrow Sleeptracker
+Under mattress - Sleeme o cer, Emfit QS, Tomorrow Sleeptracker
 
 ## Wearable Trackers
 
@@ -91,15 +102,17 @@ Exercise, on the other hand, is a block of time that you **intentionally set asi
 
 With the two types of activity in mind, and considering that the main role of any wearable tracker is to do activity logging - *and nothing else* (not telling the time, not notifications, not sleep tracking, not any fancy advertising features like "SPO2 monitoring"), let's judge the trackers that are available.
 
-### What We'll Try
+#### What We'll Try
 
-#### Whoop Strap 4.0
+##### Whoop Strap 4.0
 
 Paid monthly subscription... that's actually expensive??? Please no
 But hey, it can be worn with your underwear! Sheeeeesh
 We'll try it.
 
-#### Fitbit Inspire
+Ok, I'm trying it now. See you in about a week lmao.
+
+##### Fitbit Inspire
 
 (Note, the below is based on the Inspire 2)
 
@@ -107,9 +120,11 @@ Wearing this watch feels a lot nicer, there are times when I forgot it was there
 
 Ok. So immediately, we won't be able to wear the Fitbit consistently. We will need to take it off when working on a computer or test, since it disrupts our ability to move the mouse. In addition, we'll need to take it off occasionally (probably just daily at night) to charge, which is quite annoying. So there are a lot of annoyances that the possible benefits need to offset to make any Fitbit watch viable.
 
-### What We Considered
+After some testing, the Fitbit is actually quite good at recording exercise of all types - it works by looking at your heart rate, not movement, which is why it'll work for any type of exercise. The app dashboard is actually quite clean too - it shows the most important thing (150 mins of exercise) at the top, with useful details relating to sleep, steps, stress, etc. on the bottom.
 
-#### Hidrate Spark PRO Smart Water Bottle (and Water Tracking)
+#### What We Considered
+
+##### Hidrate Spark PRO Smart Water Bottle (and Water Tracking)
 
 TLDR: Your body has built in thirst reminders that help you meet your water intake needs, with only minor side effects if you're really thirsty. Daily water tracking is overkill.
 
@@ -127,15 +142,15 @@ Drinking during meals has benefits for digestion of food, while your body uses m
 
 A smart water bottle is overkill. It's inconvenient and just not needed. Your body can do the reminding for you. Basically, if you aren't constantly thirsty and don't always have non-light yellow urine, you're meeting your recommended daily water intake.
 
-#### Oura Ring
+##### Oura Ring
 
 Apparently wearing a ring comes with a different [cultural meaning](https://www.aureusboutique.com/abx/the-meaning-of-each-finger-for-rings) for each finger. Yikes. Also rings can easily get stuck on your finger. And the Oura ring is expensive / has a monthly membership. Might be good for some, but not for me.
 
-#### Amazon Halo View/Band
+##### Amazon Halo View/Band
 
 Amazon's quite new to the wearable health industry, and they have lots of privacy issues. So, it's better to avoid these watches for now.
 
-#### Apple Watch
+##### Apple Watch
 
 It's like wearing a (light) rock! xd
 
@@ -151,9 +166,23 @@ Other stuff that might be useful to show: Time spent on screens / generally what
 
 Note - We split nutrition tracking into a separate category below, since nutrition is harder to do well and requires a more focused app.
 
-### What We Considered
+### The Best
 
-#### “Health dashboards”
+#### Google Fit
+
+Clean interface displaying the main useful stat (exercise time), also with a step counter and a modern square widget. Unfortunately, it doesn't integrate well with Fitbit. It would work if you're using Apple Health though, so I'm happy :)
+
+#### What We Consiered
+
+##### Fitbit
+
+Clean interface, but it's specific to Fitbit. There's no easy way to sync Apple Health data to Fitbit: myFitnessSync is an app that tries to do it, but it doesn't sync workouts.
+
+##### Whoop 4.0
+
+Clean interface, but it's specific to Whoop, doesn't have any nutrition info, and the "strain goal" which is meant for exercise is a bit vague and not much use to look at in real time.
+
+##### “Health dashboards”
 
 HealthView, FitnessView, Health Stats, Dashboard for Apple Health, Apple's own Health app… these all give a bunch of numbers, but with little to no goal metrics, so they’re pretty much useless. Also, most of them don't look good, *and* they cost money. Ouch.
 
@@ -167,7 +196,7 @@ But do we actually want/need it? It takes a LOT more effort/friction to log ever
 
 Maybe all we need is something that encourages us to eat healthy, which is basically what nutrition logging is trying to do anyway. Or find an app that only logs harmful foods? Or have more of a reference app to see quick facts about the foods we're eating and how healthy they are, rather than having to log it.
 
-### Research
+#### Research
 
  - [The American Heart Association Diet and Lifestyle Recommendations \| American Heart Association](https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/nutrition-basics/aha-diet-and-lifestyle-recommendations)
  - [The Facts on Fats Infographic \| American Heart Association](https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/fats/the-facts-on-fats)
@@ -186,50 +215,62 @@ Other stuff that's supplemental:
  - https://www.hsph.harvard.edu/nutritionsource/salt-and-sodium/
 	 - Keeping sodium low is very important! Think of it as a goal that should be on par with sugar reduction. Basically, balance is everything, for all foods.
 
-### What We'll Try
+### The Best
 
 #### Lose It!
+
+Cost: $19.99 per year
 
 This is the best food logging app that we considered.
 
 Great food tracking, decent (and customizable!) interface. Gives actionable goals/limits on calories in, macronutrient balance, sodium, and sugar levels. Has basic trend data.
 
+Note: See below for a discussion on whether or not to even use a food tracker. It takes time and energy to log foods!
+
 #### Or just don't use any food tracker at all :p
+
+**TLDR; Only use a food tracker if you're actively trying to improve your health - not just maintaining it.**
 
 Do we really need a food tracker? Is it worth the extra effort of logging every meal? I don't know... in fact, there's really no definitive way to know except for trying it ourselves! So that's what we're going to do.
 
-I'll update this article after we've tried using Lose It! for about a week. Let's see how things go.
+So, it's definitely a good bit more of extra effort to manually log every meal, especially when it's not a branded meal (say, if you're at a buffet or a school dining hall). It's also not completely accurate - you need to get good at estimating portion sizes, which I think is actually a good thing. It takes ~2 minutes per meal, so with 2 meals, plus 1 minute for controlling the intermittent fasting timer, that's ~5 minutes per day spent on logging food.
 
-### What We Considered
+In return, you get to track how much you've eaten so far along with your fasting times and use that to make informed decisions on when/what to eat next. You can do this on the same day even, or just look at it in the future with a week's worth of data behind you. Of course, you can become more aware of exactly what calories and nutrients the foods that you're eating have, without feeling *too* guilty about it since there's no obvious food rating. You can even take pictures of each meal (there's a feature for that) and look back on it :)
 
-#### MyFitnessPal
+So, I think it depends. If you're already healthy and you just want to stay healthy, then food trackers aren't worth it. If you're actively trying to improve your health - such as losing weight or building muscle - then using a food tracker is a good choice.
 
-Great food tracking, good interface. Gives actionable trends/limits on calories in/out, macronutrient balance, fat, sodium, cholesterol,  Has clean trend data. However, Lose It! beats MyFitnessPal in terms of customization, which is what I'm looking for.
+#### What We Considered
 
-#### Lifesum
+##### MyFitnessPal
+
+Great food tracking, good interface. Gives actionable trends/limits on calories in/out, macronutrient balance, fat, sodium, cholesterol,  Has clean trend data. However, Lose It! beats MyFitnessPal in terms of customization, which is what I'm looking for. Also, Lose It! is quite a bit cheaper.
+
+In addition, Lose It! actually seems to beat MyFitnessPal in terms of ease of logging (surprisingly!). This is thanks to Lose It’s grouping of brands and their serving size guide, along with a bunch of convenience stuff like having the default serving size be ~1 cup instead of 1 gram or 1 piece.
+
+##### Lifesum
 
 Ok food tracking, great interface. Too primitive though - doesn't have intermittent fasting, cannot track specific goals like low sodium or low sugar. Lifescore is cool, but you need to take a long weekly quiz every time, or use manual tracking which is a pain.
 
-#### Noom
+##### Noom
 
 It's too expensive. ($209 yearly!!!)
 
-#### Nutri Coach
+##### Nutri Coach
 
 Food database isn't trustworthy. Interface is too plain.
 
-#### Fooducate
+##### Fooducate
 
 Food database isn't comprehensive enough. Most food grades aren't available.
 
-#### MyPlate
+##### MyPlate
 
 Old interface / app in general. Suggested number of calories seemed very low (inaccurate).
 
-#### Cronometer
+##### Cronometer
 
 Just bad. Not polished enough.
 
-#### BetterMe
+##### BetterMe
 
 Cannot easily log food. The searchable food database is lacking, and only barcode scanning is available.
