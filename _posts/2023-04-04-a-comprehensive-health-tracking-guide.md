@@ -223,7 +223,7 @@ Cost: $19.99 per year
 
 This is the best food logging app that we considered.
 
-Great food tracking, decent (and customizable!) interface. Gives actionable goals/limits on calories in, macronutrient balance, sodium, and sugar levels. Has basic trend data.
+Great food tracking, decent (and customizable!) interface. Gives actionable goals/limits on calories in, macronutrient balance, sodium, and sugar levels. Has basic trend data. I'm using it right now!
 
 Note: See below for a discussion on whether or not to even use a food tracker. It takes time and energy to log foods!
 

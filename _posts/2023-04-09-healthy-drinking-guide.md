@@ -6,6 +6,7 @@ image: assets/img/rethinkyourdrink.jpeg
 imagealt: A variety of unhealthy drinks with lumps of sugar below them.
 ---
 
+Disclaimer: This is not medical advice.
 ## Motivation
 
 So of course, water is healthy and sodas aren't. But... why? The purpose of this article is to record the answers to all these "why" questions, so you don't need to re-research it every time.

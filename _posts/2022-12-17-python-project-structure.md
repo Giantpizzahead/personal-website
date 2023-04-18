@@ -28,6 +28,10 @@ Don't know which license to use? Try [choosealicense.com](https://choosealicense
 
 ### Making Tests Work
 
+[This PyTest article](https://docs.pytest.org/en/7.1.x/explanation/goodpractices.html) will answer all of your questions. Trust me.
+
+The below method is outdated and (probably) should be ignored.
+
 Copied from [https://docs.python-guide.org/writing/structure/](https://docs.python-guide.org/writing/structure/)
 
 To give individual tests import context (so they can access your module), create a tests/context.py file:
