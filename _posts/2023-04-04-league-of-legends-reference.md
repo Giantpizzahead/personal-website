@@ -14,7 +14,8 @@ Yes, we're really writing this. No, I'm not insane. It's good practice for writi
 The most important factors for winning a game:
 
  1. **Avoid dying at all costs.**
- 2. That's literally it.
+ 2. **Avoid giving away turret plates if possible.**
+ 3. That's literally it.
 
 ### Details
 
@@ -31,6 +32,12 @@ If you have more time - say, a long death and you're feeling like it, or post-ga
  - Could *you* have played differently?
 
 It's ok if the answer to these is "they did nothing wrong" or "it was a 3 for 1 so it's cool". Some deaths are fixable, some are justified given the situation and/or your expected level of play. The point is just to help you realize that deaths are often a direct result of your decisions. It also helps you see some patterns that could be leading to your deaths.
+
+#### Avoid giving away turret plates if possible.
+
+I might elaborate more on this later, but for now: Remember that each turret plate is 175 gold, and minions are also worth gold and a lot of experience. Experience is essential in the early game and still very important later on - losing a wave of XP alone is already equivalent to giving away 1 kill. Add on the gold from 1-2 turret plates and the minions themselves, and you're pretty much giving away 2 kills for every wave you let crash without being there.
+
+So don't let the opposing team get free reign on your turrets unless you have a REALLY good reason to (ex: your team is getting baron or dragon and you *have* to be there to secure the objective).
 
 ## Ahri
 

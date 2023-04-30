@@ -51,6 +51,8 @@ This section is in a separate article, linked [here](/2023/04/09/how-to-stay-act
 
 ## Socializing
 
+### Friendship
+
 I'm focusing specifically on **forming genuine bonds with others - friendship!** - since the general act of socializing doesn't require much of a guide. It's easier said than done, but you need to get out of your comfort zone, go to events, and talk with people.
 
 For friendships, I discuss this in a separate article, linked [here](/2023/02/05/friends.html)/
