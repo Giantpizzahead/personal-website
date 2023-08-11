@@ -63,3 +63,9 @@ These. Are. Amazing. Literally. Just get it. The 3-flavor assorted version is th
 It tastes great! I've had some consistency issues, and they do add a bit of extra sugar for taste, but I think it's well worth the many benefits of coconut water. It's a great replacement for other sugary drinks like fruit juice.
 
 ## Restaurants
+
+### Dumpling Kingdom
+
+#### Scallion Pancake: 2/10
+
+It's not good. Too mushy, it feels more like mashed potatoes instead of a fried scallion pancake.

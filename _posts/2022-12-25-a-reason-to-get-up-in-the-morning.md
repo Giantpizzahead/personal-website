@@ -5,9 +5,11 @@ image: assets/img/sleepinginbed.jpg
 imagealt: Person sleeping in a bed
 ---
 
-*(Warning: Contains mentions of suicide and self-harm)*
+{% alert %}
+*If you'd like to talk to someone, the Suicide & Crisis Lifeline provides 24/7, free and confidential support for people in distress, prevention and crisis resources for you or your loved ones, and best practices for professionals in the United States. See [https://988lifeline.org/](https://988lifeline.org/) for more info.*
+{% endalert %}
 
-Life can feel meaningless at times. And in a way, it kinda is - everyone has to choose their own goals, their own way of living life. But then, what's the point of getting up at all? Why not just stay in bed... forever? Or just... end it all?
+Life can feel meaningless at times. And in a way, it kinda is - everyone has to choose their own goals, their own way of living life. But then, what's the point of getting up at all? Why not just stay in bed... forever? Or just... end it all? (Note: This is purely hypothetical - it is posed mainly as a thought experiment. Also cause I took philosophy at some point.)
 ## Is suicide an option?
 ### Question
 Are there any circumstances in which suicide makes sense? If so, what? If not, what implications does this have on our approach to life?
@@ -38,8 +40,6 @@ Ok, so based on the way homeless articles are phrased, yes, they're going throug
 One thing to make clear here - the stigma surrounding "death" is completely manmade. There's nothing inherently bad about "dying", it's just that our brains are instinctively against the idea. In a way, all of humanity is participating in the game of life willingly, choosing to frame death as "the thing to avoid". And I guess there are valid reasons to do this - we don't know what happens after death, so we should make the most of the one thing we do know; we are here, right now, and we have the ability to choose our own life path.<br>
 C: We haven't answered #2 yet.<br>
 R: The thing is, no matter how much suffering there seems to be at a given point, we always have the option to work hard to improve our living situation. We can choose to move on from traumatic events (though it might take some time). We can earn money, buy an apartment, buy a house, buy more things. We can find all sorts of people to make friends with, possibly even search for a romantic partner. I guess it comes down to the age old question - "Is life worth living?" Perhaps that's a better question than "Is life happy or sad?". It captures the same idea...
-
-We discuss the answer to the question "Is life worth living?" in a [separate article]({{ site.baseurl }}{% post_url 2023-01-03-is-life-worth-living %}).
 ## We'll Be Alive Next Year
 Knowing that dying intentionally is not an option, we can extend the argument.
 

@@ -57,6 +57,18 @@ I'm focusing specifically on **forming genuine bonds with others - friendship!**
 
 For friendships, I discuss this in a separate article, linked [here](/2023/02/05/friends.html)/
 
+## Being Mindful
+
+### Meditation
+
+You've undoubtably heard about the [benefits of meditation](https://www.mayoclinic.org/tests-procedures/meditation/in-depth/meditation/art-20045858), so I'll skip that part. Again, **consistency is key**! So let's look for apps/websites that make consistency easy.
+
+### The Best
+
+#### Headspace
+
+#### Balanced Minds
+
 ## Maintaining Yourself
 
 ### Brain Training
