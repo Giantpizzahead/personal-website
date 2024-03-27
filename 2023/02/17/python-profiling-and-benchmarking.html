@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Python - Profiling and Benchmarking | Kyle Fu</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="https://kylefu.me//" class="logo"><strong>Kyle Fu</strong> <span>@Giantpizzahead</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+		
+        
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/about_me.html">About Me</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/wiki.html">Wiki</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/projects.html">Projects</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/allposts.html">All Posts</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="/showcase.html" class="button fit special">Showcase</a></li>
+		<!-- <li><a href="#" class="button fit">Log In</a></li> -->
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<div class="post-header">
+			<div class="text-part">
+				<header class="major">
+					<h1>Python - Profiling and Benchmarking</h1>
+				</header>
+			
+				<div class="condensed">
+					<ol></li><li><a href="#benchmarking">Benchmarking</a><ul><li><a href="#example-usage">Example Usage</a></li></ul></li><li><a href="#profiling">Profiling</a></ol>
+				</div>
+			</div>
+			<div class="image-part">
+				
+				<img src="/assets/img/pythonlogo.webp" alt="" style="height: 100%; width: 100%; margin: 0 1em 0 0"/>
+				
+			</div>
+		</div>
+		<h2 id="benchmarking">Benchmarking</h2>
+<p>Benchmarking treats the code as a “black box”, only caring about the overall time the code takes to run.</p>
+
+<p><a href="https://github.com/sharkdp/hyperfine">Hyperfine</a> is a great (and pretty!) CLI tool to do benchmarking for all commands - not just Python!</p>
+
+<p>Remember, time measurements can only be used to compare <em>relative performance</em> of code! Absolute performance depends on many external factors (like CPU and GPU speed).</p>
+
+<h3 id="example-usage">Example Usage</h3>
+
+<p>Consider two Python files with code as shown below:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># fibslow.py
+</span><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="k">else</span> <span class="mi">1</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">fib</span><span class="p">(</span><span class="mi">30</span><span class="p">))</span>
+
+<span class="c1"># fibfast.py
+</span><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">b</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">fib</span><span class="p">(</span><span class="mi">30</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>Running Hyperfine on these two files gives:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>hyperfine <span class="s2">"python fibslow.py"</span> <span class="s2">"python fibfast.py"</span>   
+Benchmark 1: python fibslow.py
+  Time <span class="o">(</span>mean ± σ<span class="o">)</span>:     144.2 ms ±   8.4 ms    <span class="o">[</span>User: 117.0 ms, System: 18.7 ms]
+  Range <span class="o">(</span>min … max<span class="o">)</span>:   138.3 ms … 172.1 ms    16 runs
+
+  Warning: The first benchmarking run <span class="k">for </span>this <span class="nb">command </span>was significantly slower than the rest
+	<span class="o">(</span>172.1 ms<span class="o">)</span><span class="nb">.</span> This could be caused by <span class="o">(</span>filesystem<span class="o">)</span> caches that were not filled <span class="k">until </span>after the
+	first run. You should consider using the <span class="s1">'--warmup'</span> option to fill those caches before the
+	actual benchmark. Alternatively, use the <span class="s1">'--prepare'</span> option to clear the caches before each
+	timing run.
+
+Benchmark 2: python fibfast.py
+  Time <span class="o">(</span>mean ± σ<span class="o">)</span>:      38.8 ms ±   2.4 ms    <span class="o">[</span>User: 14.8 ms, System: 18.1 ms]
+  Range <span class="o">(</span>min … max<span class="o">)</span>:    36.2 ms …  53.5 ms    57 runs
+
+  Warning: Statistical outliers were detected. Consider re-running this benchmark on a quiet PC
+	without any interferences from other programs. It might <span class="nb">help </span>to use the <span class="s1">'--warmup'</span> or
+	<span class="s1">'--prepare'</span> options.
+
+Summary
+  <span class="s1">'python fibfast.py'</span> ran
+    3.72 ± 0.32 <span class="nb">times </span>faster than <span class="s1">'python fibslow.py'</span>
+</code></pre></div></div>
+
+<p>As shown above, it’s much more than just a basic benchmarker - it does multiple runs, compares results automatically, and can help you detect/fix anomalies in each. You can benchmark as many commands as you want - e.g. 2 are used here, but 1 or 3 would work too.</p>
+
+<p>Adding some <strong>warmup runs</strong> to keep things stable gives:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>hyperfine <span class="s2">"python fibslow.py"</span> <span class="s2">"python fibfast.py"</span> <span class="nt">-w</span> 5  
+Benchmark 1: python fibslow.py
+  Time <span class="o">(</span>mean ± σ<span class="o">)</span>:     140.4 ms ±   2.3 ms    <span class="o">[</span>User: 112.7 ms, System: 17.3 ms]
+  Range <span class="o">(</span>min … max<span class="o">)</span>:   136.8 ms … 147.0 ms    20 runs
+
+Benchmark 2: python fibfast.py
+  Time <span class="o">(</span>mean ± σ<span class="o">)</span>:      38.7 ms ±   1.3 ms    <span class="o">[</span>User: 12.2 ms, System: 21.9 ms]
+  Range <span class="o">(</span>min … max<span class="o">)</span>:    36.1 ms …  42.6 ms    60 runs
+
+Summary
+  <span class="s1">'python fibfast.py'</span> ran
+    3.62 ± 0.14 <span class="nb">times </span>faster than <span class="s1">'python fibslow.py'</span>
+</code></pre></div></div>
+
+<div class="note-msg"><i class="fa fa-info-circle"></i><strong style="margin-left: 0.15rem"> Note</strong>
+<p>Hyperfine compares execution times of <em>entire commands</em>. That’s why the speed difference here seems low - the loading time of Python’s interpreter itself is being counted. This has a negligible effect on slower programs though.</p>
+</div>
+<h2 id="profiling">Profiling</h2>
+
+<p>Profiling, on the other hand, records how much time is taken by each individual function, allowing you to pinpoint pieces of code that could be optimized.</p>
+
+<p>Pretty much all external profilers rely on first creating a <code class="language-plaintext highlighter-rouge">.prof</code> file using Python’s built in tools, then displaying it in a pretty format. To do this, run:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">cProfile</span> <span class="o">-</span><span class="n">o</span> <span class="n">program</span><span class="p">.</span><span class="n">prof</span> <span class="n">my_program</span><span class="p">.</span><span class="n">py</span>
+</code></pre></div></div>
+
+<p><a href="https://jiffyclub.github.io/snakeviz/">Snakeviz</a> is one such visualizer. It’s pretty cool!</p>
+
+		
+			<i>Last updated: 17 February 2023</i>
+		
+		<p><i><a class="previous-page yes-link-fade" href="javascript:historyBackWithFallback()">Back to previous page</a></i></p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<!--
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/f/mwkzgglo" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a class="no-link-fade" href="mailto:kyle_fu@yahoo.com">kyle_fu@yahoo.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>(XXX) XXX-XXXX</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    (Private)<br />
+					
+					
+					    Sunnyvale,
+					
+					
+					    CA 
+					
+					
+					    <br />
+					
+					
+					    United States of America
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+-->
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+					
+						<li>
+							<a href="https://github.com/Giantpizzahead" class="icon alt fa-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+								<span class="label">GitHub</span>
+							</a>
+						</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						<li>
+							<a href="https://www.linkedin.com/in/kyle-fu-us/" class="icon alt fa-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+								<span class="label">LinkedIn</span>
+							</a>
+						</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						<li>
+							<a href="https://www.youtube.com/channel/UCqok9Akhd7R3u2jcTGph2oA" class="icon alt fa-youtube-play" target="_blank" rel="noopener noreferrer" aria-label="YouTube-Play">
+								<span class="label">YouTube-Play</span>
+							</a>
+						</li>
+					
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Kyle Fu @Giantpizzahead</li>
+				<li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
+				<li>Jekyll integration: <a href="http://andrewbanchi.ch" target="_blank">Andrew Banchich</a></li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="https://kylefu.me/assets/js/jquery.min.js"></script>
+	<script src="https://kylefu.me/assets/js/jquery.scrolly.min.js"></script>
+	<script src="https://kylefu.me/assets/js/jquery.scrollex.min.js"></script>
+	<script src="https://kylefu.me/assets/js/skel.min.js"></script>
+	<script src="https://kylefu.me/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="https://kylefu.me/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="https://kylefu.me/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

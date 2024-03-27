@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AlphaLol 2.0 Planning | Kyle Fu</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="https://kylefu.me//" class="logo"><strong>Kyle Fu</strong> <span>@Giantpizzahead</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+		
+        
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/about_me.html">About Me</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/wiki.html">Wiki</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/projects.html">Projects</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/allposts.html">All Posts</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="/showcase.html" class="button fit special">Showcase</a></li>
+		<!-- <li><a href="#" class="button fit">Log In</a></li> -->
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<div class="post-header">
+			<div class="text-part">
+				<header class="major">
+					<h1>AlphaLol 2.0 Planning</h1>
+				</header>
+			
+				<div class="condensed">
+					<ol></li><li><a href="#problem-statement">Problem Statement</a></li><li><a href="#failing-fast">Failing Fast</a></li><li><a href="#our-data">Our Data</a></li><li><a href="#research">Research</a></ol>
+				</div>
+			</div>
+			<div class="image-part">
+				
+				<img src="/assets/img/alphalol.jpeg" alt="League of Legends gameplay." style="height: 100%; width: 100%; margin: 0 1em 0 0"/>
+				
+			</div>
+		</div>
+		<p>Yes, we’re doing this again. Yes, it’s going to actually use deep learning this time.</p>
+
+<p>And yes, we’re probably going to stop at some point. And then try again, again. :)</p>
+
+<h2 id="problem-statement">Problem Statement</h2>
+
+<p><strong>Make a bot that can play League of Legends at an acceptable skill level.</strong> We’ll define an “acceptable skill level” to mean beating Intermediate bots consistently in a mid 1v1 while playing as a specific champion, against a predefined list of ~5 champions.</p>
+
+<p>In order to do this, the bot must understand the current game state, work as a team with ally players by performing its specific role correctly, predict enemy actions and play around these, make macro decisions with at most a few seconds delay, and make micro decisions in real time.</p>
+
+<h2 id="failing-fast">Failing Fast</h2>
+
+<p>Following the brilliant concept of focusing on the <strong>hardest part first</strong> instead of the parts that seem doable… let’s focus on vision. Here’s our new problem:</p>
+
+<p>In League of Legends, there’s a ton of visual data that needs to be processed and understood by the player. A lot of this is hard for computers to detect automatically: think skillshot shapes and directions. Not just that, but things like emotes, changing background screens due to OP ults (Nocturne, Mordekaiser), even autos from champs, minions, towers, jungle camps…! There’s not even a good way to store skillshot data in a programmed state. Plus, for a computer to fully understand skillshots and how to interpret them, it would need to know what the skillshots do in the first place, which would mean interpreting the skill descriptions and/or previews on the internet. And just to be complete, some ults only have audio indicators (Sion ult)… yeah.</p>
+
+<p>All the above means that any method of processing data likely would need to have <strong>some type of raw pixels as input</strong> (possibly after some image/video manipulation, but preserving all things that a human would see), and we’d need to just tell the computer to “understand” what it’s seeing. (It’s probably need to have <strong>audio input</strong> too!) The only way to check if it really knows what it’s seeing would be to <strong>quiz it on basic facts</strong>, like:</p>
+
+<ul>
+  <li>Annie is visible on the minimap, where is she?</li>
+  <li>Twitch is missing, where do you think he is based on context?</li>
+  <li>If you autoed the cannon right now, would you get the last hit?</li>
+  <li>Is Ahri throwing a skillshot at you? If so, what is it, and what is its hitbox?</li>
+</ul>
+
+<p>And the hardest thing of all… these questions need to be answerable <strong>in real time</strong>. Recognizing and dodging skillshots isn’t something we can ask any online GPT bot how to do in the background. (If it gets to that point, we could use GPT bots to make macro decisions.)</p>
+
+<p>So, the hardest part of AlphaLoL: We must feed it raw video and audio data - there’s no other way. We also cannot program an explicit game state into it, because there’s just too much to capture. AlphaLoL can observe other people’s gameplay, mess around on its own, and gain external feedback through quizzes. With only this knowledge, AlphaLoL needs to be able to truly understand the game - develop game sense - then put that knowledge to use through micro (which is also hard to do in code!).</p>
+
+<p>What does all this imply? Well, AlphaLoL should be <strong>one big model</strong>, rather than several individual models trying to handle specific tasks. And our current models and processing power might not be enough. But we won’t know until we try…</p>
+
+<h2 id="our-data">Our Data</h2>
+
+<p>We have access to tons of <strong>expert recordings</strong> via sites like YouTube and Twitch - basically people who are really good at League, playing League. However, we do <em>not</em> have access to their actions - the buttons they pressed, how they moved the mouse, etc. These videos are also not labeled - we don’t have bounding boxes next to skillshots, or descriptions of what is happening in the video.</p>
+
+<p>We also have the ability to create <strong>amateur demonstrations</strong> on our local machine by playing League while running an external recorder of some sort. We can (probably) record actions associated with these video demonstrations, and we could manually label important things. However, <strong>our time is limited</strong> - we can only make at most a few of these video demos.</p>
+
+<p>There are <strong>tons of online guides</strong> explaining how to play League. These range from simple things like articles / videos showcasing champion abilities, to full-on guides about macro and micro tips at all levels of play.</p>
+
+<p>Finally, we have access to the <strong>real time environment and rewards</strong>, where we can send an AI agent “into the wild” to gain experience actually playing League. However, we cannot speed the game up in any way - this type of experience can only be gathered in real time. In addition, the only feedback would come from obvious signs in the game, such as additional gold earned or getting gray screened (dying).</p>
+
+<p>We’re intentionally trying to make what we can using the current state-of-the-art methods in deep learning. With that being said, <strong>think outside the box!</strong> How could we use a combination of this available data - and limited compute resources - to make a decent League bot?</p>
+
+<h2 id="research">Research</h2>
+
+<p><a href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2018/EECS-2018-37.pdf">Imitation from Observation: Learning to Imitate Behaviors from Raw Video via Context Translation</a></p>
+
+<p><a href="https://mishalaskin.github.io/rad/">Reinforcement Learning with Augmented Data</a></p>
+
+<p>Basically, doing things like distorting or rotating your training data can force AI models to learn patterns that actually matter in the game, instead of learning something that could be training specific or is less generalizable.</p>
+
+<p><a href="http://proceedings.mlr.press/v78/finn17a/finn17a.pdf">One-Shot Visual Imitation Learning via Meta-Learning</a></p>
+
+<ul>
+  <li>This paper discusses a meta-learning strategy (learning the general process of solving tasks instead of learning how to solve a specific task). It requires labeled expert actions (basically the exact game state) and two video demonstrations of a task during training time. Then, only one video demonstration of a task, without labeled expert actions, is required at test time.</li>
+</ul>
+
+		
+			<i>Last updated: 09 April 2023</i>
+		
+		<p><i><a class="previous-page yes-link-fade" href="javascript:historyBackWithFallback()">Back to previous page</a></i></p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<!--
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/f/mwkzgglo" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a class="no-link-fade" href="mailto:kyle_fu@yahoo.com">kyle_fu@yahoo.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>(XXX) XXX-XXXX</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    (Private)<br />
+					
+					
+					    Sunnyvale,
+					
+					
+					    CA 
+					
+					
+					    <br />
+					
+					
+					    United States of America
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+-->
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+					
+						<li>
+							<a href="https://github.com/Giantpizzahead" class="icon alt fa-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+								<span class="label">GitHub</span>
+							</a>
+						</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						<li>
+							<a href="https://www.linkedin.com/in/kyle-fu-us/" class="icon alt fa-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+								<span class="label">LinkedIn</span>
+							</a>
+						</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						<li>
+							<a href="https://www.youtube.com/channel/UCqok9Akhd7R3u2jcTGph2oA" class="icon alt fa-youtube-play" target="_blank" rel="noopener noreferrer" aria-label="YouTube-Play">
+								<span class="label">YouTube-Play</span>
+							</a>
+						</li>
+					
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Kyle Fu @Giantpizzahead</li>
+				<li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
+				<li>Jekyll integration: <a href="http://andrewbanchi.ch" target="_blank">Andrew Banchich</a></li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="https://kylefu.me/assets/js/jquery.min.js"></script>
+	<script src="https://kylefu.me/assets/js/jquery.scrolly.min.js"></script>
+	<script src="https://kylefu.me/assets/js/jquery.scrollex.min.js"></script>
+	<script src="https://kylefu.me/assets/js/skel.min.js"></script>
+	<script src="https://kylefu.me/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="https://kylefu.me/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="https://kylefu.me/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

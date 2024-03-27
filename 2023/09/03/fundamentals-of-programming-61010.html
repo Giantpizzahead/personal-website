@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Fundamentals of Programming (6.1010) | Kyle Fu</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="https://kylefu.me//" class="logo"><strong>Kyle Fu</strong> <span>@Giantpizzahead</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+		
+        
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/about_me.html">About Me</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/wiki.html">Wiki</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/projects.html">Projects</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/allposts.html">All Posts</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="/showcase.html" class="button fit special">Showcase</a></li>
+		<!-- <li><a href="#" class="button fit">Log In</a></li> -->
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<div class="post-header">
+			<div class="text-part">
+				<header class="major">
+					<h1>Fundamentals of Programming (6.1010)</h1>
+				</header>
+			
+				<div class="condensed">
+					<ol></li><li><a href="#data-structures">Data Structures</a></li><li><a href="#common-patterns">Common Patterns</a></li><li><a href="#pythons-internal-model">Python’s Internal Model</a></li><li><a href="#cheatsheets">Cheatsheets</a></ol>
+				</div>
+			</div>
+			<div class="image-part">
+				
+			</div>
+		</div>
+		<p>This is a very rough summary of what we learned in 6.1010: Fundamentals of Programming, which was taught in Python. Note that most of the learning came from <strong>coding practice in labs</strong>, the below is just a summary.</p>
+
+<h2 id="data-structures">Data Structures</h2>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">e</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">default</span><span class="p">,</span> <span class="nb">iter</span><span class="p">,</span> <span class="n">iter1</span><span class="p">,</span> <span class="n">iter2</span><span class="p">,</span> <span class="n">iter3</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">seq_x</span><span class="p">,</span> <span class="n">seq_y</span><span class="p">,</span> <span class="n">cond_x</span><span class="p">,</span> <span class="n">cond_y</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">Shape</span><span class="p">,</span> <span class="n">point_in_rect</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">s</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="bp">None</span>
+
+<span class="c1"># Strings
+</span><span class="n">S</span> <span class="o">=</span> <span class="sh">""</span>
+<span class="n">S</span><span class="p">.</span><span class="nf">upper</span><span class="p">()</span>           <span class="c1"># Also S.lower()
+</span><span class="n">S</span><span class="p">.</span><span class="nf">strip</span><span class="p">().</span><span class="nf">split</span><span class="p">(</span><span class="sh">"</span><span class="s">,</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">one</span> <span class="o">=</span> <span class="sh">"</span><span class="s">ook</span><span class="sh">"</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sh">"</span><span class="s">ok</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">ne</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">S</span><span class="p">.</span><span class="nf">index</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>    <span class="c1"># First index of s in S[a:b], or error
+</span>
+<span class="c1"># Lists (also tuples, which are immutable)
+</span><span class="n">L</span><span class="p">,</span> <span class="n">L2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">L</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="n">L</span><span class="p">.</span><span class="nf">insert</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>      <span class="c1"># Insert e before i (0 -&gt; Start of array)
+</span><span class="n">L</span><span class="p">.</span><span class="nf">extend</span><span class="p">(</span><span class="n">L2</span><span class="p">)</span>        <span class="c1"># Also L + L2
+</span><span class="n">L</span><span class="p">.</span><span class="nf">pop</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>            <span class="c1"># Returns L[i], i is optional (0 by default)
+</span><span class="n">L</span><span class="p">.</span><span class="nf">remove</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>         <span class="c1"># Find and remove first occurence of value
+</span><span class="n">L</span><span class="p">.</span><span class="nf">index</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>    <span class="c1"># First index of e in L[a:b], or error
+</span><span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>                       <span class="c1"># [ func(x, y)
+</span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">seq_x</span><span class="p">:</span>                <span class="c1">#    for x in seq_x
+</span> <span class="k">if</span> <span class="n">cond_x</span><span class="p">:</span>                    <span class="c1">#     if cond_x
+</span>  <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">seq_y</span><span class="p">:</span>              <span class="c1">#      for y in seq_y
+</span>   <span class="k">if</span> <span class="n">cond_y</span><span class="p">:</span>                  <span class="c1">#       if cond_y ]
+</span>    <span class="n">out</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>     <span class="c1"># List comprehensions
+</span>
+<span class="c1"># Sets
+</span><span class="n">S</span><span class="p">,</span> <span class="n">S2</span> <span class="o">=</span> <span class="nf">set</span><span class="p">(),</span> <span class="nf">frozenset</span><span class="p">()</span>
+<span class="n">S</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="n">S</span><span class="p">.</span><span class="nf">discard</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>        <span class="c1"># Or S.remove(e) which raises KeyError on fail
+</span><span class="n">S</span><span class="p">.</span><span class="nf">union</span><span class="p">(</span><span class="n">S2</span><span class="p">)</span>         <span class="c1"># S | S2, e present in at least one set
+</span><span class="n">S</span><span class="p">.</span><span class="nf">intersection</span><span class="p">(</span><span class="n">S2</span><span class="p">)</span>  <span class="c1"># S &amp; S2, e present in both sets
+</span><span class="n">S</span><span class="p">.</span><span class="nf">difference</span><span class="p">(</span><span class="n">S2</span><span class="p">)</span>    <span class="c1"># S - S2, e present in S but not in S2
+</span>
+<span class="c1"># Dictionaries
+</span><span class="n">D</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">D</span><span class="p">.</span><span class="nf">setdefault</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">default</span><span class="p">)</span>
+<span class="n">D</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">default</span><span class="p">)</span>
+<span class="n">D</span><span class="p">.</span><span class="nf">pop</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>            <span class="c1"># del D[k]
+</span><span class="n">D</span><span class="p">.</span><span class="nf">items</span><span class="p">()</span>           <span class="c1"># D.keys(), D.values(), returns generator
+</span><span class="n">D</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">iter</span> <span class="k">if</span> <span class="n">k</span> <span class="o">!=</span> <span class="n">v</span><span class="p">}</span>
+
+<span class="c1"># Iterables and generators
+</span><span class="k">def</span> <span class="nf">my_range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>  <span class="c1"># Generator
+</span>    <span class="k">if</span> <span class="n">start</span> <span class="o">&gt;=</span> <span class="n">end</span><span class="p">:</span> <span class="k">return</span>
+    <span class="k">yield</span> <span class="n">start</span>
+    <span class="k">yield</span> <span class="k">from</span> <span class="nf">my_range</span><span class="p">(</span><span class="n">start</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="nf">reversed</span><span class="p">(</span><span class="nb">iter</span><span class="p">):</span> <span class="nf">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">(</span><span class="nb">iter</span><span class="p">):</span> <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nf">zip</span><span class="p">(</span><span class="n">iter1</span><span class="p">,</span> <span class="n">iter2</span><span class="p">,</span> <span class="n">iter3</span><span class="p">):</span> <span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="common-patterns">Common Patterns</h2>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># List comprehensions
+</span><span class="k">def</span> <span class="nf">poly_evaluate</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+	<span class="k">return</span> <span class="nf">sum</span><span class="p">([</span><span class="n">coeff</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">coeff</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">(</span><span class="n">p</span><span class="p">)])</span>
+
+<span class="c1"># Recursion
+</span><span class="k">def</span> <span class="nf">sum_nested</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">
+</span><span class="gp">    &gt;&gt;&gt;</span> <span class="nf">sum_nested</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]],</span> <span class="p">[[[[[</span><span class="mi">6</span><span class="p">]]]]]])</span>
+    <span class="mi">21</span>
+    <span class="sh">"""</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">x</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="nf">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nf">sum_nested</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="nf">sum_nested</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="nf">sum_nested</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+
+<span class="c1"># Decorators
+</span><span class="k">def</span> <span class="nf">memoize</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="n">cache</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">def</span> <span class="nf">_mfunc</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">args</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cache</span><span class="p">:</span> <span class="n">cache</span><span class="p">[</span><span class="n">args</span><span class="p">]</span> <span class="o">=</span> <span class="nf">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">cache</span><span class="p">[</span><span class="n">args</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">_mfunc</span>
+<span class="nd">@memoize</span>
+<span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="k">else</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># OOP
+</span><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">(</span><span class="n">Shape</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">lower_left</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="n">Shape</span><span class="p">.</span><span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">ll</span> <span class="o">=</span> <span class="n">lower_left</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">w</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">h</span> <span class="o">=</span> <span class="n">height</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">center</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="nf">return </span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">ll</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">self</span><span class="p">.</span><span class="n">w</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">ll</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">self</span><span class="p">.</span><span class="n">h</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>
+    <span class="nd">@center.setter</span>
+    <span class="k">def</span> <span class="nf">center</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">ll</span> <span class="o">=</span> <span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">self</span><span class="p">.</span><span class="n">w</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">self</span><span class="p">.</span><span class="n">h</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">__contains__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nf">point_in_rect</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+
+<span class="c1"># Misc
+</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>         <span class="c1"># Swap
+</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">def</span> <span class="nf">outer</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">x</span>        <span class="c1"># Cannot modify x without this
+</span>    <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="k">def</span> <span class="nf">inner</span><span class="p">():</span>
+        <span class="k">nonlocal</span> <span class="n">y</span>  <span class="c1"># Cannot modify y without this
+</span>        <span class="n">y</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nf">inner</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">bfs</span><span class="p">(</span><span class="n">neighbors_function</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">goal_test</span><span class="p">):</span>
+    <span class="c1"># start is the initial state, goal_test returns boolean
+</span>    <span class="k">if</span> <span class="nf">goal_test</span><span class="p">(</span><span class="n">start</span><span class="p">):</span>
+        <span class="nf">return </span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="p">)</span>
+    <span class="n">agenda</span> <span class="o">=</span> <span class="p">[(</span><span class="n">start</span><span class="p">,</span> <span class="p">)]</span>
+    <span class="n">visited</span> <span class="o">=</span> <span class="p">{</span><span class="n">start</span><span class="p">}</span>
+    <span class="k">while</span> <span class="n">agenda</span><span class="p">:</span>
+        <span class="n">this_path</span> <span class="o">=</span> <span class="n">agenda</span><span class="p">.</span><span class="nf">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">terminal_state</span> <span class="o">=</span> <span class="n">this_path</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="c1"># neighbors_function returns iterable with neighbors
+</span>        <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="nf">neighbors_function</span><span class="p">(</span><span class="n">terminal_state</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">neighbor</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+                <span class="n">new_path</span> <span class="o">=</span> <span class="n">this_path</span> <span class="o">+</span> <span class="p">(</span><span class="n">neighbor</span><span class="p">,)</span>
+                <span class="k">if</span> <span class="nf">goal_test</span><span class="p">(</span><span class="n">neighbor</span><span class="p">):</span>
+                    <span class="k">return</span> <span class="n">new_path</span>
+                <span class="n">agenda</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">new_path</span><span class="p">)</span>
+                <span class="n">visited</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="pythons-internal-model">Python’s Internal Model</h2>
+
+<p>A simplified model of how Python works internally. The main idea is that every variable name points to something, and all new code does is create and/or change these names and pointers. See below for 3 examples:</p>
+
+<p><a href="https://gyazo.com/f7be7594ebb36a2e99211115e6c2f450"><img src="https://i.gyazo.com/f7be7594ebb36a2e99211115e6c2f450.png" alt="Image from Gyazo" /></a></p>
+
+<h2 id="cheatsheets">Cheatsheets</h2>
+
+<p>For personal reference only.</p>
+<ul>
+  <li><a href="https://docs.google.com/document/d/1HzYN3UzdPPbdL-F0ogLa_y77IBWGM0_wxzgYy5y9Icw/edit?usp=sharing">Part 1</a></li>
+  <li><a href="https://docs.google.com/document/d/15rYrIl9I3O9qCrXteR3BHWTynDD1bOESWb52T3qV3b8/edit?usp=sharing">Part 2</a></li>
+</ul>
+
+		
+			<i>Last updated: 03 September 2023</i>
+		
+		<p><i><a class="previous-page yes-link-fade" href="javascript:historyBackWithFallback()">Back to previous page</a></i></p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<!--
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/f/mwkzgglo" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a class="no-link-fade" href="mailto:kyle_fu@yahoo.com">kyle_fu@yahoo.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>(XXX) XXX-XXXX</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    (Private)<br />
+					
+					
+					    Sunnyvale,
+					
+					
+					    CA 
+					
+					
+					    <br />
+					
+					
+					    United States of America
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+-->
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+					
+						<li>
+							<a href="https://github.com/Giantpizzahead" class="icon alt fa-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+								<span class="label">GitHub</span>
+							</a>
+						</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						<li>
+							<a href="https://www.linkedin.com/in/kyle-fu-us/" class="icon alt fa-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+								<span class="label">LinkedIn</span>
+							</a>
+						</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						<li>
+							<a href="https://www.youtube.com/channel/UCqok9Akhd7R3u2jcTGph2oA" class="icon alt fa-youtube-play" target="_blank" rel="noopener noreferrer" aria-label="YouTube-Play">
+								<span class="label">YouTube-Play</span>
+							</a>
+						</li>
+					
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Kyle Fu @Giantpizzahead</li>
+				<li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
+				<li>Jekyll integration: <a href="http://andrewbanchi.ch" target="_blank">Andrew Banchich</a></li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="https://kylefu.me/assets/js/jquery.min.js"></script>
+	<script src="https://kylefu.me/assets/js/jquery.scrolly.min.js"></script>
+	<script src="https://kylefu.me/assets/js/jquery.scrollex.min.js"></script>
+	<script src="https://kylefu.me/assets/js/skel.min.js"></script>
+	<script src="https://kylefu.me/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="https://kylefu.me/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="https://kylefu.me/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>(Internal) Dev Reference | Kyle Fu</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="https://kylefu.me//" class="logo"><strong>Kyle Fu</strong> <span>@Giantpizzahead</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+		
+        
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/about_me.html">About Me</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/wiki.html">Wiki</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/projects.html">Projects</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/allposts.html">All Posts</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="/showcase.html" class="button fit special">Showcase</a></li>
+		<!-- <li><a href="#" class="button fit">Log In</a></li> -->
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<div class="post-header">
+			<div class="text-part">
+				<header class="major">
+					<h1>(Internal) Dev Reference</h1>
+				</header>
+			
+				<div class="condensed">
+					<ol></li><li><a href="#todo">Todo</a></li><li><a href="#common-tasks">Common Tasks</a><ul><li><a href="#live-website-preview">Live Website Preview</a></li><li><a href="#writing-and-editing-posts">Writing and Editing Posts</a></li><li><a href="#optimize-images">Optimize Images</a></li></ul></li><li><a href="#element-reference">Element Reference</a><ul><li><a href="#code-blocks">Code Blocks</a></li><li><a href="#alerts">Alerts</a></li><li><a href="#icons">Icons</a></li><li><a href="#emotes">Emotes</a></li></ul></ol>
+				</div>
+			</div>
+			<div class="image-part">
+				
+				<img src="/assets/img/webdevlogo.jpg" alt="" style="height: 100%; width: 100%; margin: 0 1em 0 0"/>
+				
+			</div>
+		</div>
+		<h2 id="todo">Todo</h2>
+
+<p>Access static (data) files in Python: <a href="https://stackoverflow.com/a/58941536">https://stackoverflow.com/a/58941536</a>
+Distributing code for end users: <a href="https://github.com/pyinstaller/pyinstaller">https://github.com/pyinstaller/pyinstaller</a>
+Or create a Python package for developers, hosted on PyPi: <a href="https://packaging.python.org/en/latest/">https://packaging.python.org/en/latest/</a></p>
+
+<p>Web apps guide <a href="https://12factor.net/">https://12factor.net/</a></p>
+
+<p>Picture tag: <a href="https://rbuchberger.github.io/jekyll_picture_tag/users/installation">https://rbuchberger.github.io/jekyll_picture_tag/users/installation</a></p>
+
+<p>Passive income: <a href="https://www.bankrate.com/investing/passive-income-ideas/">https://www.bankrate.com/investing/passive-income-ideas/</a></p>
+
+<p>Useful cheatsheet websites:
+<a href="https://devhints.io/">https://devhints.io/</a>
+<a href="https://quickref.me">https://quickref.me</a></p>
+
+<h2 id="common-tasks">Common Tasks</h2>
+
+<h3 id="live-website-preview">Live Website Preview</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./start.sh
+</code></pre></div></div>
+
+<p>Starts a local web server using port 4000 that auto-reloads on each change. See the script for the exact commands being run.</p>
+
+<div class="warning-msg"><i class="fa fa-warning"></i><strong style="margin-left: 0.15rem"> Warning</strong>
+<p>If <code class="language-plaintext highlighter-rouge">_config.yml</code> or a <code class="language-plaintext highlighter-rouge">.rb</code> file is edited, you must manually reload to apply the changes.</p>
+</div>
+
+<h3 id="writing-and-editing-posts">Writing and Editing Posts</h3>
+
+<p>Use <strong>StackEdit</strong> to edit any posts marked as WIP. Then, when you have time, start a local development server (see above), go to <a href="http://localhost:4000/admin/collections/posts">this site’s local admin page</a>, and copy those posts over. Finally, commit and push the changes onto Github.</p>
+
+<h3 id="optimize-images">Optimize Images</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>image_optim <span class="nt">--no-svgo</span> <span class="nt">--no-pngout</span> <span class="nt">-v</span> <span class="k">*</span>.<span class="o">{</span>jpg,png<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Also consider resizing images! (Open in Preview, Tools -&gt; Adjust Size)
+If you want, you can change the path name to prevent already optimized images from being processed again.</p>
+
+<h2 id="element-reference">Element Reference</h2>
+
+<p>See <a href="https://kylefu.me/elements">this page</a>.</p>
+
+<h3 id="code-blocks">Code Blocks</h3>
+
+<figure class="highlight"><pre><code class="language-markdown" data-lang="markdown"><span class="p">```</span><span class="nl">python
+</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello Markdown!</span><span class="sh">"</span><span class="p">)</span>
+<span class="p">```</span></code></pre></figure>
+
+<p>If you want line numbers:</p>
+
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="cp">{%</span><span class="w"> </span><span class="nt">highlight</span><span class="w"> </span><span class="nv">python</span><span class="w"> </span><span class="nv">linenos</span><span class="w"> </span><span class="cp">%}</span>
+a = 1
+b = 2
+print(a + b)
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endhighlight</span><span class="w"> </span><span class="cp">%}</span></code></pre></figure>
+
+<p>Outputs:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello Markdown!</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Replace <code class="language-plaintext highlighter-rouge">python</code> with your language name.</p>
+
+<div class="note-msg"><i class="fa fa-info-circle"></i><strong style="margin-left: 0.15rem"> Note</strong>
+<p><code class="language-plaintext highlighter-rouge">{% highlight python %}</code> without <code class="language-plaintext highlighter-rouge">linenos</code> is equivalent to Markdown’s triple backtick syntax.</p>
+</div>
+
+<h3 id="alerts">Alerts</h3>
+
+<figure class="highlight"><pre><code class="language-markdown" data-lang="markdown">{% alert review %}
+Sample <span class="sb">`review`</span> alert
+
+With <span class="ge">*multiple*</span> <span class="gs">**lines**</span> and formatting!
+{% endalert %}</code></pre></figure>
+
+<p>Output:</p>
+<div class="review-msg"><i class="fa fa-check"></i><strong style="margin-left: 0.15rem"> Review</strong>
+<p>Sample <code class="language-plaintext highlighter-rouge">review</code> alert</p>
+
+<p>With <em>multiple</em> <strong>lines</strong> and formatting!</p>
+</div>
+
+<h4 id="alert-types">Alert Types</h4>
+
+<p>Valid types (examples shown below): <code class="language-plaintext highlighter-rouge">note, warning, danger, review, tip, important</code></p>
+
+<div class="note-msg"><i class="fa fa-info-circle"></i><strong style="margin-left: 0.15rem"> Note</strong><p>This is a <code class="language-plaintext highlighter-rouge">note</code> alert.</p>
+</div>
+<div class="warning-msg"><i class="fa fa-warning"></i><strong style="margin-left: 0.15rem"> Warning</strong><p>This is a <code class="language-plaintext highlighter-rouge">warning</code> alert.</p>
+</div>
+<div class="danger-msg"><i class="fa fa-times-circle"></i><strong style="margin-left: 0.15rem"> Danger</strong><p>This is a <code class="language-plaintext highlighter-rouge">danger</code> alert.</p>
+</div>
+<div class="review-msg"><i class="fa fa-check"></i><strong style="margin-left: 0.15rem"> Review</strong><p>This is a <code class="language-plaintext highlighter-rouge">review</code> alert.</p>
+</div>
+<div class="tip-msg"><i class="fa fa-lightbulb-o"></i><strong style="margin-left: 0.15rem"> Tip</strong><p>This is a <code class="language-plaintext highlighter-rouge">tip</code> alert.</p>
+</div>
+<div class="important-msg"><i class="fa fa-star"></i><strong style="margin-left: 0.15rem"> Important</strong><p>This is an <code class="language-plaintext highlighter-rouge">important</code> alert.</p>
+</div>
+<div class="note-msg"><p>This is a blank alert (no type supplied).</p>
+</div>
+
+<p>Uses a simple custom plugin in <code class="language-plaintext highlighter-rouge">_plugins/alert.rb</code>.</p>
+
+<h3 id="icons">Icons</h3>
+
+<p>List of Font Awesome v4 icons: <a href="https://fontawesome.com/v4/icons/">https://fontawesome.com/v4/icons/</a></p>
+
+<h3 id="emotes">Emotes</h3>
+
+<p>List of Github Emojis: <a href="https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md">https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md</a></p>
+
+		
+			<i>Last updated: 11 December 2022</i>
+		
+		<p><i><a class="previous-page yes-link-fade" href="javascript:historyBackWithFallback()">Back to previous page</a></i></p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<!--
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/f/mwkzgglo" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a class="no-link-fade" href="mailto:kyle_fu@yahoo.com">kyle_fu@yahoo.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>(XXX) XXX-XXXX</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    (Private)<br />
+					
+					
+					    Sunnyvale,
+					
+					
+					    CA 
+					
+					
+					    <br />
+					
+					
+					    United States of America
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+-->
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+					
+						<li>
+							<a href="https://github.com/Giantpizzahead" class="icon alt fa-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+								<span class="label">GitHub</span>
+							</a>
+						</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						<li>
+							<a href="https://www.linkedin.com/in/kyle-fu-us/" class="icon alt fa-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+								<span class="label">LinkedIn</span>
+							</a>
+						</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						<li>
+							<a href="https://www.youtube.com/channel/UCqok9Akhd7R3u2jcTGph2oA" class="icon alt fa-youtube-play" target="_blank" rel="noopener noreferrer" aria-label="YouTube-Play">
+								<span class="label">YouTube-Play</span>
+							</a>
+						</li>
+					
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Kyle Fu @Giantpizzahead</li>
+				<li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
+				<li>Jekyll integration: <a href="http://andrewbanchi.ch" target="_blank">Andrew Banchich</a></li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="https://kylefu.me/assets/js/jquery.min.js"></script>
+	<script src="https://kylefu.me/assets/js/jquery.scrolly.min.js"></script>
+	<script src="https://kylefu.me/assets/js/jquery.scrollex.min.js"></script>
+	<script src="https://kylefu.me/assets/js/skel.min.js"></script>
+	<script src="https://kylefu.me/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="https://kylefu.me/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="https://kylefu.me/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

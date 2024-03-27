@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Python - Coding Guide | Kyle Fu</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="https://kylefu.me//" class="logo"><strong>Kyle Fu</strong> <span>@Giantpizzahead</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+		
+        
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/about_me.html">About Me</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/wiki.html">Wiki</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/projects.html">Projects</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/allposts.html">All Posts</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="/showcase.html" class="button fit special">Showcase</a></li>
+		<!-- <li><a href="#" class="button fit">Log In</a></li> -->
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<div class="post-header">
+			<div class="text-part">
+				<header class="major">
+					<h1>Python - Coding Guide</h1>
+				</header>
+			
+				<div class="condensed">
+					<ol></li><li><a href="#cheatsheet">Cheatsheet</a><ul><li><a href="#documentation">Documentation</a></li></ul></li><li><a href="#style">Style</a><ul><li><a href="#general-reminders">General Reminders</a></li><li><a href="#type-hints">Type Hints</a></li><li><a href="#pep-8">PEP 8</a></li><li><a href="#zen-of-python">Zen of Python</a></li></ul></li><li><a href="#documentation-1">Documentation</a></li><li><a href="#writing-tests">Writing Tests</a></li><li><a href="#logging">Logging</a></li><li><a href="#reading-great-code">Reading Great Code</a></li><li><a href="#sources">Sources</a></ol>
+				</div>
+			</div>
+			<div class="image-part">
+				
+				<img src="/assets/img/pythonlogo.webp" alt="" style="height: 100%; width: 100%; margin: 0 1em 0 0"/>
+				
+			</div>
+		</div>
+		<h2 id="cheatsheet">Cheatsheet</h2>
+
+<p><a href="https://www.pythoncheatsheet.org/cheatsheet/basics">Python Cheatsheet</a></p>
+
+<div class="tip-msg"><i class="fa fa-lightbulb-o"></i><strong style="margin-left: 0.15rem"> Tip</strong>
+<p>Use the left sidebar to choose a topic.</p>
+</div>
+
+<h3 id="documentation">Documentation</h3>
+
+<p><a href="https://docs.python.org/3/library/index.html">Official Python Docs</a></p>
+
+<h2 id="style">Style</h2>
+
+<p>Read <a href="https://docs.python-guide.org/writing/style/">https://docs.python-guide.org/writing/style/</a>, it’s a great summary of Python code style! The below is a (very) short summary of what my main takeaways were.</p>
+
+<h3 id="general-reminders">General Reminders</h3>
+
+<p>Be Pythonic whenever possible: Use commonly accepted patterns when they come up.</p>
+
+<p>When separating a long line of code into multiple lines, use parentheses instead of backslashes.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Bad
+</span><span class="n">a_string</span> <span class="o">=</span> <span class="sh">"</span><span class="s">This is a very long string that should probably span </span><span class="se">\
+</span><span class="s">    multiple lines. As a result, it does actually span multiple lines. </span><span class="se">\
+</span><span class="s">    Wow, that</span><span class="sh">'</span><span class="s">s pretty cool, isn</span><span class="sh">'</span><span class="s">t it?</span><span class="sh">"</span>
+
+<span class="c1"># Good
+</span><span class="n">a_string</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="sh">"</span><span class="s">This is a very long string that should probably span</span><span class="sh">"</span>
+    <span class="sh">"</span><span class="s">multiple lines. As a result, it does actually span multiple lines.</span><span class="sh">"</span>
+    <span class="sh">"</span><span class="s">Wow, that</span><span class="sh">'</span><span class="s">s pretty cool, isn</span><span class="sh">'</span><span class="s">t it?</span><span class="sh">"</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="type-hints">Type Hints</h3>
+
+<p>Type hints are great, use them! You can put them in gradually: The <code class="language-plaintext highlighter-rouge">Any</code> type is implicitly assumed for any functions without type hints. Type hints are generally overkill for uncommonly used scripts.</p>
+
+<p>See <a href="https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html">https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html</a> for a cheat sheet on type hints.</p>
+
+<h3 id="pep-8">PEP 8</h3>
+
+<p><a href="https://pep8.org/">PEP 8</a> is a widely used Python style guide. There are automatic checkers and formatters for PEP 8.</p>
+
+<div class="tip-msg"><i class="fa fa-lightbulb-o"></i><strong style="margin-left: 0.15rem"> Tip</strong>
+<p>Most IDEs have PEP 8 checking and formatting built in!</p>
+</div>
+
+<h4 id="auto-checking">Auto-Checking</h4>
+
+<p>Using <a href="https://github.com/PyCQA/pycodestyle">pycodestyle</a>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pip <span class="nb">install </span>pycodestyle
+<span class="nv">$ </span>pycodestyle mymodule.py
+mymodule.py:15:1: E303 too many blank lines <span class="o">(</span>4<span class="o">)</span>
+mymodule.py:19:9: E701 multiple statements on one line <span class="o">(</span>colon<span class="o">)</span>
+mymodule.py:26:8: W292 no newline at end of file
+...
+</code></pre></div></div>
+
+<h4 id="auto-formatting">Auto-Formatting</h4>
+
+<p>Using <a href="https://github.com/psf/black">black</a>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pip <span class="nb">install </span>black
+<span class="nv">$ </span>black mymodule.py
+</code></pre></div></div>
+
+<h3 id="zen-of-python">Zen of Python</h3>
+
+<p>A short list of guiding principles for Python’s design.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+</code></pre></div></div>
+
+<p>See some examples of good and bad code for each of these principles here: <a href="https://github.com/hblanks/zen-of-python-by-example/blob/master/pep20_by_example.py">PEP 20 by Example</a></p>
+
+<h2 id="documentation-1">Documentation</h2>
+
+<p>Use Sphinx to generate documentation. The Napoleon plugin can parse Google docstrings.</p>
+
+<p><a href="https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings">Google’s documentation format</a> is quite nice: I’d recommend using it, see their style guide for more details on the format.</p>
+
+<h2 id="writing-tests">Writing Tests</h2>
+
+<p>Remember, keep the tests short, fast, and simple… but don’t forget about edge cases!</p>
+
+<p>Use <a href="https://realpython.com/python-doctest/">doctests</a> for simple tests that show basic usage of functions when needed. Use <a href="https://docs.pytest.org/en/7.2.x/getting-started.html">Pytest</a> for the main test suite.</p>
+
+<p><a href="https://hypothesis.readthedocs.io/en/latest/quickstart.html">Hypothesis</a> can help you automatically generate test cases and “check your work” in a different way. Useful when you need to be 100% sure your code works, or if it’s hard to manually test.</p>
+
+<h2 id="logging">Logging</h2>
+
+<p>See <a href="https://docs.python-guide.org/writing/logging/">https://docs.python-guide.org/writing/logging/</a>.</p>
+
+<h2 id="reading-great-code">Reading Great Code</h2>
+
+<p>One of the best ways to learn how to write great code is to read and understand great code written by other Python devs!</p>
+
+<p>See <a href="https://docs.python-guide.org/writing/reading/">https://docs.python-guide.org/writing/reading/</a> for more info.</p>
+
+<h2 id="sources">Sources</h2>
+
+<ul>
+  <li><a href="https://docs.python-guide.org/writing/style/">https://docs.python-guide.org/writing/style/</a></li>
+  <li><a href="https://docs.python-guide.org/writing/reading/">https://docs.python-guide.org/writing/reading/</a></li>
+  <li><a href="https://docs.python-guide.org/writing/tests/">https://docs.python-guide.org/writing/tests/</a></li>
+</ul>
+
+		
+			<i>Last updated: 17 December 2022</i>
+		
+		<p><i><a class="previous-page yes-link-fade" href="javascript:historyBackWithFallback()">Back to previous page</a></i></p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<!--
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/f/mwkzgglo" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a class="no-link-fade" href="mailto:kyle_fu@yahoo.com">kyle_fu@yahoo.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>(XXX) XXX-XXXX</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    (Private)<br />
+					
+					
+					    Sunnyvale,
+					
+					
+					    CA 
+					
+					
+					    <br />
+					
+					
+					    United States of America
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+-->
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+					
+						<li>
+							<a href="https://github.com/Giantpizzahead" class="icon alt fa-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+								<span class="label">GitHub</span>
+							</a>
+						</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						<li>
+							<a href="https://www.linkedin.com/in/kyle-fu-us/" class="icon alt fa-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+								<span class="label">LinkedIn</span>
+							</a>
+						</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						<li>
+							<a href="https://www.youtube.com/channel/UCqok9Akhd7R3u2jcTGph2oA" class="icon alt fa-youtube-play" target="_blank" rel="noopener noreferrer" aria-label="YouTube-Play">
+								<span class="label">YouTube-Play</span>
+							</a>
+						</li>
+					
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Kyle Fu @Giantpizzahead</li>
+				<li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
+				<li>Jekyll integration: <a href="http://andrewbanchi.ch" target="_blank">Andrew Banchich</a></li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="https://kylefu.me/assets/js/jquery.min.js"></script>
+	<script src="https://kylefu.me/assets/js/jquery.scrolly.min.js"></script>
+	<script src="https://kylefu.me/assets/js/jquery.scrollex.min.js"></script>
+	<script src="https://kylefu.me/assets/js/skel.min.js"></script>
+	<script src="https://kylefu.me/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="https://kylefu.me/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="https://kylefu.me/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

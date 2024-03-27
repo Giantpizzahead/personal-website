@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Python - Packaging Guide | Kyle Fu</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="https://kylefu.me//" class="logo"><strong>Kyle Fu</strong> <span>@Giantpizzahead</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+		
+        
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/about_me.html">About Me</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/wiki.html">Wiki</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/projects.html">Projects</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/allposts.html">All Posts</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="/showcase.html" class="button fit special">Showcase</a></li>
+		<!-- <li><a href="#" class="button fit">Log In</a></li> -->
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<div class="post-header">
+			<div class="text-part">
+				<header class="major">
+					<h1>Python - Packaging Guide</h1>
+				</header>
+			
+				<div class="condensed">
+					<ol></li><li><a href="#a-model-example">A Model Example</a></li><li><a href="#packaging-python-projects">Packaging Python Projects</a></li><li><a href="#freezing-python-projects">Freezing Python Projects</a></li><li><a href="#making-a-windows-app-installer">Making a Windows App Installer</a></ol>
+				</div>
+			</div>
+			<div class="image-part">
+				
+				<img src="/assets/img/pythonlogo.webp" alt="Python logo." style="height: 100%; width: 100%; margin: 0 1em 0 0"/>
+				
+			</div>
+		</div>
+		<h2 id="a-model-example">A Model Example</h2>
+
+<p>See my mock application - the <a href="https://github.com/Giantpizzahead/auto-league-closer">Auto League Closer™</a> - for a real-world demo (with external libraries, data files, and application logs) of how to package, freeze, or make a windows installer for your Python project. This model application was also made to follow best practices for Python projects in general!</p>
+
+<h2 id="packaging-python-projects">Packaging Python Projects</h2>
+
+<p>Scenario: You want to package your code and upload it onto PyPi so end users can just <code class="language-plaintext highlighter-rouge">pip install</code> it.</p>
+
+<p>How do you make your code into a package? See <a href="https://docs.python.org/3/tutorial/modules.html">this tutorial</a>.</p>
+
+<ol>
+  <li>Create a <code class="language-plaintext highlighter-rouge">pyproject.toml</code> file in the same directory as the module file or folder. Fill it with the following info - change default fields as needed and ensure the project name matches the module name:</li>
+</ol>
+
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[build-system]</span>
+<span class="py">requires</span> <span class="p">=</span> <span class="py">["setuptools&gt;</span><span class="p">=</span><span class="mf">61.0</span><span class="s">"]</span><span class="err">
+</span><span class="py">build-backend</span> <span class="p">=</span> <span class="s">"setuptools.build_meta"</span>
+
+<span class="nn">[project]</span>
+<span class="py">name</span> <span class="p">=</span> <span class="s">"my_amazing_package"</span>
+<span class="py">version</span> <span class="p">=</span> <span class="s">"0.0.1"</span>
+<span class="py">authors</span> <span class="p">=</span> <span class="p">[</span>
+  <span class="err">{</span> <span class="py">name</span><span class="p">=</span><span class="s">"Example Author"</span><span class="p">,</span> <span class="py">email</span><span class="p">=</span><span class="s">"author@example.com"</span> <span class="err">}</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="py">description</span> <span class="p">=</span> <span class="s">"A small example package"</span>
+<span class="py">readme</span> <span class="p">=</span> <span class="s">"README.md"</span>
+<span class="py">requires-python</span> <span class="p">=</span> <span class="py">"&gt;</span><span class="p">=</span><span class="mf">3.7</span><span class="s">"</span><span class="err">
+</span><span class="py">classifiers</span> <span class="p">=</span> <span class="p">[</span>
+    <span class="s">"Programming Language :: Python :: 3"</span><span class="p">,</span>
+    <span class="s">"License :: OSI Approved :: MIT License"</span><span class="p">,</span>
+    <span class="s">"Operating System :: OS Independent"</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="py">dependencies</span> <span class="p">=</span> <span class="p">[</span>
+  <span class="py">"numpy&gt;</span><span class="p">=</span><span class="mf">1.13</span><span class="err">.</span><span class="mi">3</span><span class="s">",</span><span class="err">
+</span><span class="p">]</span>
+
+<span class="nn">[project.urls]</span>
+<span class="py">"Homepage"</span> <span class="p">=</span> <span class="s">"https://github.com/pypa/sampleproject"</span>
+<span class="py">"Documentation"</span> <span class="p">=</span> <span class="s">"https://package.readthedocs.io/"</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Run the below commands to build your package:</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pip <span class="nb">install </span>build
+<span class="nv">$ </span>python <span class="nt">-m</span> build
+</code></pre></div></div>
+
+<ol>
+  <li>Upload your package to PyPi:</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>twine
+python <span class="nt">-m</span> twine upload dist/<span class="k">*</span>
+</code></pre></div></div>
+
+<p><a href="https://packaging.python.org/en/latest/tutorials/packaging-projects/">This official Python 3 tutorial</a> covers it all in a surprisingly simple way (use setuptools because everyone else is). <a href="https://scikit-hep.org/developer/pep621">This article</a> covers how to include dependencies. I don’t want to reinvent the wheel by explaining all the details, so take a look at that.</p>
+
+<h2 id="freezing-python-projects">Freezing Python Projects</h2>
+
+<p>Scenario: You want to package your entire Python program - external dependencies and all - into a single EXE file that others can run, <em>without</em> installing the program first (so it’s a standalone executable).</p>
+
+<p>Use <a href="https://pyinstaller.org/en/stable/">PyInstaller</a>. It’s more mature and widely used/maintained than all the other options out there. See <a href="https://pyinstaller.org/en/stable/usage.html">this article</a> for pretty much all the options you’ll ever need for any project setups.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pip <span class="nb">install </span>pyinstaller
+
+<span class="c"># Create one directory in the `dist` folder containing an executable</span>
+<span class="c"># Think of pyinstaller like this: When you run the generated EXE,</span>
+<span class="c"># it does whatever `python entry.py` would do, and nothing more.</span>
+<span class="nv">$ </span>pyinstaller entry.py <span class="nt">--name</span> <span class="s2">"My Cool Program"</span> <span class="nt">--icon</span> MY_APP_ICON.png
+
+<span class="c"># Bundle the entire Python program into one standalone EXE</span>
+<span class="c"># Note that this EXE will take a long time to launch! (It extracts the folder on every run)</span>
+<span class="nv">$ </span>pyinstaller entry.py <span class="nt">--onefile</span> <span class="nt">--name</span> <span class="s2">"My Cool Program"</span> <span class="nt">--icon</span> MY_APP_ICON.png
+
+<span class="c"># Fix PyInstaller if your program requires external data files</span>
+<span class="c"># Say you're running pyinstaller OUTSIDE of the module folder "my_module"</span>
+<span class="c"># and you need a bunch of images in a resource folder located at "my_module/data"</span>
+<span class="c"># while preserving any relative paths used by your Python code</span>
+<span class="nv">$ </span>pyinstaller entry.py <span class="nt">--add-data</span> <span class="s2">"my_module/data;data"</span> <span class="nt">--name</span> <span class="s2">"My Cool Program"</span> <span class="nt">--icon</span> MY_APP_ICON.png
+</code></pre></div></div>
+
+<p>There’s a different way to collect data files that works without manually specifying all of them. It’s really simple too, so if you have more than one data file/folder or the data folder has a long path, use this method! It’s given in the 2nd half of <a href="https://pyinstaller.org/en/stable/runtime-information.html">this article</a>.</p>
+
+<h2 id="making-a-windows-app-installer">Making a Windows App Installer</h2>
+
+<p>Scenario: You want to make an app like Discord or Google Chrome. Users need to install it first with a standalone installer, then they can run it however they want.</p>
+
+<p>Use <a href="https://jrsoftware.org/isdl.php">Inno Setup</a> on top of Pyinstaller.</p>
+
+<ol>
+  <li>Freeze the Python project (see above).</li>
+  <li>Install <a href="https://jrsoftware.org/isdl.php">Inno Setup</a> (yes it’s kinda meta, but install it like you would any other app). Launch it.</li>
+  <li>Use the Inno Setup Script Wizard to make an installation script. Select the EXE from PyInstaller, and the folder which contains that EXE as an additional required folder.</li>
+  <li>Save the script, compile it, and try out the generated installer!</li>
+</ol>
+
+<p>Note: If you’re trying to create files of some sort in your app (ex: for logging), <a href="https://social.msdn.microsoft.com/Forums/en-US/8ab21321-b19a-4acc-a8db-5ebaae114332/write-to-program-filesapplicationname-without-administrator-privileges?forum=vbgeneral">you’ll need to move those</a> into a different folder, separate from the application, for security reasons. This is what <code class="language-plaintext highlighter-rouge">AppData/Roaming</code> is for! (See <a href="https://learn.microsoft.com/en-us/archive/blogs/patricka/where-should-i-store-my-data-and-configuration-files-if-i-target-multiple-os-versions">this article</a>)</p>
+
+<p>As an extension to the above, you can make your program behave differently in source and bundled locations using PyInstaller’s generated run-time information:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">sys</span>
+<span class="k">if</span> <span class="nf">getattr</span><span class="p">(</span><span class="n">sys</span><span class="p">,</span> <span class="sh">'</span><span class="s">frozen</span><span class="sh">'</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span> <span class="ow">and</span> <span class="nf">hasattr</span><span class="p">(</span><span class="n">sys</span><span class="p">,</span> <span class="sh">'</span><span class="s">_MEIPASS</span><span class="sh">'</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">running in a PyInstaller bundle</span><span class="sh">'</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">running in a normal Python process</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>See <a href="https://pyinstaller.org/en/stable/runtime-information.html">their tutorial article</a> for details.</p>
+
+<p><a href="https://stackoverflow.com/questions/9960583/how-do-you-make-an-installer-for-your-python-program">Source</a></p>
+
+		
+			<i>Last updated: 09 April 2023</i>
+		
+		<p><i><a class="previous-page yes-link-fade" href="javascript:historyBackWithFallback()">Back to previous page</a></i></p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<!--
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/f/mwkzgglo" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a class="no-link-fade" href="mailto:kyle_fu@yahoo.com">kyle_fu@yahoo.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>(XXX) XXX-XXXX</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    (Private)<br />
+					
+					
+					    Sunnyvale,
+					
+					
+					    CA 
+					
+					
+					    <br />
+					
+					
+					    United States of America
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+-->
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+					
+						<li>
+							<a href="https://github.com/Giantpizzahead" class="icon alt fa-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+								<span class="label">GitHub</span>
+							</a>
+						</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						<li>
+							<a href="https://www.linkedin.com/in/kyle-fu-us/" class="icon alt fa-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+								<span class="label">LinkedIn</span>
+							</a>
+						</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						<li>
+							<a href="https://www.youtube.com/channel/UCqok9Akhd7R3u2jcTGph2oA" class="icon alt fa-youtube-play" target="_blank" rel="noopener noreferrer" aria-label="YouTube-Play">
+								<span class="label">YouTube-Play</span>
+							</a>
+						</li>
+					
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Kyle Fu @Giantpizzahead</li>
+				<li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
+				<li>Jekyll integration: <a href="http://andrewbanchi.ch" target="_blank">Andrew Banchich</a></li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="https://kylefu.me/assets/js/jquery.min.js"></script>
+	<script src="https://kylefu.me/assets/js/jquery.scrolly.min.js"></script>
+	<script src="https://kylefu.me/assets/js/jquery.scrollex.min.js"></script>
+	<script src="https://kylefu.me/assets/js/skel.min.js"></script>
+	<script src="https://kylefu.me/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="https://kylefu.me/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="https://kylefu.me/assets/js/main.js"></script>
+
+
+</body>
+
+</html>
