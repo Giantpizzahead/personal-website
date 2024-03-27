@@ -69,3 +69,27 @@ It tastes great! I've had some consistency issues, and they do add a bit of extr
 #### Scallion Pancake: 2/10
 
 It's not good. Too mushy, it feels more like mashed potatoes instead of a fried scallion pancake.
+
+### Bull Ohgane Korean BBQ
+
+#### Small dishes
+
+Glass noodles: 8.5/10.
+
+Gyoza: 5/10.
+
+Seaweed soup: 9/10, as long as you get soup only (avoid bits of meat).
+
+Tofu miso stew: Hot, decent. 6.5/10.
+
+#### Meat
+
+Marinated rib eye (bulgogi): Fast cook, a little stringy. 7/10.
+
+Seasoned pork belly: Medium-slow cook, stringy. 6.5/10.
+
+Pork belly: 6/10. I think they switched the meat.
+
+Ribeye steak: Slow cook, has some tough parts, but good overall. Unique flavor (steak-like). 7/10.
+
+Beef brisket: Fast cook, thin, not much flavor though. 6.5/10.

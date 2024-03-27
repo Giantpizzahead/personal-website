@@ -6,6 +6,8 @@ imagealt: Simmons Hall Dorm
 ---
 
 ## Optimal Route
+This no longer applies. Use the CSC Go app to choose the best room to go to (ideally 2 free washers).
+
 - Take B elevator (or stairs) from 10th to 7th floor. Check **765** (on the right, same side).
 - Take B elevator from 7th to 5th floor. Check **529** (across). No stair access!
 - Take B elevator from 5th to 3rd floor. Walk towards A tower (on the left). Check **346** (same side as elevator).
@@ -26,19 +28,19 @@ A and B towers are connected on the 7th floor, but *not* the C tower. All towers
 
 Going out of the middle tower elevator, A tower is on the left, C tower is on the right.
 
-(Room statuses last updated 4/30/23)
+(Room statuses last updated 1/29/24)
 
 ### 845
-Next to A tower elevator, going towards B tower. 2 washers, 2 dryers.
+Next to A tower elevator, going towards B tower. 2 washers, 2 dryers. Dryers are set to ? minutes.
 
 ### 765
-Next to B tower elevator/stairs, going towards C tower. 2 washers, 2 dryers.
+Next to B tower elevator/stairs, going towards C tower. 2 washers, 2 dryers. Dryers are set to 60 minutes.
 
 ### 676
-Far-ish from C tower elevator, going towards B tower. 2 washers, 2 dryers.
+Far-ish from C tower elevator, going towards B tower. 2 washers, 2 dryers. Dryers are set to 60 minutes.
 
 ### 529
-Right across from B tower elevator. 2 washers, 2 dryers.
+Right across from B tower elevator. 2 washers, 2 dryers. Dryers are set to 45 minutes.
 
 ### 346
-Next to A tower elevator, going towards B tower. 2 washers, 2 dryers.
+Next to A tower elevator, going towards B tower. 2 washers, 2 dryers. Dryers are set to 45 minutes.
