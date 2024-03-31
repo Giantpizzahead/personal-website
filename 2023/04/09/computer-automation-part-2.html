@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Computer Automation: Part 2 | Kyle Fu</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="https://kylefu.me//" class="logo"><strong>Kyle Fu</strong> <span>@Giantpizzahead</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+		
+        
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/about_me.html">About Me</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/wiki.html">Wiki</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/projects.html">Projects</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/allposts.html">All Posts</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="/showcase.html" class="button fit special">Showcase</a></li>
+		<!-- <li><a href="#" class="button fit">Log In</a></li> -->
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<div class="post-header">
+			<div class="text-part">
+				<header class="major">
+					<h1>Computer Automation: Part 2</h1>
+				</header>
+			
+				<div class="condensed">
+					<ol></li><li><a href="#accessibility-a-new-perspective">Accessibility: A New Perspective?</a><ul><li><a href="#windows-gui-automation-pywinauto">Windows GUI Automation: pywinauto</a></li></ul></li><li><a href="#sikulix-and-lackey"><a href="https://sikulix.github.io/">SikuliX</a> and <a href="https://github.com/glitchassassin/lackey">Lackey</a></a></ol>
+				</div>
+			</div>
+			<div class="image-part">
+				
+				<img src="/assets/img/computerautomation.jpeg" alt="Robot using a computer." style="height: 100%; width: 100%; margin: 0 1em 0 0"/>
+				
+			</div>
+		</div>
+		<h2 id="accessibility-a-new-perspective">Accessibility: A New Perspective?</h2>
+
+<p>According to the American Foundation for the Blind, nearly 27 million adult Americans (~10%) are blind. So, society has done <a href="%28https://www.afb.org/blindness-and-low-vision/using-technology/using-computer%29">amazing things</a> to ensure these people can still use a computer! A similar idea applies to <a href="https://abilitynet.org.uk/factsheets/hearing-loss-and-computing">those who are deaf</a>.</p>
+
+<p>Now, here’s the key insight. A computer program can control the mouse and keyboard, but current state-of-the-art methods have a hard time interpreting audio and video inputs. One way to think about this is that <strong>computers are partially blind</strong> - although they can “see” perfectly, they can’t interpret it easily, so assume that it can’t see at all. Then a whole suite of tools designed for visually impaired computer usage becomes available!</p>
+
+<p>Let’s start with this: <a href="https://www.afb.org/blindness-and-low-vision/using-technology/using-computer/part-ii-experienced-computer-user-new">For the Experienced Computer User with a New Visual Impairment (afb.org)</a>.</p>
+
+<h3 id="windows-gui-automation-pywinauto">Windows GUI Automation: pywinauto</h3>
+
+<p>Microsoft also provides an API for screen readers and other accessibility devices to use: <a href="https://learn.microsoft.com/en-us/dotnet/framework/ui-automation/ui-automation-overview">UI Automation Overview - .NET Framework | Microsoft Learn</a>.</p>
+
+<h4 id="initial-attempt">Initial Attempt</h4>
+
+<p>But I tried using the <a href="https://github.com/pywinauto/py_inspect">py_inspect.py</a> tool from <a href="https://github.com/pywinauto/pywinauto">pywinauto</a> - which is meant to determine whether certain GUI elements are visible in both UI Automation and an older Microsoft API for the same purpose - but it didn’t find anything. It’s probably because Discord’s desktop app is actually just a browser in the backend.</p>
+
+<p>Since Discord is considered a relatively simple modern web app to “automate” (relative to something like League), I doubt this UI Automation would work for most purposes. So rip Windows-specific UI Automation I guess :(</p>
+
+<h4 id="wait">Wait…</h4>
+
+<p>So I tried using <a href="https://github.com/blackrosezy/gui-inspect-tool/blob/master/Inspect.exe">Inspect.exe</a> on Discord and it gave me this…</p>
+
+<p><img src="https://i.gyazo.com/c3174f1f15cb56fcde38820c44378df1.png" alt="Discord popup when using a screen reader" /></p>
+
+<p>I clicked on a couple of the buttons and got this huge thing:</p>
+
+<p><img src="https://i.gyazo.com/29229928e2be9a66ccffe6606504b11d.png" alt="Info given when hovering over a Discord button" /></p>
+
+<p>And yes, I just got <a href="https://gyazo.com/">Gyazo</a> and am realizing how powerful it is. ;)</p>
+
+<p>So we <em>could</em> probably use UIA or other types to do this, but it wouldn’t generalize to other apps like League, so I’ll stick with image recognition UI automation.</p>
+
+<h2 id="sikulix-and-lackey"><a href="https://sikulix.github.io/">SikuliX</a> and <a href="https://github.com/glitchassassin/lackey">Lackey</a></h2>
+
+<p>“Don’t reinvent the wheel” is my motivation for trying to find new ways to do this whole UI automation thing (I’m also kinda lazy xd). This has gotta be something that tons of people need to do, right?</p>
+
+<p>Well, I found a pair of automation libraries that allow you to write scripts to automate graphical tasks. Or really, SikuliX, Lackey is just a port (ish) of that over to Python. Let’s see if it works - and if it’s easy enough to use.</p>
+
+<p>Here’s a <a href="https://www.swtestacademy.com/quick-start-to-sikulix/">tutorial</a> for the SikuliX IDE (the exact type of script writing tool I was looking for!).</p>
+
+<p><img src="https://i.gyazo.com/5d2ace585c3e38eefd65aefbb3990e7d.png" alt="Sample SikuliX script" /></p>
+
+<p><img src="https://i.gyazo.com/637a4807c8b3f8a925636bb952b2d89b.gif" alt="SikuliX script automatically opening League of Legends" /></p>
+
+<p><em>Oh my god.</em> This is literally exactly what I was looking for. Look at it go… it even saves the script in a nice little folder, for use with other apps… Love at first sight &lt;3</p>
+
+<p><img src="https://i.gyazo.com/095df59231a6321bcc5f33df984eae9a.png" alt="The auto-generated folder containing the script" /></p>
+
+<p>Well then. Now we just need to see if I can port it to Python…</p>
+
+<p>I looked around for a better option, but it looks like <a href="https://github.com/glitchassassin/lackey">Lackey</a> is the way to go - even though it hasn’t been maintained for 3 years now. Welp, I guess I’ll fork it and make it not deprecated.</p>
+
+		
+			<i>Last updated: 09 April 2023</i>
+		
+		<p><i><a class="previous-page yes-link-fade" href="javascript:historyBackWithFallback()">Back to previous page</a></i></p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<!--
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/f/mwkzgglo" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a class="no-link-fade" href="mailto:kyle_fu@yahoo.com">kyle_fu@yahoo.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>(XXX) XXX-XXXX</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    (Private)<br />
+					
+					
+					    Sunnyvale,
+					
+					
+					    CA 
+					
+					
+					    <br />
+					
+					
+					    United States of America
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+-->
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+					
+						<li>
+							<a href="https://github.com/Giantpizzahead" class="icon alt fa-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+								<span class="label">GitHub</span>
+							</a>
+						</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						<li>
+							<a href="https://www.linkedin.com/in/kyle-fu-us/" class="icon alt fa-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+								<span class="label">LinkedIn</span>
+							</a>
+						</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						<li>
+							<a href="https://www.youtube.com/channel/UCqok9Akhd7R3u2jcTGph2oA" class="icon alt fa-youtube-play" target="_blank" rel="noopener noreferrer" aria-label="YouTube-Play">
+								<span class="label">YouTube-Play</span>
+							</a>
+						</li>
+					
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Kyle Fu @Giantpizzahead</li>
+				<li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
+				<li>Jekyll integration: <a href="http://andrewbanchi.ch" target="_blank">Andrew Banchich</a></li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="https://kylefu.me/assets/js/jquery.min.js"></script>
+	<script src="https://kylefu.me/assets/js/jquery.scrolly.min.js"></script>
+	<script src="https://kylefu.me/assets/js/jquery.scrollex.min.js"></script>
+	<script src="https://kylefu.me/assets/js/skel.min.js"></script>
+	<script src="https://kylefu.me/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="https://kylefu.me/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="https://kylefu.me/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

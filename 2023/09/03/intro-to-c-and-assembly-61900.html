@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Intro to C and Assembly (6.1900) | Kyle Fu</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="https://kylefu.me//" class="logo"><strong>Kyle Fu</strong> <span>@Giantpizzahead</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+		
+        
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/about_me.html">About Me</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/wiki.html">Wiki</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/projects.html">Projects</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/allposts.html">All Posts</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="/showcase.html" class="button fit special">Showcase</a></li>
+		<!-- <li><a href="#" class="button fit">Log In</a></li> -->
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<div class="post-header">
+			<div class="text-part">
+				<header class="major">
+					<h1>Intro to C and Assembly (6.1900)</h1>
+				</header>
+			
+				<div class="condensed">
+					<ol></li><li><a href="#how-a-computer-runs-code">How a Computer Runs Code</a></li><li><a href="#c">C</a></li><li><a href="#assembly">Assembly</a></ol>
+				</div>
+			</div>
+			<div class="image-part">
+				
+			</div>
+		</div>
+		<p>This is a rough summary of 6.1900.</p>
+
+<h2 id="how-a-computer-runs-code">How a Computer Runs Code</h2>
+
+<p>Computers work in <strong>binary</strong> (base 2). Meaning can be assigned to these 1s and 0s (ex: the ASCII table’s mapping) to create useful programs. <strong>Hexadecimal</strong> (base 16) is often used to easier visualize binary numbers. Many decimal operations also apply to binary numbers, along with others like shifting the bits left or right, and there is the possibility of <strong>overflow</strong> (cutting off the number).</p>
+
+<p><strong>One’s complement</strong> (x if positive, else -x+1) is used to represent negative numbers. If the number range was -4 to 3, you could think of it like flipping across the vertical axis in a wheel with 8 entries: 0, 1, 2, 3, -4, -3, -2, and -1 going clockwise.</p>
+
+<p>Floating point numbers are represented in a <strong>scientific notation</strong>-like format. As a result, they suffer from roundoff issues.</p>
+
+<p><a href="https://gyazo.com/13aa44b66675a68b9a0e3817e71bebdd"><img src="https://i.gyazo.com/13aa44b66675a68b9a0e3817e71bebdd.png" alt="Image from Gyazo" /></a></p>
+
+<p>Memory model in RISC-V (and most CPUs):</p>
+
+<p><a href="https://gyazo.com/9551f388b5879089c4dafd4f33f3bafb"><img src="https://i.gyazo.com/9551f388b5879089c4dafd4f33f3bafb.png" alt="Image from Gyazo" /></a></p>
+
+<p>The stack is used when we know the memory size needed ahead of time / for general program execution info (like return addresses), whereas the heap allows for dynamic allocation of memory. Heap blocks created by malloc contain metadata at the top, like the size of the chunk, a pointer to the previous chunk, alignment bytes, and so on. Higher level languages abstract these details away, but in assembly you need to work with these and follow calling conventions.</p>
+
+<h2 id="c">C</h2>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// This is a comment.</span>
+<span class="cm">/*
+This is a multiline comment.
+*/</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="c1">  // Gives you access to printf()</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdint.h&gt;</span><span class="c1">  // Includes definitions in standard int C library.</span><span class="cp">
+#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="c1">  // Lets you manipulate c-strings</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="c1">  // Includes malloc() and free()</span><span class="cp">
+</span>
+<span class="c1">// Functions</span>
+<span class="kt">int</span> <span class="nf">double_num</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">sum</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">arr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">len</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">len</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">s</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">basic_syntax</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Variable types must be declared, memory is allocated according to type</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>  <span class="c1">// Reserves 32 bits in memory to hold a</span>
+    <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+    <span class="c1">// Conditionals</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"less</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"equal</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"more</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Loops</span>
+    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%d "</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+        <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%d "</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+
+    <span class="c1">// Arguments passed by value (makes a copy of the argument, doesn't alter original)</span>
+    <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">double_num</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"double_num(%d) = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+
+    <span class="c1">// Arrays</span>
+    <span class="kt">int</span> <span class="n">arr</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">};</span>  <span class="c1">// Elements must all be the same type</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">sum</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"arr[1] = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"sum(arr, 6) = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+
+    <span class="c1">// Types</span>
+    <span class="kt">float</span> <span class="n">f</span> <span class="o">=</span> <span class="mi">3</span><span class="p">.</span><span class="mi">14</span><span class="p">;</span>  <span class="c1">// 4 bytes</span>
+    <span class="kt">double</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">3</span><span class="p">.</span><span class="mi">1415</span><span class="p">;</span>  <span class="c1">// 8 bytes</span>
+    <span class="kt">char</span> <span class="n">s1</span> <span class="o">=</span> <span class="sc">'y'</span><span class="p">;</span>  <span class="c1">// 1 byte</span>
+    <span class="kt">char</span> <span class="n">s2</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"hello"</span><span class="p">;</span>
+
+    <span class="c1">// printf()</span>
+    <span class="c1">// %s = str, %d = int, %c = char, %x = hex, %p = ptr</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%3d, %6d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%3.0f in F is %7.1f in C</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="mi">619</span><span class="p">.</span><span class="mi">14</span><span class="p">,</span> <span class="p">(</span><span class="mi">619</span><span class="p">.</span><span class="mi">14</span><span class="o">-</span><span class="mi">32</span><span class="p">)</span><span class="o">*</span><span class="mi">5</span><span class="o">/</span><span class="mi">9</span><span class="p">);</span>
+
+    <span class="c1">// In C, / is integer division</span>
+    <span class="c1">// No built in exponent</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"-1 mod 10 = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="o">%</span> <span class="mi">10</span><span class="p">);</span>  <span class="c1">// Different from Python behavior!</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"x++ = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">x</span><span class="o">++</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"++x = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="o">++</span><span class="n">x</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">double_ptr</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">xptr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// *ptr = Dereference the pointer (get the value that the pointer points to)</span>
+    <span class="o">*</span><span class="n">xptr</span> <span class="o">=</span> <span class="o">*</span><span class="n">xptr</span> <span class="o">+</span> <span class="o">*</span><span class="n">xptr</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">pointer_intro</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Pointers</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="c1">// Use &amp; to get the address of a variable (pointer)</span>
+    <span class="n">double_ptr</span><span class="p">(</span><span class="o">&amp;</span><span class="n">x</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"after double_ptr(%p), x = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>  <span class="c1">// p is a pointer to an int</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>  <span class="c1">// p is assigned to address of a</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>  <span class="c1">// sets a = 1</span>
+    <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>  <span class="c1">// sets *p = x = 2 because *p points at memory location for x.</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"p = %p, &amp;a = %p</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"*p = %d, a = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
+
+    <span class="c1">// int8_t, uint8_t, int32_t, uint32_t</span>
+    <span class="c1">// Gives number of bits and signed/(u)nsigned</span>
+    <span class="c1">// Some operations behave differently based on signed or unsigned</span>
+<span class="p">}</span>
+
+<span class="c1">// Struct (public class)</span>
+<span class="k">struct</span> <span class="n">Subject</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">num_students</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+<span class="p">};</span>  <span class="c1">// This takes ~104 bytes of memory</span>
+
+<span class="kt">void</span> <span class="nf">struct_malloc</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Making a struct</span>
+    <span class="k">struct</span> <span class="n">Subject</span> <span class="n">my_class</span><span class="p">;</span>
+    <span class="n">my_class</span><span class="p">.</span><span class="n">num_students</span> <span class="o">=</span> <span class="mi">256</span><span class="p">;</span>
+    <span class="n">strcpy</span><span class="p">(</span><span class="n">my_class</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="s">"Intro to C and Assembly"</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%s has %d students</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">my_class</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">my_class</span><span class="p">.</span><span class="n">num_students</span><span class="p">);</span>
+
+    <span class="c1">// Using malloc (heap) and pointers</span>
+    <span class="k">struct</span> <span class="n">Subject</span><span class="o">*</span> <span class="n">c</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">my_class</span><span class="p">));</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Malloced size %lu</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">my_class</span><span class="p">));</span>
+    <span class="n">c</span><span class="o">-&gt;</span><span class="n">num_students</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">s1</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="s">"6."</span><span class="p">;</span>
+
+    <span class="c1">// String operations (also see strncpy, strcat, strstr, strtok, sprintf)</span>
+    <span class="kt">char</span> <span class="n">s2</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"1900"</span><span class="p">;</span>
+    <span class="n">strncat</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="n">strlen</span><span class="p">(</span><span class="n">s2</span><span class="p">));</span>
+    <span class="n">strcpy</span><span class="p">((</span><span class="o">*</span><span class="n">c</span><span class="p">).</span><span class="n">name</span><span class="p">,</span> <span class="n">s1</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%s has %d students</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">c</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">,</span> <span class="n">c</span><span class="o">-&gt;</span><span class="n">num_students</span><span class="p">);</span>
+    
+    <span class="c1">// Always free any malloc-ed pointers!</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">basic_syntax</span><span class="p">();</span>
+    <span class="n">pointer_intro</span><span class="p">();</span>
+    <span class="n">struct_malloc</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="assembly">Assembly</h2>
+
+<p>Assembly is designed to be directly implementable in hardware. Because of this, it’s very low level and tedious to code in, as the instruction set is made up of mostly “foundational” operations. There are a few instruction sets - search CISC vs RISC. We studied RISC-V.</p>
+
+<p><a href="https://www.cs.sfu.ca/~ashriram/Courses/CS295/assets/notebooks/RISCV/RISCV_CARD.pdf">RISC-V Reference Card</a></p>
+<ul>
+  <li>This contains many more instructions than were taught.</li>
+  <li>RISC-V has pseudoinstructions (aliases for a bunch of real instructions) that make coding a bit easier.</li>
+</ul>
+
+<p>In general, we have a bunch of registers, each with different purposes (mostly to keep with established standards and calling convention). We also have a bunch of instructions that execute linearly, meaning once an instruction is executed, the CPU will move to the next instruction - there is no idea of “nesting” in Assembly. Complex control flows are created using tests and conditional jumps.</p>
+
+<p>Example assembly program, following calling convention (sN registers saved by the callee, all other registers saved by the caller):</p>
+
+<p><a href="https://gyazo.com/4b47a0ed553b157b6f3027e94b4843d9"><img src="https://i.gyazo.com/4b47a0ed553b157b6f3027e94b4843d9.png" alt="Image from Gyazo" /></a></p>
+
+		
+			<i>Last updated: 03 September 2023</i>
+		
+		<p><i><a class="previous-page yes-link-fade" href="javascript:historyBackWithFallback()">Back to previous page</a></i></p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<!--
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/f/mwkzgglo" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a class="no-link-fade" href="mailto:kyle_fu@yahoo.com">kyle_fu@yahoo.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>(XXX) XXX-XXXX</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    (Private)<br />
+					
+					
+					    Sunnyvale,
+					
+					
+					    CA 
+					
+					
+					    <br />
+					
+					
+					    United States of America
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+-->
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+					
+						<li>
+							<a href="https://github.com/Giantpizzahead" class="icon alt fa-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+								<span class="label">GitHub</span>
+							</a>
+						</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						<li>
+							<a href="https://www.linkedin.com/in/kyle-fu-us/" class="icon alt fa-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+								<span class="label">LinkedIn</span>
+							</a>
+						</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						<li>
+							<a href="https://www.youtube.com/channel/UCqok9Akhd7R3u2jcTGph2oA" class="icon alt fa-youtube-play" target="_blank" rel="noopener noreferrer" aria-label="YouTube-Play">
+								<span class="label">YouTube-Play</span>
+							</a>
+						</li>
+					
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Kyle Fu @Giantpizzahead</li>
+				<li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
+				<li>Jekyll integration: <a href="http://andrewbanchi.ch" target="_blank">Andrew Banchich</a></li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="https://kylefu.me/assets/js/jquery.min.js"></script>
+	<script src="https://kylefu.me/assets/js/jquery.scrolly.min.js"></script>
+	<script src="https://kylefu.me/assets/js/jquery.scrollex.min.js"></script>
+	<script src="https://kylefu.me/assets/js/skel.min.js"></script>
+	<script src="https://kylefu.me/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="https://kylefu.me/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="https://kylefu.me/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

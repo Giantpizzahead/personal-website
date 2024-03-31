@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Python - Project Structure | Kyle Fu</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="https://kylefu.me//" class="logo"><strong>Kyle Fu</strong> <span>@Giantpizzahead</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+		
+        
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/about_me.html">About Me</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/wiki.html">Wiki</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/projects.html">Projects</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/allposts.html">All Posts</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="/showcase.html" class="button fit special">Showcase</a></li>
+		<!-- <li><a href="#" class="button fit">Log In</a></li> -->
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<div class="post-header">
+			<div class="text-part">
+				<header class="major">
+					<h1>Python - Project Structure</h1>
+				</header>
+			
+				<div class="condensed">
+					<ol></li><li><a href="#directory-structure">Directory Structure</a><ul><li><a href="#making-tests-work">Making Tests Work</a></li><li><a href="#larger-projects">Larger Projects</a></li></ul></li><li><a href="#sources">Sources</a></ol>
+				</div>
+			</div>
+			<div class="image-part">
+				
+				<img src="/assets/img/pythonlogo.webp" alt="" style="height: 100%; width: 100%; margin: 0 1em 0 0"/>
+				
+			</div>
+		</div>
+		<h2 id="directory-structure">Directory Structure</h2>
+
+<p>Basic project structure, as suggested by <a href="https://github.com/navdeep-G/samplemod">Kenneth Reitz’s Github repo</a>:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>README.rst
+LICENSE
+setup.py
+requirements.txt
+sample/__init__.py
+sample/core.py
+sample/helpers.py
+docs/conf.py
+docs/index.rst
+tests/test_basic.py
+tests/test_advanced.py
+</code></pre></div></div>
+
+<div class="tip-msg"><i class="fa fa-lightbulb-o"></i><strong style="margin-left: 0.15rem"> Tip</strong>
+<p>Don’t know which license to use? Try <a href="https://choosealicense.com/">choosealicense.com</a>!</p>
+</div>
+
+<h3 id="making-tests-work">Making Tests Work</h3>
+
+<p><a href="https://docs.pytest.org/en/7.1.x/explanation/goodpractices.html">This PyTest article</a> will answer all of your questions. Trust me.</p>
+
+<p>The below method is outdated and (probably) should be ignored.</p>
+
+<p>Copied from <a href="https://docs.python-guide.org/writing/structure/">https://docs.python-guide.org/writing/structure/</a></p>
+
+<p>To give individual tests import context (so they can access your module), create a tests/context.py file:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">os</span>
+<span class="kn">import</span> <span class="n">sys</span>
+<span class="n">sys</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">abspath</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">),</span> <span class="sh">'</span><span class="s">..</span><span class="sh">'</span><span class="p">)))</span>
+
+<span class="kn">import</span> <span class="n">mymodule</span>
+</code></pre></div></div>
+
+<p>Then, within the individual test modules, import the module like so:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">.context</span> <span class="kn">import</span> <span class="n">mymodule</span>
+</code></pre></div></div>
+
+<p>This will always work as expected, regardless of installation method.</p>
+
+<h3 id="larger-projects">Larger Projects</h3>
+
+<p>Copied from <a href="https://realpython.com/python-application-layouts/">https://realpython.com/python-application-layouts/</a></p>
+
+<p>A larger project structure with submodules and data files might look something like:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>helloworld/
+│
+├── bin/
+│
+├── docs/
+│   ├── hello.md
+│   └── world.md
+│
+├── helloworld/
+│   ├── __init__.py
+│   ├── runner.py
+│   ├── hello/
+│   │   ├── __init__.py
+│   │   ├── hello.py
+│   │   └── helpers.py
+│   │
+│   └── world/
+│       ├── __init__.py
+│       ├── helpers.py
+│       └── world.py
+│
+├── data/
+│   ├── input.csv
+│   └── output.xlsx
+│
+├── tests/
+│   ├── hello
+│   │   ├── helpers_tests.py
+│   │   └── hello_tests.py
+│   │
+│   └── world/
+│       ├── helpers_tests.py
+│       └── world_tests.py
+│
+├── .gitignore
+├── LICENSE
+└── README.md
+</code></pre></div></div>
+
+<h2 id="sources">Sources</h2>
+
+<ul>
+  <li><a href="https://docs.python-guide.org/writing/structure/">https://docs.python-guide.org/writing/structure/</a></li>
+  <li><a href="https://realpython.com/python-application-layouts/">https://realpython.com/python-application-layouts/</a></li>
+</ul>
+
+		
+			<i>Last updated: 17 December 2022</i>
+		
+		<p><i><a class="previous-page yes-link-fade" href="javascript:historyBackWithFallback()">Back to previous page</a></i></p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<!--
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/f/mwkzgglo" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a class="no-link-fade" href="mailto:kyle_fu@yahoo.com">kyle_fu@yahoo.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>(XXX) XXX-XXXX</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    (Private)<br />
+					
+					
+					    Sunnyvale,
+					
+					
+					    CA 
+					
+					
+					    <br />
+					
+					
+					    United States of America
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+-->
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+					
+						<li>
+							<a href="https://github.com/Giantpizzahead" class="icon alt fa-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+								<span class="label">GitHub</span>
+							</a>
+						</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						<li>
+							<a href="https://www.linkedin.com/in/kyle-fu-us/" class="icon alt fa-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+								<span class="label">LinkedIn</span>
+							</a>
+						</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						<li>
+							<a href="https://www.youtube.com/channel/UCqok9Akhd7R3u2jcTGph2oA" class="icon alt fa-youtube-play" target="_blank" rel="noopener noreferrer" aria-label="YouTube-Play">
+								<span class="label">YouTube-Play</span>
+							</a>
+						</li>
+					
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Kyle Fu @Giantpizzahead</li>
+				<li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
+				<li>Jekyll integration: <a href="http://andrewbanchi.ch" target="_blank">Andrew Banchich</a></li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="https://kylefu.me/assets/js/jquery.min.js"></script>
+	<script src="https://kylefu.me/assets/js/jquery.scrolly.min.js"></script>
+	<script src="https://kylefu.me/assets/js/jquery.scrollex.min.js"></script>
+	<script src="https://kylefu.me/assets/js/skel.min.js"></script>
+	<script src="https://kylefu.me/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="https://kylefu.me/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="https://kylefu.me/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

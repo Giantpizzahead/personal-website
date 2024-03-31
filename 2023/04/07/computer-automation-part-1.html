@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Computer Automation: Part 1 | Kyle Fu</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="https://kylefu.me//" class="logo"><strong>Kyle Fu</strong> <span>@Giantpizzahead</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+		
+        
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/about_me.html">About Me</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/wiki.html">Wiki</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/projects.html">Projects</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/allposts.html">All Posts</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="/showcase.html" class="button fit special">Showcase</a></li>
+		<!-- <li><a href="#" class="button fit">Log In</a></li> -->
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<div class="post-header">
+			<div class="text-part">
+				<header class="major">
+					<h1>Computer Automation: Part 1</h1>
+				</header>
+			
+				<div class="condensed">
+					<ol></li><li><a href="#what-is-computer-automation">What is Computer Automation?</a></li><li><a href="#past-attempts">Past Attempts</a><ul><li><a href="#alphalol">AlphaLoL</a></li><li><a href="#auto-league-closer">Auto League Closer</a></li><li><a href="#judgelite">JudgeLite</a></li><li><a href="#lofi-girl">Lofi Girl</a></li><li><a href="#various-scriptsmacros">Various Scripts/Macros</a></li></ul></ol>
+				</div>
+			</div>
+			<div class="image-part">
+				
+				<img src="/assets/img/computerautomation.jpeg" alt="A physical robot trying to use a laptop." style="height: 100%; width: 100%; margin: 0 1em 0 0"/>
+				
+			</div>
+		</div>
+		<h2 id="what-is-computer-automation">What is Computer Automation?</h2>
+
+<p>I’m defining computer automation as anything that involves writing new computer code to <strong>automatically do things in existing computer programs</strong>. Specifically, this could mean many things, such as:</p>
+
+<ul>
+  <li>Scheduling a computer shutdown (ex: turn off after 2 hours)</li>
+  <li>Creating a new text file on the Desktop using pure code</li>
+  <li>Opening Notepad, typing some text, then saving the file</li>
+  <li>Using text-to-speech to read out the contents of a Word document</li>
+  <li>Opening Discord’s desktop app and reading/responding to unread DMs</li>
+  <li>Searching for the latest fashion trends on Google</li>
+  <li>Completing a basic math course on Khan Academy’s website</li>
+  <li>Playing a Coop vs. AI game as mid in League of LegendsJu</li>
+  <li>Streaming yourself playing League in a Discord voice call</li>
+  <li><strong>Being a “smart chatbot” by doing things that humans do</strong>
+    <ul>
+      <li>Read messages or hear chatter, then react by doing the appropriate things, like replying, searching on Google, opening League and inviting someone else to the party, streaming in Discord, etc.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>As you can see, this definition is super broad - the things listed above are ordered from trivial to practically impossible (or is it?). In fact, it can be argued that a lot of existing computer programs do “computer automation” tasks:</p>
+
+<ul>
+  <li>Mail apps pool all your accounts into one area so you don’t have to check each individual one</li>
+  <li>Antivirus apps check all your files for viruses so you don’t have to do it manually</li>
+  <li>Window’s search feature (on the taskbar) pools a bunch of info into one area, saving you time</li>
+</ul>
+
+<p>And well… I’ve also done a lot of it in the past. With mixed results. That’s what Part 1 of this series of blog posts will cover. In future parts, I’ll log my progress on computer automation, hopefully sharing a bunch of cool applications along the way.</p>
+
+<p>Enough introductions. Let’s get going!</p>
+
+<h2 id="past-attempts">Past Attempts</h2>
+
+<p>Ok, so I may have gotten lazy and just realized that this part of the post doesn’t really contribute anything. So I’ll just link my past projects here without explanation, and skip to the good stuff (Part 2 and above).</p>
+
+<h3 id="alphalol">AlphaLoL</h3>
+
+<p>This is probably my most comprehensive automation attempt so far. It’s a bot that can play League of Legends automatically at a… semi-passable level. It can beat Intro bots easily. It can also 1v1 <em>most</em> Beginner bots, minus ones that are skillshot-heavy.</p>
+
+<p>It’s coded using computer vision techniques with OpenCV and OCR, along with some manual AI logic. I’m looking to expand this further so that more of the code uses deep learning :o</p>
+
+<p><a href="https://github.com/Giantpizzahead/AlphaLoL">https://github.com/Giantpizzahead/AlphaLoL</a></p>
+
+<h3 id="auto-league-closer">Auto League Closer</h3>
+
+<p>A mock program that automatically closes League by forcibly moving your mouse whenever it’s running.</p>
+
+<p><a href="https://github.com/Giantpizzahead/auto-league-closer">https://github.com/Giantpizzahead/auto-league-closer</a></p>
+
+<h3 id="judgelite">JudgeLite</h3>
+
+<p>Automatically compiles and judges code to see if it passes a bunch of test cases. Made for competitive programming (think USACO or ICPC).</p>
+
+<p><a href="https://github.com/Giantpizzahead/judgelite">https://github.com/Giantpizzahead/judgelite</a></p>
+
+<h3 id="lofi-girl">Lofi Girl</h3>
+
+<p>Basically a private Discord bot that serves as a music player (since Discord/YouTube tried to remove all the music bots for their own Activity thing). Wasn’t much work though, I just used a pre-coded bot online (something like <a href="https://github.com/jagrosh/MusicBot">this</a>, but not that exact one).</p>
+
+<h3 id="various-scriptsmacros">Various Scripts/Macros</h3>
+
+<p>You know, the typical “home automation” type stuff, but for computers. Things like turning on/off the computer at set times, opening a reminder window every week at 9 AM, etc.</p>
+
+		
+			<i>Last updated: 07 April 2023</i>
+		
+		<p><i><a class="previous-page yes-link-fade" href="javascript:historyBackWithFallback()">Back to previous page</a></i></p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<!--
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/f/mwkzgglo" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a class="no-link-fade" href="mailto:kyle_fu@yahoo.com">kyle_fu@yahoo.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>(XXX) XXX-XXXX</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    (Private)<br />
+					
+					
+					    Sunnyvale,
+					
+					
+					    CA 
+					
+					
+					    <br />
+					
+					
+					    United States of America
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+-->
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+					
+						<li>
+							<a href="https://github.com/Giantpizzahead" class="icon alt fa-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+								<span class="label">GitHub</span>
+							</a>
+						</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						<li>
+							<a href="https://www.linkedin.com/in/kyle-fu-us/" class="icon alt fa-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+								<span class="label">LinkedIn</span>
+							</a>
+						</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						<li>
+							<a href="https://www.youtube.com/channel/UCqok9Akhd7R3u2jcTGph2oA" class="icon alt fa-youtube-play" target="_blank" rel="noopener noreferrer" aria-label="YouTube-Play">
+								<span class="label">YouTube-Play</span>
+							</a>
+						</li>
+					
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Kyle Fu @Giantpizzahead</li>
+				<li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
+				<li>Jekyll integration: <a href="http://andrewbanchi.ch" target="_blank">Andrew Banchich</a></li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="https://kylefu.me/assets/js/jquery.min.js"></script>
+	<script src="https://kylefu.me/assets/js/jquery.scrolly.min.js"></script>
+	<script src="https://kylefu.me/assets/js/jquery.scrollex.min.js"></script>
+	<script src="https://kylefu.me/assets/js/skel.min.js"></script>
+	<script src="https://kylefu.me/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="https://kylefu.me/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="https://kylefu.me/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Python - Fast Screen Capture | Kyle Fu</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="https://kylefu.me//" class="logo"><strong>Kyle Fu</strong> <span>@Giantpizzahead</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+		
+        
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/">Home</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/about_me.html">About Me</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/wiki.html">Wiki</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/projects.html">Projects</a></li>
+		    
+		
+		    
+		        <li><a href="https://kylefu.me/allposts.html">All Posts</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="/showcase.html" class="button fit special">Showcase</a></li>
+		<!-- <li><a href="#" class="button fit">Log In</a></li> -->
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<div class="post-header">
+			<div class="text-part">
+				<header class="major">
+					<h1>Python - Fast Screen Capture</h1>
+				</header>
+			
+				<div class="condensed">
+					<ol></li><li><a href="#code">Code</a></li><li><a href="#windows">Windows</a><ul><li><a href="#results">Results</a></li><li><a href="#details">Details</a></li></ul></li><li><a href="#mac">Mac</a><ul><li><a href="#results-1">Results</a></li><li><a href="#details-1">Details</a></li></ul></li><li><a href="#linux">Linux</a></li><li><a href="#remarks">Remarks</a></ol>
+				</div>
+			</div>
+			<div class="image-part">
+				
+				<img src="/assets/img/camera.jpeg" alt="" style="height: 100%; width: 100%; margin: 0 1em 0 0"/>
+				
+			</div>
+		</div>
+		<h2 id="code">Code</h2>
+<p>The below methods were called a variable number of times in each run (30-360 frames). Multiple runs were used to find the average speed of each method. For more detail on the benchmarking process, see this <a href="https://github.com/Giantpizzahead/natural-learning/tree/main/screenshot-speed">Github link</a>.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">"""</span><span class="s"> =============================== Pillow  =============================== </span><span class="sh">"""</span>
+<span class="kn">from</span> <span class="n">PIL</span> <span class="kn">import</span> <span class="n">ImageGrab</span>
+<span class="k">def</span> <span class="nf">get_screenshot</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">ImageGrab</span><span class="p">.</span><span class="nf">grab</span><span class="p">(</span><span class="n">bbox</span><span class="o">=</span><span class="n">BBOX</span><span class="p">)</span>
+
+
+<span class="sh">"""</span><span class="s"> ===============================   MSS   =============================== </span><span class="sh">"""</span>
+<span class="kn">import</span> <span class="n">mss</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="n">sct</span> <span class="o">=</span> <span class="n">mss</span><span class="p">.</span><span class="nf">mss</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">get_screenshot</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="nf">asarray</span><span class="p">(</span><span class="n">sct</span><span class="p">.</span><span class="nf">grab</span><span class="p">(</span><span class="n">sct</span><span class="p">.</span><span class="n">monitors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">BBOX</span> <span class="k">else</span> <span class="n">BBOX</span><span class="p">))</span>
+
+
+<span class="sh">"""</span><span class="s"> ===============================  DXcam  =============================== </span><span class="sh">"""</span>
+<span class="kn">import</span> <span class="n">dxcam</span>
+<span class="n">camera</span> <span class="o">=</span> <span class="n">dxcam</span><span class="p">.</span><span class="nf">create</span><span class="p">()</span>
+<span class="c1"># Video mode was turned to False for the UFO 60FPS test to test
+# DXcam's raw video capture speed, without cache optimizations.
+</span><span class="n">camera</span><span class="p">.</span><span class="nf">start</span><span class="p">(</span><span class="n">target_fps</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">video_mode</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="n">BBOX</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">get_screenshot</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">camera</span><span class="p">.</span><span class="nf">get_latest_frame</span><span class="p">()</span>
+
+
+<span class="sh">"""</span><span class="s"> =============================== np.sum  =============================== </span><span class="sh">"""</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="n">screenshot</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">asarray</span><span class="p">(</span><span class="sh">"</span><span class="s">Taken using MSS, not counted in time taken</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">get_screenshot</span><span class="p">():</span>
+    <span class="c1"># Simulating iteration over all pixels
+</span>    <span class="n">total</span> <span class="o">=</span> <span class="n">screenshot</span><span class="p">.</span><span class="nf">sum</span><span class="p">()</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Sum of pixel values:</span><span class="sh">"</span><span class="p">,</span> <span class="n">total</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">screenshot</span>
+</code></pre></div></div>
+
+<h2 id="windows">Windows</h2>
+
+<div class="tip-msg"><i class="fa fa-lightbulb-o"></i><strong style="margin-left: 0.15rem"> Tip</strong>
+<p>TLDR; Use <a href="https://github.com/ra1nty/DXcam">DXcam</a>. Expect ~100 FPS for mid tier PCs.</p>
+</div>
+
+<p>DXcam grabs the raw screen faster, and has optimizations if the image doesn’t always change. <a href="https://github.com/BoboTiG/python-mss">MSS</a> is fine for cross-platform and ease of use, but will be about 3 times slower on Windows.</p>
+
+<h3 id="results">Results</h3>
+
+<p>FPS is displayed as mean ± σ. Results on a mid tier 1920x1200 Windows laptop:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Test Type</th>
+      <th>Pillow</th>
+      <th>MSS</th>
+      <th>DXcam</th>
+      <th>np.sum(screen)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Static</td>
+      <td>27 ± 0.5</td>
+      <td>29 ± 0.1</td>
+      <td><strong>170 ± 3.4*</strong></td>
+      <td>~650</td>
+    </tr>
+    <tr>
+      <td>Dynamic</td>
+      <td>22 ± 1.4</td>
+      <td>28 ± 0.7</td>
+      <td><strong>96 ± 9.2*</strong></td>
+      <td>~650</td>
+    </tr>
+    <tr>
+      <td>UFO 60FPS</td>
+      <td>~19</td>
+      <td>~25</td>
+      <td><strong>~60</strong></td>
+      <td>~650</td>
+    </tr>
+    <tr>
+      <td>Small Region</td>
+      <td>27 ± 0.7</td>
+      <td>57 ± 0.3</td>
+      <td><strong>387 ± 11.4*</strong></td>
+      <td>~5000</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>np.sum(screen) serves as a baseline. It measures how many times Numpy can iterate through the whole image in one second.</p>
+
+<p>*See details.</p>
+
+<h3 id="details">Details</h3>
+
+<p>DXcam has a lot of optimizations, including only processing / outputting new frames when something’s changed (along with a “video mode” that kind of? controls this feature). This makes it hard to compare with the others objectively. But overall, DXcam is much faster than both of the other options, both in terms of capturing the raw screen and real usage. So just use it on Windows.</p>
+
+<p>Use MSS on Mac and Linux (maybe Windows to trade ease of use with a noticeable speed decrease) if you need cross compatability.</p>
+
+<p>The above FPS values aren’t 100% accurate, due to minor testing issues / oversights. The overall trend is definitely right though.</p>
+
+<h2 id="mac">Mac</h2>
+<div class="tip-msg"><i class="fa fa-lightbulb-o"></i><strong style="margin-left: 0.15rem"> Tip</strong>
+<p>TLDR; Use <a href="https://github.com/BoboTiG/python-mss">MSS</a>. ~50 FPS on a MacBook Air (M1, 2020).</p>
+</div>
+
+<p>MSS is 15-20 times faster than Pillow, and I couldn’t find any better options. It can also be sped up by grabbing specific screen regions.</p>
+
+<h3 id="results-1">Results</h3>
+
+<p>FPS is displayed as mean ± σ. Results on an MacBook Air (M1, 2020):</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Test Type</th>
+      <th>Pillow</th>
+      <th>MSS</th>
+      <th>np.sum(screen)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Dynamic</td>
+      <td>2.8 ± 0.0</td>
+      <td><strong>47 ± 1.2</strong></td>
+      <td>260 ± 7.0</td>
+    </tr>
+    <tr>
+      <td>Small Region</td>
+      <td>2.6 ± 0.1</td>
+      <td><strong>61 ± 1.1</strong></td>
+      <td>639 ± 47</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>np.sum(screen) serves as a baseline. It measures how many times Numpy can iterate through the whole image in one second.</p>
+
+<p>Both static and dynamic screens were tested, but the results were very similar (neither library optimizes for still images), so I only included the dynamic results.</p>
+
+<h3 id="details-1">Details</h3>
+
+<p>So, Mac has a Retina display, which means the displayed resolution is doubled from
+the <em>virtual</em> resolution. That is, for all intents and purposes, treat a 2800 x 1800
+Mac screen as 1400 x 900. (The retina part is ONLY for making the display look better.)</p>
+
+<p>Virtual = Normal resolution, Retina = Double resolution
+Both screenshot libraries use virtual resolution to specify the desired region to grab.
+Then they used different methods to handle the retina resolution:</p>
+
+<p>Pillow - If no region is specified, Pillow uses (0, 0, retina width, retina height).
+First, Pillow uses screencapture (Mac commandline tool) to grab the <em>virtual resolution</em> region
+of the screen, returning that region in <em>retina resolution</em>. Then, Pillow resizes that image into
+the specified region size, and returns it. All in all, you specify a virtual res size, and Pillow
+returns an image of that virtual res size. But if you don’t specify a region, a retina res version
+of the screen is returned.</p>
+
+<p>MSS - If no region is specified, MSS uses (0, 0, virtual width, virtual height).
+Luckily, MSS is straightforward. Query a virtual res region, and the returned image will be retina res.</p>
+
+<p>Basically, just use MSS. I’m noting down the technical details here for completeness’s sake.</p>
+
+<h2 id="linux">Linux</h2>
+
+<p>I’m going to generalize Mac results to Linux, since a brief search yielded no methods that were advertised as “fast”. Suggesting that <a href="https://github.com/BoboTiG/python-mss">MSS</a> is likely still the best choice.</p>
+
+<h2 id="remarks">Remarks</h2>
+
+<p>This article was written in February 2023. There could be better tools out there now. And I’m pretty sure the Linux generalization is probably wrong. If there are any new tools (or ones I missed), I’d love to hear about it!</p>
+
+		
+			<i>Last updated: 18 February 2023</i>
+		
+		<p><i><a class="previous-page yes-link-fade" href="javascript:historyBackWithFallback()">Back to previous page</a></i></p>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<!--
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/f/mwkzgglo" method="POST">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="reset" value="Clear" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a class="no-link-fade" href="mailto:kyle_fu@yahoo.com">kyle_fu@yahoo.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<span>(XXX) XXX-XXXX</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					    (Private)<br />
+					
+					
+					    Sunnyvale,
+					
+					
+					    CA 
+					
+					
+					    <br />
+					
+					
+					    United States of America
+					
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+-->
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+					
+						<li>
+							<a href="https://github.com/Giantpizzahead" class="icon alt fa-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+								<span class="label">GitHub</span>
+							</a>
+						</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						<li>
+							<a href="https://www.linkedin.com/in/kyle-fu-us/" class="icon alt fa-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+								<span class="label">LinkedIn</span>
+							</a>
+						</li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+						<li>
+							<a href="https://www.youtube.com/channel/UCqok9Akhd7R3u2jcTGph2oA" class="icon alt fa-youtube-play" target="_blank" rel="noopener noreferrer" aria-label="YouTube-Play">
+								<span class="label">YouTube-Play</span>
+							</a>
+						</li>
+					
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Kyle Fu @Giantpizzahead</li>
+				<li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
+				<li>Jekyll integration: <a href="http://andrewbanchi.ch" target="_blank">Andrew Banchich</a></li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="https://kylefu.me/assets/js/jquery.min.js"></script>
+	<script src="https://kylefu.me/assets/js/jquery.scrolly.min.js"></script>
+	<script src="https://kylefu.me/assets/js/jquery.scrollex.min.js"></script>
+	<script src="https://kylefu.me/assets/js/skel.min.js"></script>
+	<script src="https://kylefu.me/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="https://kylefu.me/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="https://kylefu.me/assets/js/main.js"></script>
+
+
+</body>
+
+</html>
