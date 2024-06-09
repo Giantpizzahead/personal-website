@@ -24,7 +24,9 @@ See the [habits cheat sheet](https://s3.amazonaws.com/jamesclear/Atomic+Habits/H
 	- If you get 1% better each day, you will end up nearly 37 times better after 1 year.
 - Habits can work for you *or* against you! Bad habits exist too.
 - **Plateau of Latent Potential: The observable results of our efforts are often delayed.**
-	- This is why it's so hard to stick to habits (no instant gratification).![Plateau of Latent Potential](https://miro.medium.com/v2/resize:fit:705/1*u7aERFwzRl0d8u_OzzOZcw.jpeg)
+	- This is why it's so hard to stick to habits (no instant gratification).
+
+![Plateau of Latent Potential](https://miro.medium.com/v2/resize:fit:705/1*u7aERFwzRl0d8u_OzzOZcw.jpeg){:width="500"}
 
 - **You do not rise to the level of your goals. You fall to the level of your systems.**
 	- Think about it: Winners and losers have the same goals. So something else must be different.
@@ -69,7 +71,8 @@ See the [habits cheat sheet](https://s3.amazonaws.com/jamesclear/Atomic+Habits/H
 	- Response: The actual habit performed, which could be a thought or an action.
 	- Reward: Something positive you get or feel after doing the response.
 	- Cue and Craving form the problem phase. Response and Reward form the solution phase.
-![The Habit Loop](https://jamesclear.com/wp-content/uploads/2013/02/The-habit-loop-01-e1537283945960.png)
+
+![The Habit Loop](https://jamesclear.com/wp-content/uploads/2013/02/The-habit-loop-01-e1537283945960.png){:width="400"}
 
 - Examples of habits and their feedback loops:
 	- Your phone buzzes with a new text message (Cue). You want to see what the contents (Craving). You grab your phone and read the text (Response). You satisfy your craving to read the message. Grabbing your phone becomes associated with your phone buzzing (Reward).
@@ -123,7 +126,8 @@ See the [habits cheat sheet](https://s3.amazonaws.com/jamesclear/Atomic+Habits/H
 	- Allows you to join habits together, building a routine.
 	- Formula: **"After I [current habit], I will [new habit]."**
 	- For best results, make the cue highly specific and immediately actionable.
-![Habit Stacking](https://yuyangyy.com/blog/assets/img/posts/20210114-habit-stacking.png)
+
+![Habit Stacking](https://yuyangyy.com/blog/assets/img/posts/20210114-habit-stacking.png){:width="400"}
 
 - Use the Habit Stacking exercise by making two lists:
 	- The first for all habits you do daily without fail (ex: Getting out of bed, eating lunch).
@@ -149,7 +153,7 @@ See the [habits cheat sheet](https://s3.amazonaws.com/jamesclear/Atomic+Habits/H
 - The inversion of the 1st Law of Behavior Change is to **make it invisible**.
 - Once a habit is formed, it is unlikely to be forgotten.
 	- Once you're used to a habit (good or bad), it's nearly impossible to remove, but it does get less strong over time.
-- People with high "discipline" or self-control do not have better willpower. Instead, they are better at structuring their lives in a way that does not require willpower and self-control.
+- People with high "discipline" or self-control do not necessarily have better willpower. Instead, they can also be better at structuring their lives in a way that does not require willpower and self-control.
 	- **People with high self-control spend less time in tempting situations.**
 	- It's easier to avoid temptation than resist it.
 - **One of the most practical ways to eliminate a bad habit is to reduce exposure to the cue that causes it.**
@@ -169,7 +173,8 @@ See the [habits cheat sheet](https://s3.amazonaws.com/jamesclear/Atomic+Habits/H
 - **It is the anticipation of a reward - not the fulfillment of it - that gets us to take action.**
 	- The greater the anticipation, the greater the dopamine spike.
 	- Our brains eventually learn to predict the right amount of reward, moving the full dopamine spike to the craving.
-![The Dopamine Spike](https://miro.medium.com/v2/resize:fit:1284/1*lFxyt50FvkULytZdBcmpLg.png)
+
+![The Dopamine Spike](https://miro.medium.com/v2/resize:fit:1284/1*lFxyt50FvkULytZdBcmpLg.png){:width="400"}
 
 - **Temptation bundling** is one way to make your habits more attractive.
 	- Pair an action you want to do with an action you need to do.
@@ -232,7 +237,8 @@ See the [habits cheat sheet](https://s3.amazonaws.com/jamesclear/Atomic+Habits/H
 	- You don't need to map out every feature of a new habit. You just need to practice it.
 	- At the start, a lot of effort is needed (A). Then, it gets easier, but still needs attention (B).
 	- With enough reps, automaticity takes over (C). Beyond the habit line, it can be done more or less without thinking.
-![The Habit Line](https://millennialinchief.com/wp-content/uploads/2023/03/61a9a8c19027ddd04438058c_the-habit-line.png)
+
+![The Habit Line](https://millennialinchief.com/wp-content/uploads/2023/03/61a9a8c19027ddd04438058c_the-habit-line.png){:width="400"}
 
 ### 12. The Law of Least Effort
 
@@ -254,7 +260,8 @@ See the [habits cheat sheet](https://s3.amazonaws.com/jamesclear/Atomic+Habits/H
 - Many habits occur at **decisive moments** - choices that are like a fork in the road - and either send you in the direction of a good day or a bad one.
 	- Ex: When you get home, you can choose to workout, sleep, or play games. That decisive moment shapes everything else.
 	- Habits are the entry point, not the end point. They are the cab to the gym, not the gym itself.
-![Decisive Moments](https://lh3.googleusercontent.com/XU9Y4ChK9TcD4S1NbjXBXFzeM4h5yz9AHPJXaA-6R-Gge8koK9Z82FNJuNLY5wetfaAvrOnSctKQO1DETCyPG09j-DNjGVd4UdmtNHSNgMUilbr5LfeqO-su6BrO4tyKqQka5JsU)
+
+![Decisive Moments](https://lh3.googleusercontent.com/XU9Y4ChK9TcD4S1NbjXBXFzeM4h5yz9AHPJXaA-6R-Gge8koK9Z82FNJuNLY5wetfaAvrOnSctKQO1DETCyPG09j-DNjGVd4UdmtNHSNgMUilbr5LfeqO-su6BrO4tyKqQka5JsU){:width="500"}
 
 - **The Two-Minute Rule:** When you start a new habit, it should take less than 2 minutes to do.
 	- Helps keep you from starting too big. Always start small!
@@ -368,7 +375,8 @@ See the [habits cheat sheet](https://s3.amazonaws.com/jamesclear/Atomic+Habits/H
 
 - **The Goldilocks Rule:** Humans experience peak motivation when working on tasks that are right on the edge of their current abilities.
 	- If something is too easy, you'll get bored. If it's too hard, you'll get frustrated.
-![The Goldilocks Rule](https://media.licdn.com/dms/image/C5612AQHYVH8ZvxaptA/article-cover_image-shrink_720_1280/0/1604256775479?e=2147483647&v=beta&t=3m7enFAew7e3PRQXfe6GlW5d5e-KpD8EiljLrC7YNPY)
+
+![The Goldilocks Rule](https://media.licdn.com/dms/image/C5612AQHYVH8ZvxaptA/article-cover_image-shrink_720_1280/0/1604256775479?e=2147483647&v=beta&t=3m7enFAew7e3PRQXfe6GlW5d5e-KpD8EiljLrC7YNPY){:width="500"}
 
 - **The greatest threat to success is not failure but boredom.**
 	- Most habit-forming products provide continuous novelty. Ex: Video games.
@@ -392,7 +400,8 @@ See the [habits cheat sheet](https://s3.amazonaws.com/jamesclear/Atomic+Habits/H
 - **Habits + Deliberate Practice = Mastery.**
 	- Certain skills do need to become automatic, but you need to keep practicing.
 	- Mastery: Focus on a tiny element of success, internalize it, then use that habit to advance to the next element. Repeat.
-![Mastering a Field](https://yuyangyy.com/blog/assets/img/posts/20210114-master-a-field.png)
+
+![Mastering a Field](https://yuyangyy.com/blog/assets/img/posts/20210114-master-a-field.png){:width="400"}
 
 - Reflection and review allows you to remain conscious of your performance over time.
 	- Ex: Basketball players who were told to improve by 1 percent each season.
@@ -428,3 +437,23 @@ See the [habits cheat sheet](https://s3.amazonaws.com/jamesclear/Atomic+Habits/H
 	- Desire initiates. Pleasure sustains.
 - Hope declines with experience and is replaced by acceptance.
 	- One reason why we continuously want the latest tips/tricks.
+
+## Criticisms of Atomic Habits
+
+June 2024: This brief addendum addresses when the concepts covered in the book aren't very useful, can't be applied directly, or are just plain wrong. It draws from my personal experiences since reading the book, the relevant [If Books Could Kill](https://www.buzzsprout.com/2040953/13042014-atomic-habits) podcast episode, and [this blog post](https://thewallflowerdigest.co.uk/life/my-problem-with-atomic-habits-by-james-clear/).
+
+### Things Change
+
+Life happens. You might choose to go on vacation or go on summer break for school. Then what happens to your habits? It's hard to consistently do homework when there is no homework to do! Does that mean you then need to rebuild your habits every year? Having self-discipline and the energy/ability to adjust to new situations is just as important, if not more so, than being able to build up and maintain habits. The book conveniently fails to mention any of these situations.
+
+### Consistency Doesn't Always Work
+
+Not all habits can be packaged up into incremental, consistent steps. The amount of homework one has can vary a lot from day to day, and since it's (mostly) required, it's hard to incrementally build up the work you need to do. Some habits may only be done on weekdays, or only need to be done weekly. These non-daily habits don't work nearly as well with the Atomic Habits model. Again, though ideas like making the habit attractive and satisfying are still good, the book makes an effort to avoid mentioning these types of habits completely.
+
+### Discipline Matters
+
+One of the ideas in the book - that "discipline" really just means knowing how to avoid temptation - is just plain wrong. Just think of any military bootcamp and this becomes immediately clear. Self-discipline is a vital skill, and it does involve knowing how to resist temptations. Some of the ideas in the book can help with that, but willpower is still the key, and we know that willpower is like a muscle - it can be trained. Even in the specific, daily habits that the book mentions, willpower is still needed to setup systems in the first place (although admittedly less so). Make temptations work for you when possible, but keep your willpower strong, for when new temptations inevitably show up.
+
+### Privilege & Lack of Evidence
+
+Although the book has a good number of useful ideas, much of the advice is only anecdotally supported at best, and some of it is completely opinion-based. Also, the person who wrote it is a white, male blogger who was already super organized in college, so the advice may only work for some people. Personally, I'm not too concerned about this, since I think the book can give exposure to new ideas that you can try on your own (to see if they work for you), but it's important to note. This is not a scientific, fact-based book, even if it may appear that way at first.

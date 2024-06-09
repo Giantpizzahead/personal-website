@@ -31,7 +31,7 @@ Going out of the middle tower elevator, A tower is on the left, C tower is on th
 (Room statuses last updated 1/29/24)
 
 ### 845
-Next to A tower elevator, going towards B tower. 2 washers, 2 dryers. Dryers are set to ? minutes.
+Next to A tower elevator, going towards B tower. 2 washers, 2 dryers. Dryers are set to 60 minutes.
 
 ### 765
 Next to B tower elevator/stairs, going towards C tower. 2 washers, 2 dryers. Dryers are set to 60 minutes.

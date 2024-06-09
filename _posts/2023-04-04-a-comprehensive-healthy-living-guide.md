@@ -20,8 +20,8 @@ So, to put it plainly... Tracking your health doesn't mean shit if you aren't ac
  - Being mindful (and managing stress)
  - Maintaining yourself (mind and body)
  - Controlling your habits (good and bad)
- - Being proactive (vs. reactive)
  - Forming systems (that last)
+ - Being proactive (vs. reactive)
 
 Note that this isn't just about the basics - eating, sleeping, exercising. We're trying to form a solid foundation from which to build *everything* else on, from being a good student / holding a stable job to clearing up enough time to try something new, and having the systems in place to do that new thing consistently (so not just a new year's resolution). I almost called this "A Guide to Life", but it's not *that* broad and would be impossible to cover in one article. With that being said, this entire wiki together will hopefully be a full guide to life one day... :)
 
@@ -40,6 +40,8 @@ This guide was created in April 2023, but this type of advice doesn't really cha
 **Good quality sleep is essential for EVERYTHING else in life.**
 
 I don't want to reinvent the wheel here, so I'd recommend downloading [Sleep Cycle](https://www.sleepcycle.com/) and signing up for their 2 week "Sleep School" email program. You don't *need* to use their app - though I do think it's useful - but their sleep school emails are really good!
+
+One very important note: The idea of 90-minute sleep cycles should be essentially ignored. Yes, it might make you feel more alert when you initially wake up. However, your brain doesn't recover in 90-minute increments: Sleeping for 30 minutes longer than you otherwise would've *will* help you recover more, even if you might feel worse (or better!) at first when waking up. So, unless it's a power nap or something similar, forget about the 90-minute stuff. Always try to maximize the number of hours slept overall (the recommendation is 7-9, but we should aim for 8-9 or even 8-10).
 
 ## Eating Well
 
@@ -118,3 +120,7 @@ Games are too plain. The challenge level is decent, but it’s quite expensive (
 ##### Impulse
 
 It’s too plain. Obviously the devs tried to make the games as easy to code as possible. I doubt there is scientific evidence backing this one up. Also the games are too easy and difficulty goes up very slowly.
+
+## Habits and Systems
+
+This section is covered by a separate article, linked [here](/2024/03/31/atomic-habits-summary.html).
