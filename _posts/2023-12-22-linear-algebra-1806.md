@@ -1,7 +1,8 @@
 ---
-title: Linear Algebra (18.06)
+title: '18.06: Linear Algebra'
 ---
 
+We learned about linear algebra, its intricacies, and how far-reaching its applications are.
 ## Cheatsheets
 
 - [Part 1](https://docs.google.com/document/d/1q9IunHWgFjdMAwkKc0mqaLURzi8UvfXaGiOIAlYZmQw/edit?usp=sharing)

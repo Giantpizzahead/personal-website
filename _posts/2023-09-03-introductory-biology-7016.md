@@ -1,8 +1,8 @@
 ---
-title: Introductory Biology (7.016)
+title: '7.016: Introductory Biology'
 ---
 
-Check out this [Amoeba Sisters review video](https://www.youtube.com/watch?v=7xeFP0SEDdc)!
+We learned about biology! Check out this [Amoeba Sisters review video](https://www.youtube.com/watch?v=7xeFP0SEDdc).
 
 ## Cheatsheets
 

@@ -1,5 +1,5 @@
 ---
-title: Manual Investing (WIP)
+title: Manual Investing
 description: Honestly, just let a monkey pick for you.
 image: assets/img/dollarquestionmark.jpeg
 imagealt: Money with a question mark.

@@ -17,7 +17,6 @@ Are there any circumstances in which suicide makes sense? If so, what? If not, w
 **Suicide is not an option under normal circumstances.**
 If either no one would be severely affected by your choice, or the suffering in life greatly outweighs the rewards, then suicide becomes an option. However, there are always other paths to take that can fix the above conditions.
 #### Reasoning
-(Taken from the life mind map)
 
 R (Response): No. People (friends, family / extended family, etc.) care about you. If anything happened to you, they would certainly feel terrible, and even responsible for your actions. Things would be especially bad for your parents and friends.<br>
 C (Counter): What if the world isn't real, whatever that means? Nothing matters anyway, right? Even if your death would have impact on other people, what do you care if everyone's fake anyways, including parents and friends?<br>

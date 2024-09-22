@@ -1,8 +1,8 @@
 ---
-title: Fundamentals of Programming (6.1010)
+title: '6.101: Fundamentals of Programming'
 ---
 
-This is a very rough summary of what we learned in 6.1010: Fundamentals of Programming, which was taught in Python. Note that most of the learning came from **coding practice in labs**, the below is just a summary.
+This is a very rough summary of what we learned in 6.101: Fundamentals of Programming, which was taught in Python. Note that most of the learning came from **coding practice in labs**, the below is just a summary.
 
 ## Data Structures
 

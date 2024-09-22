@@ -1,5 +1,5 @@
 ---
-title: The Power of Pest Control (WIP)
+title: The Power of Pest Control
 description: Bzzzzz
 image: assets/img/cleaning.jpeg
 ---

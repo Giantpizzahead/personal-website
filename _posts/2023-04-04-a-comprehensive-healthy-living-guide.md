@@ -1,5 +1,5 @@
 ---
-title: A Comprehensive Healthy Living Guide (WIP)
+title: A Comprehensive Healthy Living Guide
 description: How to sleep, eat, exercise, socialize, meditate, and make/break habits.
 image: assets/img/heart.jpeg
 imagealt: A red heart.

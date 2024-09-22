@@ -1,5 +1,5 @@
 ---
-title: A Comprehensive Health Tracking Guide (WIP)
+title: A Comprehensive Health Tracking Guide
 description: How (and whether) to track aspects of your health. Make sure to act on
   the data too!
 image: assets/img/heart.jpeg

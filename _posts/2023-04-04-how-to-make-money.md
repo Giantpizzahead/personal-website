@@ -1,5 +1,5 @@
 ---
-title: How to Make Money (WIP)
+title: How to Make Money
 description: A comprehensive overview (WIP)
 image: assets/img/dollarquestionmark.jpeg
 imagealt: Dollar bills with a question mark on top.

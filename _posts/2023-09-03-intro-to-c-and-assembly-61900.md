@@ -1,8 +1,8 @@
 ---
-title: Intro to C and Assembly (6.1900)
+title: '6.190: Intro to C and Assembly'
 ---
 
-This is a rough summary of 6.1900.
+This is a rough summary of 6.190.
 
 ## How a Computer Runs Code
 
