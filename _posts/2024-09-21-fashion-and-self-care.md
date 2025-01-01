@@ -15,9 +15,9 @@ A bunch of good hairstyles based on face shapes are in [this YouTube video](http
 
 Also, note that Asian hair is straight/hard.
 
-Consider a low taper fade haircut (recommended). When talking to a barber, say 3 on the side and 7 on the top, with sideburns up to a bit below the frames (even on both sides). This style works good, but experimenting could help you find a better one.
+Normal style: When talking to a barber, say 2 on the side, 6 on the top, and scissors in the front (not 8!), with sideburns up to a bit below the frames (even on both sides). This style works good, but experimenting could help you find a better one.
 
-Look at a fade haircut from [Great Clips](https://www.greatclips.com/lookbook/classic-fade-haircut).
+Look at a fade haircut from [Great Clips](https://www.greatclips.com/lookbook/classic-fade-haircut). A low taper fade haircut (yes, the meme) can be considered too.
 
 ### Nose Hair
 
@@ -26,6 +26,8 @@ You can use a specialized trimmer, or just use scissors / a comb (but be careful
 ## Shower
 
 When showering, rinse hair, then apply shampoo, lather (wet a bit then spread it out with hands), rinse, then apply conditioner, brush your teeth or wash your body for 1-2 minutes while letting the conditioner stay, then rinse.
+
+Do NOT use 2-in-one shampoo/conditioner products, they don't work. They will leave your hair dry and prone to dandruff / other undesireable things.
 
 ## Laundry
 

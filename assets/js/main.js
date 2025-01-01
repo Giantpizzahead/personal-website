@@ -8,8 +8,8 @@
 function modifierHeld(event) {
   // Don't stop the user if they're trying to open a new tab.
   return (
-    event.ctrlKey || 
-    event.shiftKey || 
+    event.ctrlKey ||
+    event.shiftKey ||
     event.metaKey || // apple
     (event.button && event.button == 1) // middle click, >IE9 + everyone else
   );
@@ -17,15 +17,15 @@ function modifierHeld(event) {
 
 // https://stackoverflow.com/a/24056766
 function historyBackWithFallback(fallbackUrl) {
-  fallbackUrl = fallbackUrl || '/';
+  fallbackUrl = fallbackUrl || "/";
   var prevPage = window.location.href;
 
   window.history.back();
 
-  setTimeout(function(){ 
-      if (window.location.href == prevPage) {
-          window.location.href = fallbackUrl; 
-      }
+  setTimeout(function () {
+    if (window.location.href == prevPage) {
+      window.location.href = fallbackUrl;
+    }
   }, 750);
 }
 
@@ -157,27 +157,32 @@ function historyBackWithFallback(fallbackUrl) {
       $links.each(function () {
         var $link = $(this);
         // Only process internal links that aren't anchors, haven't been explicitly filtered, and don't open a new tab.
-        if (((this.pathname === window.location.pathname && this.href.includes("#")) ||
-             this.host !== window.location.host || $link.attr("target") == "_blank" ||
-             $link.hasClass("no-link-fade")) && !$link.hasClass("yes-link-fade"))
+        if (
+          ((this.pathname === window.location.pathname &&
+            this.href.includes("#")) ||
+            this.host !== window.location.host ||
+            $link.attr("target") == "_blank" ||
+            $link.hasClass("no-link-fade")) &&
+          !$link.hasClass("yes-link-fade")
+        )
           return;
-  
+
         $link.on("click", function (event) {
           if (modifierHeld(event)) return;
           var href = $link.attr("href");
-  
+
           // Prevent default.
           event.stopPropagation();
           event.preventDefault();
-  
+
           // Start transitioning.
           $wrapper.addClass("is-transitioning");
-  
+
           // Hide menu (if visible).
           window.setTimeout(function () {
             $menu._hide();
           }, $fadeTime);
-  
+
           // Redirect.
           window.setTimeout(function () {
             if ($link.attr("target") == "_blank") window.open(href);
@@ -360,10 +365,10 @@ function historyBackWithFallback(fallbackUrl) {
         // Hide on escape.
         if (event.keyCode == 27) $menu._hide();
       });
-    
+
     // Code block formatting
     var $codeBlocks = $("figure.highlight pre code");
-    $codeBlocks.each(function() {
+    $codeBlocks.each(function () {
       // Check if the code block has a child table element
       if ($(this).find("table").length == 0) {
         // Add 1em padding to the code block
@@ -373,15 +378,17 @@ function historyBackWithFallback(fallbackUrl) {
 
     // Smooth scrolling for anchor links
     // https://stackoverflow.com/a/7717572
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       // Don't scroll if the href is #menu
       if ($(this).attr("href") == "#menu") return;
-      anchor.addEventListener('click', function (e) {
+      anchor.addEventListener("click", function (e) {
         if (modifierHeld(e)) return;
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+        document
+          .querySelector(`[id='${this.getAttribute("href").split("#")[1]}']`) // Works for a digit as 1st char
+          .scrollIntoView({
+            behavior: "smooth",
+          });
       });
     });
 

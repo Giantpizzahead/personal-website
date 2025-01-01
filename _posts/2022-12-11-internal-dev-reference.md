@@ -4,22 +4,6 @@ description: Internal dev reference (I'm being resourceful!)
 image: assets/img/webdevlogo.jpg
 ---
 
-## Todo
-
-Access static (data) files in Python: [https://stackoverflow.com/a/58941536](https://stackoverflow.com/a/58941536)
-Distributing code for end users: [https://github.com/pyinstaller/pyinstaller](https://github.com/pyinstaller/pyinstaller)
-Or create a Python package for developers, hosted on PyPi: [https://packaging.python.org/en/latest/](https://packaging.python.org/en/latest/)
-
-Web apps guide [https://12factor.net/](https://12factor.net/)
-
-Picture tag: [https://rbuchberger.github.io/jekyll_picture_tag/users/installation](https://rbuchberger.github.io/jekyll_picture_tag/users/installation)
-
-Passive income: [https://www.bankrate.com/investing/passive-income-ideas/](https://www.bankrate.com/investing/passive-income-ideas/)
-
-Useful cheatsheet websites:
-[https://devhints.io/](https://devhints.io/)
-[https://quickref.me](https://quickref.me)
-
 ## Common Tasks
 
 ### Live Website Preview
@@ -128,3 +112,17 @@ List of Font Awesome v4 icons: [https://fontawesome.com/v4/icons/](https://fonta
 ### Emotes
 
 List of Github Emojis: [https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md)
+
+## Todo
+
+Access static (data) files in Python: [https://stackoverflow.com/a/58941536](https://stackoverflow.com/a/58941536)
+Distributing code for end users: [https://github.com/pyinstaller/pyinstaller](https://github.com/pyinstaller/pyinstaller)
+Or create a Python package for developers, hosted on PyPi: [https://packaging.python.org/en/latest/](https://packaging.python.org/en/latest/)
+
+Web apps guide [https://12factor.net/](https://12factor.net/)
+
+Picture tag: [https://rbuchberger.github.io/jekyll_picture_tag/users/installation](https://rbuchberger.github.io/jekyll_picture_tag/users/installation)
+
+Useful cheatsheet websites:
+[https://devhints.io/](https://devhints.io/)
+[https://quickref.me](https://quickref.me)
