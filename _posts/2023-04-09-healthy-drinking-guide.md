@@ -132,13 +132,13 @@ Side note: Talking Point has very high quality documentaries on this type of stu
 
 ### Classic Soda
 
-Of course, this is a very unhealthy option, so **do not drink this routinely (ideally limit to once per week or less). A 12-ounce can of standard soda contains about [39 grams of sugar and 150 calories](https://drinkolipop.com/blogs/digest/switch-to-olipop). (Mountain Dew has 46 grams per can!) That's equivalent to about 9 teaspoons of sugar per can just to put things into perspective.
+Of course, this is a very unhealthy option, so **do not drink this routinely** (ideally limit to once per week or less). A 12-ounce can of standard soda contains about [39 grams of sugar and 150 calories](https://drinkolipop.com/blogs/digest/switch-to-olipop). (Mountain Dew has 46 grams per can!) That's equivalent to about 9 teaspoons of sugar per can just to put things into perspective.
 
 #### Too Much Sugar, Not Enough Fiber
 
 Basically all the drinks that are considered unhealthy have too much sugar, whether added or "natural". Whether the sugars are added or natural doesn't actually matter - the only way to make sugars have less of an impact is to also eat **fiber** along with sugar (to slow down the body's rate of sugar intake). That's why whole fruits are healthy - even though they have a good deal of sugar, they also come with a good amount of fiber. Most foods/drinks with added sugar, on the other hand, don't have fiber - which is why most recommendations focus on avoiding only added sugar.
 
-To learn more: [Fiber | The Nutrition Source | Harvard T.H. Chan School of Public Health](https://www.hsph.harvard.edu/nutritionsource/carbohydrates/fiber/)
+To learn more: [Fiber, The Nutrition Source, Harvard T.H. Chan School of Public Health](https://www.hsph.harvard.edu/nutritionsource/carbohydrates/fiber/)
 
 ### Fruit Juice, Without Vitamins
 
