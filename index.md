@@ -8,4 +8,4 @@ author: null
 show_tile: false
 ---
 
-I'm Kyle Fu, a passionate college student looking to change the world using the latest breakthroughs in computer science. I've made some interesting projects and blog posts. Feel free to explore!
+I'm Kyle Fu, a passionate MIT undergraduate looking to change the world using the latest breakthroughs in computer science. I've made some interesting projects and blog posts. Feel free to explore!

@@ -1,8 +1,9 @@
 ---
 title: League Win Predictor
-description: Small widget that displays predicted probability of winning a League
+description:
+  Small widget that displays predicted probability of winning a League
   game in real time.
-showcase: 4
+showcase: 6
 image: assets/img/leaguewinpred.png
 ---
 

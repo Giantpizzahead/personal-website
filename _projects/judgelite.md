@@ -1,8 +1,9 @@
 ---
 title: JudgeLite
-description: A simple competitive programming submission judge, created for HHS Programming
+description:
+  A simple competitive programming submission judge, created for HHS Programming
   Club.
-showcase: 5
+showcase: 7
 image: assets/img/judgelite.png
 ---
 

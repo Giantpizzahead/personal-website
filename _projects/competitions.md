@@ -1,8 +1,9 @@
 ---
 title: Competitive Programming & CTFs
-description: Archives of (almost) all my competitive programming and Capture The Flag
+description:
+  Archives of (almost) all my competitive programming and Capture The Flag
   code.
-showcase: 2
+showcase: 4
 image: assets/img/usacow.png
 ---
 
